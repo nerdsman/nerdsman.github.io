@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">通讯录管理系统 | hojun</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "さくら荘そのhojun";
+  mashiro_option.author_name = "hojun";
+  mashiro_option.site_url = "https://sakura.hojun.cn";
+  mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
+  mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(1).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(2).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(3).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(4).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(5).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(6).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(7).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(8).jpg.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://sakura.hojun.cn">
+          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/honjun" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="sina">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/sina.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="zhihu">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/wechat.jpg">
+                  </div>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/wechat.jpg">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">さくら荘その</span>
+            <span class="shironeko">hojun</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/悦读/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/图集/">
+                          <i class="fa fa-photo" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/client/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+                    客户端
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">通讯录管理系统</h1>
+            <p class="entry-census">&nbsp;·&nbsp;2021-2-3&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <h1 id="通讯录管理系统"><a href="#通讯录管理系统" class="headerlink" title="通讯录管理系统"></a>通讯录管理系统</h1><h2 id="1、系统需求"><a href="#1、系统需求" class="headerlink" title="1、系统需求"></a>1、系统需求</h2><p>通讯录是一个可以记录亲人、好友信息的工具。</p>
+<p>本教程主要利用C++来实现一个通讯录管理系统</p>
+<p>系统中需要实现的功能如下：</p>
+<ul>
+<li>添加联系人：向通讯录中添加新人，信息包括（姓名、性别、年龄、联系电话、家庭住址）最多记录1000人</li>
+<li>显示联系人：显示通讯录中所有联系人信息</li>
+<li>删除联系人：按照姓名进行删除指定联系人</li>
+<li>查找联系人：按照姓名查看指定联系人信息</li>
+<li>修改联系人：按照姓名重新修改指定联系人</li>
+<li>清空联系人：清空通讯录中所有信息</li>
+<li>退出通讯录：退出当前使用的通讯录</li>
+</ul>
+<h2 id="2、创建项目"><a href="#2、创建项目" class="headerlink" title="2、创建项目"></a>2、创建项目</h2><p>创建项目步骤如下：</p>
+<ul>
+<li>创建新项目</li>
+<li>添加文件</li>
+</ul>
+<h3 id="2-1-创建项目"><a href="#2-1-创建项目" class="headerlink" title="2.1 创建项目"></a>2.1 创建项目</h3><p>打开vs2017后，点击创建新项目，创建新的C++项目</p>
+<p><img src="1544151401138.png" alt="1544151401138"></p>
+<p>填写项目名称，选择项目路径</p>
+<p><img src="1544151579620.png" alt="1544151579620"></p>
+<h3 id="2-2添加文件"><a href="#2-2添加文件" class="headerlink" title="2.2添加文件"></a>2.2添加文件</h3><p><img src="1544161551746.png" alt="1544161551746"></p>
+<p><img src="1544161648175.png" alt="1544161648175"></p>
+<p>添加成功后，效果如图：</p>
+<p><img src="1544162344057.png" alt="1544162344057"></p>
+<p>至此，项目已创建完毕</p>
+<h2 id="3、菜单功能"><a href="#3、菜单功能" class="headerlink" title="3、菜单功能"></a>3、菜单功能</h2><p><strong>功能描述：</strong> 用户选择功能的界面</p>
+<p>菜单界面效果如下图：</p>
+<p><img src="1544149559893.png" alt="1544149559893"></p>
+<p><strong>步骤：</strong></p>
+<ul>
+<li>封装函数显示该界面  如 <code>void showMenu()</code></li>
+<li>在main函数中调用封装好的函数</li>
+</ul>
+<p><strong>代码：</strong></p>
+<pre><code class="C++">#include&lt;iostream&gt;
+using namespace std;
+
+//菜单界面
+void showMenu()
+{
+    cout &lt;&lt; &quot;***************************&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  1、添加联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  2、显示联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  3、删除联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  4、查找联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  5、修改联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  6、清空联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  0、退出通讯录  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***************************&quot; &lt;&lt; endl;
+}
+
+int main() {
+
+    showMenu();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+}
+</code></pre>
+<h2 id="4、退出功能"><a href="#4、退出功能" class="headerlink" title="4、退出功能"></a>4、退出功能</h2><p>功能描述：退出通讯录系统</p>
+<p>思路：根据用户不同的选择，进入不同的功能，可以选择switch分支结构，将整个架构进行搭建</p>
+<p>当用户选择0时候，执行退出，选择其他先不做操作，也不会退出程序</p>
+<p><strong>代码：</strong></p>
+<pre><code class="C++">int main() {
+
+    int select = 0;
+
+    while (true)
+    {
+        showMenu();
+
+        cin &gt;&gt; select;
+
+        switch (select)
+        {
+        case 1:  //添加联系人
+            break;
+        case 2:  //显示联系人
+            break;
+        case 3:  //删除联系人
+            break;
+        case 4:  //查找联系人
+            break;
+        case 5:  //修改联系人
+            break;
+        case 6:  //清空联系人
+            break;
+        case 0:  //退出通讯录
+            cout &lt;&lt; &quot;欢迎下次使用&quot; &lt;&lt; endl;
+            system(&quot;pause&quot;);
+            return 0;
+            break;
+        default:
+            break;
+        }
+    }
+
+    system(&quot;pause&quot;);
+
+    return 0;
+}
+</code></pre>
+<p>效果图：</p>
+<p><img src="1544163868043.png" alt="1544163868043"></p>
+<h2 id="5、添加联系人"><a href="#5、添加联系人" class="headerlink" title="5、添加联系人"></a>5、添加联系人</h2><p>功能描述：</p>
+<p>实现添加联系人功能，联系人上限为1000人，联系人信息包括（姓名、性别、年龄、联系电话、家庭住址）</p>
+<p>添加联系人实现步骤：</p>
+<ul>
+<li>设计联系人结构体</li>
+<li>设计通讯录结构体</li>
+<li>main函数中创建通讯录</li>
+<li>封装添加联系人函数</li>
+<li>测试添加联系人功能</li>
+</ul>
+<h3 id="5-1-设计联系人结构体"><a href="#5-1-设计联系人结构体" class="headerlink" title="5.1 设计联系人结构体"></a>5.1 设计联系人结构体</h3><p>联系人信息包括：姓名、性别、年龄、联系电话、家庭住址</p>
+<p>设计如下：</p>
+<pre><code class="C++">#include &lt;string&gt;  //string头文件
+//联系人结构体
+struct Person
+{
+    string m_Name; //姓名
+    int m_Sex; //性别：1男 2女
+    int m_Age; //年龄
+    string m_Phone; //电话
+    string m_Addr; //住址
+};
+</code></pre>
+<h3 id="5-2-设计通讯录结构体"><a href="#5-2-设计通讯录结构体" class="headerlink" title="5.2 设计通讯录结构体"></a>5.2 设计通讯录结构体</h3><p>设计时候可以在通讯录结构体中，维护一个容量为1000的存放联系人的数组，并记录当前通讯录中联系人数量</p>
+<p>设计如下</p>
+<pre><code class="C++">#define MAX 1000 //最大人数
+
+//通讯录结构体
+struct Addressbooks
+{
+    struct Person personArray[MAX]; //通讯录中保存的联系人数组
+    int m_Size; //通讯录中人员个数
+};
+</code></pre>
+<h3 id="5-3-main函数中创建通讯录"><a href="#5-3-main函数中创建通讯录" class="headerlink" title="5.3 main函数中创建通讯录"></a>5.3 main函数中创建通讯录</h3><p>添加联系人函数封装好后，在main函数中创建一个通讯录变量，这个就是我们需要一直维护的通讯录</p>
+<pre><code class="c++">mian函数起始位置添加：
+
+    //创建通讯录
+    Addressbooks abs;
+    //初始化通讯录中人数
+    abs.m_Size = 0;
+</code></pre>
+<h3 id="5-4-封装添加联系人函数"><a href="#5-4-封装添加联系人函数" class="headerlink" title="5.4 封装添加联系人函数"></a>5.4 封装添加联系人函数</h3><p>思路：添加联系人前先判断通讯录是否已满，如果满了就不再添加，未满情况将新联系人信息逐个加入到通讯录</p>
+<p>添加联系人代码：</p>
+<pre><code class="C++">//1、添加联系人信息
+void addPerson(Addressbooks *abs)
+{
+    //判断电话本是否满了
+    if (abs-&gt;m_Size == MAX)
+    {
+        cout &lt;&lt; &quot;通讯录已满，无法添加&quot; &lt;&lt; endl;
+        return;
+    }
+    else
+    {
+        //姓名
+        string name;
+        cout &lt;&lt; &quot;请输入姓名：&quot; &lt;&lt; endl;
+        cin &gt;&gt; name;
+        abs-&gt;personArray[abs-&gt;m_Size].m_Name = name;
+
+        cout &lt;&lt; &quot;请输入性别：&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;1 -- 男&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;2 -- 女&quot; &lt;&lt; endl;
+
+        //性别
+        int sex = 0;
+        while (true)
+        {
+            cin &gt;&gt; sex;
+            if (sex == 1 || sex == 2)
+            {
+                abs-&gt;personArray[abs-&gt;m_Size].m_Sex = sex;
+                break;
+            }
+            cout &lt;&lt; &quot;输入有误，请重新输入&quot;;
+        }
+
+        //年龄
+        cout &lt;&lt; &quot;请输入年龄：&quot; &lt;&lt; endl;
+        int age = 0;
+        cin &gt;&gt; age;
+        abs-&gt;personArray[abs-&gt;m_Size].m_Age = age;
+
+        //联系电话
+        cout &lt;&lt; &quot;请输入联系电话：&quot; &lt;&lt; endl;
+        string phone = &quot;&quot;;
+        cin &gt;&gt; phone;
+        abs-&gt;personArray[abs-&gt;m_Size].m_Phone = phone;
+
+        //家庭住址
+        cout &lt;&lt; &quot;请输入家庭住址：&quot; &lt;&lt; endl;
+        string address;
+        cin &gt;&gt; address;
+        abs-&gt;personArray[abs-&gt;m_Size].m_Addr = address;
+
+        //更新通讯录人数
+        abs-&gt;m_Size++;
+
+        cout &lt;&lt; &quot;添加成功&quot; &lt;&lt; endl;
+        system(&quot;pause&quot;);
+        system(&quot;cls&quot;);
+    }
+}
+</code></pre>
+<h3 id="5-5-测试添加联系人功能"><a href="#5-5-测试添加联系人功能" class="headerlink" title="5.5 测试添加联系人功能"></a>5.5 测试添加联系人功能</h3><p>选择界面中，如果玩家选择了1，代表添加联系人，我们可以测试下该功能</p>
+<p>在switch case 语句中，case1里添加：</p>
+<pre><code class="C++">case 1:  //添加联系人
+    addPerson(&amp;abs);
+    break;
+</code></pre>
+<p>测试效果如图：</p>
+<p><img src="1544165554002.png" alt="1544165554002"></p>
+<h2 id="6、显示联系人"><a href="#6、显示联系人" class="headerlink" title="6、显示联系人"></a>6、显示联系人</h2><p>功能描述：显示通讯录中已有的联系人信息</p>
+<p>显示联系人实现步骤：</p>
+<ul>
+<li>封装显示联系人函数</li>
+<li>测试显示联系人功能</li>
+</ul>
+<h3 id="6-1-封装显示联系人函数"><a href="#6-1-封装显示联系人函数" class="headerlink" title="6.1 封装显示联系人函数"></a>6.1 封装显示联系人函数</h3><p>思路：判断如果当前通讯录中没有人员，就提示记录为空，人数大于0，显示通讯录中信息</p>
+<p>显示联系人代码：</p>
+<pre><code class="C++">//2、显示所有联系人信息
+void showPerson(Addressbooks * abs)
+{
+    if (abs-&gt;m_Size == 0)
+    {
+        cout &lt;&lt; &quot;当前记录为空&quot; &lt;&lt; endl;
+    }
+    else
+    {
+        for (int i = 0; i &lt; abs-&gt;m_Size; i++)
+        {
+            cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; abs-&gt;personArray[i].m_Name &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;性别：&quot; &lt;&lt; (abs-&gt;personArray[i].m_Sex == 1 ? &quot;男&quot; : &quot;女&quot;) &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; abs-&gt;personArray[i].m_Age &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;电话：&quot; &lt;&lt; abs-&gt;personArray[i].m_Phone &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;住址：&quot; &lt;&lt; abs-&gt;personArray[i].m_Addr &lt;&lt; endl;
+        }
+    }
+
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+
+}
+</code></pre>
+<h3 id="6-2-测试显示联系人功能"><a href="#6-2-测试显示联系人功能" class="headerlink" title="6.2 测试显示联系人功能"></a>6.2 测试显示联系人功能</h3><p>在switch case语句中，case 2 里添加</p>
+<pre><code class="C++">case 2:  //显示联系人
+    showPerson(&amp;abs);
+    break;
+</code></pre>
+<p>测试效果如图：</p>
+<p><img src="1544166401582.png" alt="1544166401582"></p>
+<h2 id="7、删除联系人"><a href="#7、删除联系人" class="headerlink" title="7、删除联系人"></a>7、删除联系人</h2><p>功能描述：按照姓名进行删除指定联系人</p>
+<p>删除联系人实现步骤：</p>
+<ul>
+<li>封装检测联系人是否存在</li>
+<li>封装删除联系人函数</li>
+<li>测试删除联系人功能</li>
+</ul>
+<h3 id="7-1-封装检测联系人是否存在"><a href="#7-1-封装检测联系人是否存在" class="headerlink" title="7.1  封装检测联系人是否存在"></a>7.1  封装检测联系人是否存在</h3><p>设计思路：</p>
+<p>删除联系人前，我们需要先判断用户输入的联系人是否存在，如果存在删除，不存在提示用户没有要删除的联系人</p>
+<p>因此我们可以把检测联系人是否存在封装成一个函数中，如果存在，返回联系人在通讯录中的位置，不存在返回-1</p>
+<p>检测联系人是否存在代码：</p>
+<pre><code class="C++">//判断是否存在查询的人员，存在返回在数组中索引位置，不存在返回-1
+int isExist(Addressbooks * abs, string name)
+{
+    for (int i = 0; i &lt; abs-&gt;m_Size; i++)
+    {
+        if (abs-&gt;personArray[i].m_Name == name)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+</code></pre>
+<h3 id="7-2-封装删除联系人函数"><a href="#7-2-封装删除联系人函数" class="headerlink" title="7.2 封装删除联系人函数"></a>7.2 封装删除联系人函数</h3><p>根据用户输入的联系人判断该通讯录中是否有此人</p>
+<p>查找到进行删除，并提示删除成功</p>
+<p>查不到提示查无此人。</p>
+<pre><code class="C++">//3、删除指定联系人信息
+void deletePerson(Addressbooks * abs)
+{
+    cout &lt;&lt; &quot;请输入您要删除的联系人&quot; &lt;&lt; endl;
+    string name;
+    cin &gt;&gt; name;
+
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        for (int i = ret; i &lt; abs-&gt;m_Size; i++)
+        {
+            abs-&gt;personArray[i] = abs-&gt;personArray[i + 1];
+        }
+         abs-&gt;m_Size--;
+        cout &lt;&lt; &quot;删除成功&quot; &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
+    }
+
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+</code></pre>
+<h3 id="7-3-测试删除联系人功能"><a href="#7-3-测试删除联系人功能" class="headerlink" title="7.3 测试删除联系人功能"></a>7.3 测试删除联系人功能</h3><p>在switch case 语句中，case3里添加：</p>
+<pre><code class="C++">case 3:  //删除联系人
+    deletePerson(&amp;abs);
+    break;
+</code></pre>
+<p>测试效果如图：</p>
+<p>存在情况：</p>
+<p><img src="1544167951559.png" alt="1544167951559"></p>
+<p>不存在情况：</p>
+<p><img src="1544168010831.png" alt="1544168010831"></p>
+<h2 id="8、查找联系人"><a href="#8、查找联系人" class="headerlink" title="8、查找联系人"></a>8、查找联系人</h2><p>功能描述：按照姓名查看指定联系人信息</p>
+<p>查找联系人实现步骤</p>
+<ul>
+<li>封装查找联系人函数</li>
+<li>测试查找指定联系人</li>
+</ul>
+<h3 id="8-1-封装查找联系人函数"><a href="#8-1-封装查找联系人函数" class="headerlink" title="8.1 封装查找联系人函数"></a>8.1 封装查找联系人函数</h3><p>实现思路：判断用户指定的联系人是否存在，如果存在显示信息，不存在则提示查无此人。</p>
+<p>查找联系人代码：</p>
+<pre><code class="C++">//4、查找指定联系人信息
+void findPerson(Addressbooks * abs)
+{
+    cout &lt;&lt; &quot;请输入您要查找的联系人&quot; &lt;&lt; endl;
+    string name;
+    cin &gt;&gt; name;
+
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Name &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;性别：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Sex &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Age &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;电话：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Phone &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;住址：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Addr &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
+    }
+
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+
+}
+</code></pre>
+<h3 id="8-2-测试查找指定联系人"><a href="#8-2-测试查找指定联系人" class="headerlink" title="8.2 测试查找指定联系人"></a>8.2 测试查找指定联系人</h3><p>在switch case 语句中，case4里添加：</p>
+<pre><code class="C++">case 4:  //查找联系人
+    findPerson(&amp;abs);
+    break;
+</code></pre>
+<p>测试效果如图</p>
+<p>存在情况：</p>
+<p><img src="1544170057646.png" alt="1544170057646"></p>
+<p>不存在情况：</p>
+<p><img src="1544170254021.png" alt="1544170254021"></p>
+<h2 id="9、修改联系人"><a href="#9、修改联系人" class="headerlink" title="9、修改联系人"></a>9、修改联系人</h2><p>功能描述：按照姓名重新修改指定联系人</p>
+<p>修改联系人实现步骤</p>
+<ul>
+<li>封装修改联系人函数</li>
+<li>测试修改联系人功能</li>
+</ul>
+<h3 id="9-1-封装修改联系人函数"><a href="#9-1-封装修改联系人函数" class="headerlink" title="9.1 封装修改联系人函数"></a>9.1 封装修改联系人函数</h3><p>实现思路：查找用户输入的联系人，如果查找成功进行修改操作，查找失败提示查无此人</p>
+<p>修改联系人代码：</p>
+<pre><code class="C++">//5、修改指定联系人信息
+void modifyPerson(Addressbooks * abs)
+{
+    cout &lt;&lt; &quot;请输入您要修改的联系人&quot; &lt;&lt; endl;
+    string name;
+    cin &gt;&gt; name;
+
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        //姓名
+        string name;
+        cout &lt;&lt; &quot;请输入姓名：&quot; &lt;&lt; endl;
+        cin &gt;&gt; name;
+        abs-&gt;personArray[ret].m_Name = name;
+
+        cout &lt;&lt; &quot;请输入性别：&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;1 -- 男&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;2 -- 女&quot; &lt;&lt; endl;
+
+        //性别
+        int sex = 0;
+        while (true)
+        {
+            cin &gt;&gt; sex;
+            if (sex == 1 || sex == 2)
+            {
+                abs-&gt;personArray[ret].m_Sex = sex;
+                break;
+            }
+            cout &lt;&lt; &quot;输入有误，请重新输入&quot;;
+        }
+
+        //年龄
+        cout &lt;&lt; &quot;请输入年龄：&quot; &lt;&lt; endl;
+        int age = 0;
+        cin &gt;&gt; age;
+        abs-&gt;personArray[ret].m_Age = age;
+
+        //联系电话
+        cout &lt;&lt; &quot;请输入联系电话：&quot; &lt;&lt; endl;
+        string phone = &quot;&quot;;
+        cin &gt;&gt; phone;
+        abs-&gt;personArray[ret].m_Phone = phone;
+
+        //家庭住址
+        cout &lt;&lt; &quot;请输入家庭住址：&quot; &lt;&lt; endl;
+        string address;
+        cin &gt;&gt; address;
+        abs-&gt;personArray[ret].m_Addr = address;
+
+        cout &lt;&lt; &quot;修改成功&quot; &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
+    }
+
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+
+}
+</code></pre>
+<h3 id="9-2-测试修改联系人功能"><a href="#9-2-测试修改联系人功能" class="headerlink" title="9.2 测试修改联系人功能"></a>9.2 测试修改联系人功能</h3><p>在switch case 语句中，case 5里添加：</p>
+<pre><code class="C++">case 5:  //修改联系人
+    modifyPerson(&amp;abs);
+    break;
+</code></pre>
+<p>测试效果如图：</p>
+<p>查不到指定联系人情况：</p>
+<p><img src="1544172265676.png" alt="1544172265676"></p>
+<p>查找到联系人，并修改成功：</p>
+<p><img src="1544172164141.png" alt="1544172164141"></p>
+<p>再次查看通讯录，确认修改完毕</p>
+<p><img src="1544172228627.png" alt="1544172228627"></p>
+<h2 id="10、清空联系人"><a href="#10、清空联系人" class="headerlink" title="10、清空联系人"></a>10、清空联系人</h2><p>功能描述：清空通讯录中所有信息</p>
+<p>清空联系人实现步骤</p>
+<ul>
+<li>封装清空联系人函数</li>
+<li>测试清空联系人</li>
+</ul>
+<h3 id="10-1-封装清空联系人函数"><a href="#10-1-封装清空联系人函数" class="headerlink" title="10.1 封装清空联系人函数"></a>10.1 封装清空联系人函数</h3><p>实现思路： 将通讯录所有联系人信息清除掉，只要将通讯录记录的联系人数量置为0，做逻辑清空即可。</p>
+<p>清空联系人代码：</p>
+<pre><code class="C++">//6、清空所有联系人
+void cleanPerson(Addressbooks * abs)
+{
+    abs-&gt;m_Size = 0;
+    cout &lt;&lt; &quot;通讯录已清空&quot; &lt;&lt; endl;
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+</code></pre>
+<h3 id="10-2-测试清空联系人"><a href="#10-2-测试清空联系人" class="headerlink" title="10.2  测试清空联系人"></a>10.2  测试清空联系人</h3><p>在switch case 语句中，case 6 里添加：</p>
+<pre><code class="C++">case 6:  //清空联系人
+    cleanPerson(&amp;abs);
+    break;
+</code></pre>
+<p>测试效果如图：</p>
+<p>清空通讯录</p>
+<p><img src="1544172909693.png" alt="1544172909693"></p>
+<p>再次查看信息，显示记录为空</p>
+<p><img src="1544172943653.png" alt="1544172943653"></p>
+<p><strong>至此，通讯录管理系统完成！</strong></p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2021/02/03/C-基础入门（第一阶段）/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                C++基础入门（第一阶段）</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2021/01/19/《王杰》重制/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                《王杰》重制</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author"></a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 hojun<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">さくら荘そのhojun</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/honjun" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/mashirozx?is_all=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/悦读/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/图集/">
+                  <i class="fa fa-photo" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/client/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+            客户端
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="2660651585"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="auto"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>
