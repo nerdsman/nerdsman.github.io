@@ -343,19 +343,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2021/02/11/4fYyLzqMUvcHiZp.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2021/02/11/4fYyLzqMUvcHiZp.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      《数字图像处理第四版》读书笔记</h1>
+      <p class="entry-census">
+        <span>
+          <a href="hojun.cn">
+            <img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="hojun.cn">RobertCarlson</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2021-2-11<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
       <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-          <header class="entry-header">
-            <h1 class="entry-title">《数字图像处理第四版》读书笔记</h1>
-            <p class="entry-census">RobertCarlson&nbsp;·&nbsp;2021-2-11&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
         
         <div class="entry-content">
           <h1 id="《数字图像处理-第四版》读书笔记"><a href="#《数字图像处理-第四版》读书笔记" class="headerlink" title="《数字图像处理 第四版》读书笔记"></a>《数字图像处理 第四版》读书笔记</h1><div align="center"><br><img src="https://i.loli.net/2021/02/11/4fYyLzqMUvcHiZp.png" width="230" height="294"><br></div>
@@ -446,7 +463,7 @@
 </code></pre>
 <h4 id="3-3-2-直方图匹配（规定化）"><a href="#3-3-2-直方图匹配（规定化）" class="headerlink" title="3.3.2 直方图匹配（规定化）"></a>3.3.2 直方图匹配（规定化）</h4><p>用于生成规定直方图的图像的方法。</p>
 <hr>
-<h2 id="第9章-形态学图像处理"><a href="#第9章-形态学图像处理" class="headerlink" title="第9章 形态学图像处理"></a>第9章 形态学图像处理</h2><h3 id="本章思维导图"><a href="#本章思维导图" class="headerlink" title="本章思维导图"></a>本章思维导图</h3><h3 id="9-1-预备知识"><a href="#9-1-预备知识" class="headerlink" title="9.1 预备知识"></a>9.1 预备知识</h3><p>二维整数空间：像素的坐标<br>三维整数空间：像素的坐标+离散灰度值<br>高维整数空间：包含更多的图像分量，例如彩色分量、时变分量<br><img src="https://i.loli.net/2021/02/11/WFMg9C2tzuN8vBn.png" alt><br>形态学运算使用<strong>集合</strong>来定义的，形态学集合包括<strong>目标元素</strong>和<strong>结构元（SE）</strong>两类元素的集合。<br>目标元素：前景像素的集合<br>结构元：根据前景像素和背景像素来规定。（有时候包含“不关心”元素）<br><img src="https://i.loli.net/2021/02/11/6W9PHV2rJaLGnIR.png" alt><br>反射：<br>$$\hat{B}=｛w|w=-b，b\in B｝$$<br>$$\hat{B}为相对于其原点的反射。<br>$$<br><img src="https://i.loli.net/2021/02/11/og9r43lpb6cHYKB.png" alt><br>平移：<br>$$(B)<em>{z}=｛c|c=b+z，b\in B｝$$<br>$$<br>(B)</em>{z}是B中坐标(x,y)已被(x+z_{1},y+z_{2})代替的点集。<br>$$</p>
+<h2 id="第9章-形态学图像处理"><a href="#第9章-形态学图像处理" class="headerlink" title="第9章 形态学图像处理"></a>第9章 形态学图像处理</h2><h3 id="本章思维导图"><a href="#本章思维导图" class="headerlink" title="本章思维导图"></a>本章思维导图</h3><h3 id="9-1-预备知识"><a href="#9-1-预备知识" class="headerlink" title="9.1 预备知识"></a>9.1 预备知识</h3><p>二维整数空间：像素的坐标<br>三维整数空间：像素的坐标+离散灰度值<br>高维整数空间：包含更多的图像分量，例如彩色分量、时变分量<br><img src="https://i.loli.net/2021/02/11/WFMg9C2tzuN8vBn.png" alt><br>形态学运算使用<strong>集合</strong>来定义的，形态学集合包括<strong>目标元素</strong>和<strong>结构元（SE）</strong>两类元素的集合。<br>目标元素：前景像素的集合<br>结构元：根据前景像素和背景像素来规定。（有时候包含“不关心”元素）<br><img src="https://i.loli.net/2021/02/11/6W9PHV2rJaLGnIR.png" alt><br>反射：<br>$$<br>\hat{B}=｛w|w=-b，b\in B｝\<br>\hat{B}为相对于其原点的反射。<br>$$<br><img src="https://i.loli.net/2021/02/11/og9r43lpb6cHYKB.png" alt><br>平移：<br>$$<br>(B)<em>{z}=｛c|c=b+z，b\in B｝\<br>(B)</em>{z}是B中坐标(x,y)已被(x+z_{1},y+z_{2})代替的点集。<br>$$</p>
 
         </div>
         <!-- .entry-content -->
