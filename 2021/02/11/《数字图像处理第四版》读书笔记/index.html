@@ -430,8 +430,8 @@
 <li>定义域和值域相同，都为0≤ r ≤L-1，0≤ T(r) ≤L-1。——保证输出灰度的范围与输入相同</li>
 </ol>
 <p>然后，作逆变换（反函数）<br>$$r=T^{-1}(s), 0 \leqslant s \leqslant L-1$$<br>此时，将1的条件改为<br>T(r)在区间0≤ r ≤L-1上是一个<strong>严格</strong>单调递增函数。——保证s返回到r的映射是一对一的<br><img src="https://i.loli.net/2021/02/11/VsOct9e3IJWRT7E.png" alt><br>$$p_{s}(s)=p_{r}(r)\left|\frac{\mathrm{d} r}{\mathrm{~d} s}\right|$$<br>$$p_{s}(s)：输出值s的PDF（概率密度函数）<br>$$<br>$$p_{r}(r)：灰度值r的PDF$$<br>$$s=T(r)=(L-1) \int_{0}^{r} p_{r}(w) \mathrm{d} w$$</p>
-<p>$$ω：假积分变量\<br>\int_{0}^{r} p_{r}(w) \mathrm{d} w：累积分布函数（CDF）$$</p>
-<p><strong>直方图均衡代码：</strong><br>$$D_{B}=\frac{D_{m}}{A_{0}} \cdot \sum_{0}^{D_{A}} H_{A}\left(D_{A}\right)$$<br>$$<br>D_{m}：\<br>D_{A}：\<br>D_{B}：新的灰度级\<br>A_{0}：图像的总像素个数\<br>H_{A}（）：直方图<br>$$</p>
+<p>$$ω：假积分变量\newline<br>\int_{0}^{r} p_{r}(w) \mathrm{d} w：累积分布函数（CDF）$$</p>
+<p><strong>直方图均衡代码：</strong><br>$$D_{B}=\frac{D_{m}}{A_{0}} \cdot \sum_{0}^{D_{A}} H_{A}\left(D_{A}\right)$$<br>$$<br>D_{m}：\newline<br>D_{A}：\newline<br>D_{B}：新的灰度级\newline<br>A_{0}：图像的总像素个数\newline<br>H_{A}（）：直方图<br>$$</p>
 <p>第一步：计算输入图像直方图<br>第二步：计算像素新的灰度级<br>第三步：新灰度级 替换 原灰度级</p>
 <pre><code class="cpp">void CMFCApplication1View::hisEqualiz(BYTE* image, int w, int h, BYTE* outImg)
 {
@@ -463,7 +463,7 @@
 </code></pre>
 <h4 id="3-3-2-直方图匹配（规定化）"><a href="#3-3-2-直方图匹配（规定化）" class="headerlink" title="3.3.2 直方图匹配（规定化）"></a>3.3.2 直方图匹配（规定化）</h4><p>用于生成规定直方图的图像的方法。</p>
 <hr>
-<h2 id="第9章-形态学图像处理"><a href="#第9章-形态学图像处理" class="headerlink" title="第9章 形态学图像处理"></a>第9章 形态学图像处理</h2><h3 id="本章思维导图"><a href="#本章思维导图" class="headerlink" title="本章思维导图"></a>本章思维导图</h3><h3 id="9-1-预备知识"><a href="#9-1-预备知识" class="headerlink" title="9.1 预备知识"></a>9.1 预备知识</h3><p>二维整数空间：像素的坐标<br>三维整数空间：像素的坐标+离散灰度值<br>高维整数空间：包含更多的图像分量，例如彩色分量、时变分量<br><img src="https://i.loli.net/2021/02/11/WFMg9C2tzuN8vBn.png" alt><br>形态学运算使用<strong>集合</strong>来定义的，形态学集合包括<strong>目标元素</strong>和<strong>结构元（SE）</strong>两类元素的集合。<br>目标元素：前景像素的集合<br>结构元：根据前景像素和背景像素来规定。（有时候包含“不关心”元素）<br><img src="https://i.loli.net/2021/02/11/6W9PHV2rJaLGnIR.png" alt><br>反射：<br>$$<br>\hat{B}=｛w|w=-b，b\in B｝\<br>\hat{B}为相对于其原点的反射。<br>$$<br><img src="https://i.loli.net/2021/02/11/og9r43lpb6cHYKB.png" alt><br>平移：<br>$$<br>(B)<em>{z}=｛c|c=b+z，b\in B｝$$<br>$$(B)</em>{z}是B中坐标(x,y)已被(x+z_{1},y+z_{2})代替的点集。<br>$$</p>
+<h2 id="第9章-形态学图像处理"><a href="#第9章-形态学图像处理" class="headerlink" title="第9章 形态学图像处理"></a>第9章 形态学图像处理</h2><h3 id="本章思维导图"><a href="#本章思维导图" class="headerlink" title="本章思维导图"></a>本章思维导图</h3><h3 id="9-1-预备知识"><a href="#9-1-预备知识" class="headerlink" title="9.1 预备知识"></a>9.1 预备知识</h3><p>二维整数空间：像素的坐标<br>三维整数空间：像素的坐标+离散灰度值<br>高维整数空间：包含更多的图像分量，例如彩色分量、时变分量<br><img src="https://i.loli.net/2021/02/11/WFMg9C2tzuN8vBn.png" alt><br>形态学运算使用<strong>集合</strong>来定义的，形态学集合包括<strong>目标元素</strong>和<strong>结构元（SE）</strong>两类元素的集合。<br>目标元素：前景像素的集合<br>结构元：根据前景像素和背景像素来规定。（有时候包含“不关心”元素）<br><img src="https://i.loli.net/2021/02/11/6W9PHV2rJaLGnIR.png" alt><br>反射：<br>$$<br>\hat{B}=｛w|w=-b，b\in B｝<br>$$<br><strong>注释：</strong><br>$$<br>\hat{B}为相对于其原点的反射。<br>$$<br><img src="https://i.loli.net/2021/02/11/og9r43lpb6cHYKB.png" alt><br>平移：<br>$$(B)<em>{z}=｛c|c=b+z，b\in B｝$$<br><strong>注释：</strong><br>$$(B)</em>{z}是B中坐标(x,y)已被(x+z_{1},y+z_{2})代替的点集。$$</p>
 
         </div>
         <!-- .entry-content -->
