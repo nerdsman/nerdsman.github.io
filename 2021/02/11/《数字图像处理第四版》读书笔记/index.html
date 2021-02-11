@@ -413,7 +413,9 @@
           </header>
         
         <div class="entry-content">
-          <h1 id="《数字图像处理-第四版》读书笔记"><a href="#《数字图像处理-第四版》读书笔记" class="headerlink" title="《数字图像处理 第四版》读书笔记"></a>《数字图像处理 第四版》读书笔记</h1><p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/12595208/1612944561197-06ec232b-78fd-4374-a94d-97404646b8b8.jpeg#align=left&amp;display=inline&amp;height=294&amp;margin=%5Bobject%20Object%5D&amp;originHeight=1176&amp;originWidth=920&amp;size=0&amp;status=done&amp;style=none&amp;width=230" alt><br>_</p>
+          <h1 id="《数字图像处理-第四版》读书笔记"><a href="#《数字图像处理-第四版》读书笔记" class="headerlink" title="《数字图像处理 第四版》读书笔记"></a>《数字图像处理 第四版》读书笔记</h1><div align="center"><br><img src="https://i.loli.net/2021/02/11/4fYyLzqMUvcHiZp.png" width="230" height="294"><br></div>
+
+<p>_</p>
 <h4 id="关于本书"><a href="#关于本书" class="headerlink" title="关于本书"></a>关于本书</h4><table>
 <thead>
 <tr>
@@ -465,7 +467,7 @@
 <li>T(r)在区间0≤ r ≤L-1上是一个单调递增函数。——防止因灰度反转而产生伪像</li>
 <li>定义域和值域相同，都为0≤ r ≤L-1，0≤ T(r) ≤L-1。——保证输出灰度的范围与输入相同</li>
 </ol>
-<p>然后，作逆变换（反函数）<br>$$r=T^{-1}(s), 0 \leqslant s \leqslant L-1$$<br>此时，将1的条件改为<br>T(r)在区间0≤ r ≤L-1上是一个<strong>严格</strong>单调递增函数。——保证s返回到r的映射是一对一的<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612945624556-9ce8270e-1393-444d-91f6-a14f11e5be47.png#align=left&amp;display=inline&amp;height=342&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=683&amp;originWidth=1173&amp;size=142144&amp;status=done&amp;style=none&amp;width=586.5" alt="image.png"><br>$$p_{s}(s)=p_{r}(r)\left|\frac{\mathrm{d} r}{\mathrm{~d} s}\right|$$<br>$$p_{s}(s)：输出值s的PDF（概率密度函数）<br>$$<br>$$p_{r}(r)：灰度值r的PDF$$<br>$$s=T(r)=(L-1) \int_{0}^{r} p_{r}(w) \mathrm{d} w$$</p>
+<p>然后，作逆变换（反函数）<br>$$r=T^{-1}(s), 0 \leqslant s \leqslant L-1$$<br>此时，将1的条件改为<br>T(r)在区间0≤ r ≤L-1上是一个<strong>严格</strong>单调递增函数。——保证s返回到r的映射是一对一的<br><img src="https://i.loli.net/2021/02/11/VsOct9e3IJWRT7E.png" alt><br>$$p_{s}(s)=p_{r}(r)\left|\frac{\mathrm{d} r}{\mathrm{~d} s}\right|$$<br>$$p_{s}(s)：输出值s的PDF（概率密度函数）<br>$$<br>$$p_{r}(r)：灰度值r的PDF$$<br>$$s=T(r)=(L-1) \int_{0}^{r} p_{r}(w) \mathrm{d} w$$</p>
 <p>$$ω：假积分变量\<br>\int_{0}^{r} p_{r}(w) \mathrm{d} w：累积分布函数（CDF）$$</p>
 <p><strong>直方图均衡代码：</strong><br>$$D_{B}=\frac{D_{m}}{A_{0}} \cdot \sum_{0}^{D_{A}} H_{A}\left(D_{A}\right)$$<br>$$<br>D_{m}：\<br>D_{A}：\<br>D_{B}：新的灰度级\<br>A_{0}：图像的总像素个数\<br>H_{A}（）：直方图<br>$$</p>
 <p>第一步：计算输入图像直方图<br>第二步：计算像素新的灰度级<br>第三步：新灰度级 替换 原灰度级</p>
@@ -499,7 +501,7 @@
 </code></pre>
 <h4 id="3-3-2-直方图匹配（规定化）"><a href="#3-3-2-直方图匹配（规定化）" class="headerlink" title="3.3.2 直方图匹配（规定化）"></a>3.3.2 直方图匹配（规定化）</h4><p>用于生成规定直方图的图像的方法。</p>
 <hr>
-<h2 id="第9章-形态学图像处理"><a href="#第9章-形态学图像处理" class="headerlink" title="第9章 形态学图像处理"></a>第9章 形态学图像处理</h2><h3 id="本章思维导图"><a href="#本章思维导图" class="headerlink" title="本章思维导图"></a>本章思维导图</h3><p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/12595208/1613019350569-02bf7df3-f388-4f3b-ae01-8dcaf4e6e018.jpeg" alt>### 9.1 预备知识<br>二维整数空间：像素的坐标<br>三维整数空间：像素的坐标+离散灰度值<br>高维整数空间：包含更多的图像分量，例如彩色分量、时变分量<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612518500866-317a9894-bc87-4551-adb6-1c72bff8e950.png#align=left&amp;display=inline&amp;height=245&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1320&amp;originWidth=3472&amp;size=6755434&amp;status=done&amp;style=none&amp;width=645" alt="image.png"><br>形态学运算使用<strong>集合</strong>来定义的，形态学集合包括<strong>目标元素</strong>和<strong>结构元（SE）</strong>两类元素的集合。<br>目标元素：前景像素的集合<br>结构元：根据前景像素和背景像素来规定。（有时候包含“不关心”元素）<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612519136330-028aed68-9267-4fec-a803-32d26474aa4b.png#align=left&amp;display=inline&amp;height=150&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1200&amp;originWidth=2856&amp;size=4536255&amp;status=done&amp;style=none&amp;width=358" alt="image.png"><br>反射：<br>$$\hat{B}=｛w|w=-b，b\in B｝$$<br>$$\hat{B}为相对于其原点的反射。<br>$$<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612519118730-e56f8b31-0e69-4c32-9d10-ade372b60e21.png#align=left&amp;display=inline&amp;height=142&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=940&amp;originWidth=3568&amp;size=5937956&amp;status=done&amp;style=none&amp;width=538" alt="image.png"><br>平移：<br>$$(B)<em>{z}=｛c|c=b+z，b\in B｝$$<br>$$<br>(B)</em>{z}是B中坐标(x,y)已被(x+z_{1},y+z_{2})代替的点集。<br>$$</p>
+<h2 id="第9章-形态学图像处理"><a href="#第9章-形态学图像处理" class="headerlink" title="第9章 形态学图像处理"></a>第9章 形态学图像处理</h2><h3 id="本章思维导图"><a href="#本章思维导图" class="headerlink" title="本章思维导图"></a>本章思维导图</h3><h3 id="9-1-预备知识"><a href="#9-1-预备知识" class="headerlink" title="9.1 预备知识"></a>9.1 预备知识</h3><p>二维整数空间：像素的坐标<br>三维整数空间：像素的坐标+离散灰度值<br>高维整数空间：包含更多的图像分量，例如彩色分量、时变分量<br><img src="https://i.loli.net/2021/02/11/WFMg9C2tzuN8vBn.png" alt><br>形态学运算使用<strong>集合</strong>来定义的，形态学集合包括<strong>目标元素</strong>和<strong>结构元（SE）</strong>两类元素的集合。<br>目标元素：前景像素的集合<br>结构元：根据前景像素和背景像素来规定。（有时候包含“不关心”元素）<br><img src="https://i.loli.net/2021/02/11/6W9PHV2rJaLGnIR.png" alt><br>反射：<br>$$\hat{B}=｛w|w=-b，b\in B｝$$<br>$$\hat{B}为相对于其原点的反射。<br>$$<br><img src="https://i.loli.net/2021/02/11/og9r43lpb6cHYKB.png" alt><br>平移：<br>$$(B)<em>{z}=｛c|c=b+z，b\in B｝$$<br>$$<br>(B)</em>{z}是B中坐标(x,y)已被(x+z_{1},y+z_{2})代替的点集。<br>$$</p>
 
         </div>
         <!-- .entry-content -->
