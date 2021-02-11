@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">《数字图像处理第四版》读书笔记 | RobertCarlson</title>
+  <title itemprop="name">《数字图像处理第四版》读书笔记 | APingStudio</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -35,7 +35,7 @@
   mashiro_option.qzone_autocomplete = false;
   mashiro_option.site_name = "一咻工作室APingStudio";
   mashiro_option.author_name = "APingStudio";
-  mashiro_option.site_url = "https://sakura.hojun.cn";
+  mashiro_option.site_url = "https://space.bilibili.com/331466888";
   mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
   mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
   mashiro_option.mathjax = "1";
@@ -72,8 +72,8 @@
   <figure id="centerbg" class="centerbg">
     <div class="focusinfo no-select">
       <div class="header-tou">
-        <a href="https://sakura.hojun.cn">
-          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+        <a href="https://space.bilibili.com/331466888">
+          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6https://i.loli.net/2021/02/11/ke4Oyjs1uFpXVSz.jpg">
         </a>
       </div>
       <div class="header-info">
@@ -407,7 +407,7 @@
         
           <header class="entry-header">
             <h1 class="entry-title">《数字图像处理第四版》读书笔记</h1>
-            <p class="entry-census">hojun&nbsp;·&nbsp;2021-2-11&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+            <p class="entry-census">RobertCarlson&nbsp;·&nbsp;2021-2-11&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
 
             <hr>
           </header>
@@ -467,7 +467,7 @@
 </ol>
 <p>然后，作逆变换（反函数）<br>$$r=T^{-1}(s), 0 \leqslant s \leqslant L-1$$<br>此时，将1的条件改为<br>T(r)在区间0≤ r ≤L-1上是一个<strong>严格</strong>单调递增函数。——保证s返回到r的映射是一对一的<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612945624556-9ce8270e-1393-444d-91f6-a14f11e5be47.png#align=left&amp;display=inline&amp;height=342&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=683&amp;originWidth=1173&amp;size=142144&amp;status=done&amp;style=none&amp;width=586.5" alt="image.png"><br>$$p_{s}(s)=p_{r}(r)\left|\frac{\mathrm{d} r}{\mathrm{~d} s}\right|$$<br>$$p_{s}(s)：输出值s的PDF（概率密度函数）<br>$$<br>$$p_{r}(r)：灰度值r的PDF$$<br>$$s=T(r)=(L-1) \int_{0}^{r} p_{r}(w) \mathrm{d} w$$</p>
 <p>$$ω：假积分变量\<br>\int_{0}^{r} p_{r}(w) \mathrm{d} w：累积分布函数（CDF）$$</p>
-<p><strong>直方图均衡代码：</strong><br>$$D_{B}=\frac{D_{m}}{A_{0}} \cdot \sum_{0}^{D_{A}} H_{A}\left(D_{A}\right)$$<br>$$<br>\begin{align<em>}<br>D_{m}：\<br>D_{A}：\<br>D_{B}：新的灰度级\<br>A_{0}：图像的总像素个数\<br>H_{A}（）：直方图<br>\end{align</em>}<br>$$</p>
+<p><strong>直方图均衡代码：</strong><br>$$D_{B}=\frac{D_{m}}{A_{0}} \cdot \sum_{0}^{D_{A}} H_{A}\left(D_{A}\right)$$<br>$$<br>D_{m}：\<br>D_{A}：\<br>D_{B}：新的灰度级\<br>A_{0}：图像的总像素个数\<br>H_{A}（）：直方图<br>$$</p>
 <p>第一步：计算输入图像直方图<br>第二步：计算像素新的灰度级<br>第三步：新灰度级 替换 原灰度级</p>
 <pre><code class="cpp">void CMFCApplication1View::hisEqualiz(BYTE* image, int w, int h, BYTE* outImg)
 {
@@ -499,7 +499,7 @@
 </code></pre>
 <h4 id="3-3-2-直方图匹配（规定化）"><a href="#3-3-2-直方图匹配（规定化）" class="headerlink" title="3.3.2 直方图匹配（规定化）"></a>3.3.2 直方图匹配（规定化）</h4><p>用于生成规定直方图的图像的方法。</p>
 <hr>
-<h2 id="第9章-形态学图像处理"><a href="#第9章-形态学图像处理" class="headerlink" title="第9章 形态学图像处理"></a>第9章 形态学图像处理</h2><h3 id="本章思维导图"><a href="#本章思维导图" class="headerlink" title="本章思维导图"></a>本章思维导图</h3><p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/12595208/1613019350569-02bf7df3-f388-4f3b-ae01-8dcaf4e6e018.jpeg" alt>### 9.1 预备知识<br>二维整数空间：像素的坐标<br>三维整数空间：像素的坐标+离散灰度值<br>高维整数空间：包含更多的图像分量，例如彩色分量、时变分量<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612518500866-317a9894-bc87-4551-adb6-1c72bff8e950.png#align=left&amp;display=inline&amp;height=245&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1320&amp;originWidth=3472&amp;size=6755434&amp;status=done&amp;style=none&amp;width=645" alt="image.png"><br>形态学运算使用<strong>集合</strong>来定义的，形态学集合包括<strong>目标元素</strong>和<strong>结构元（SE）</strong>两类元素的集合。<br>目标元素：前景像素的集合<br>结构元：根据前景像素和背景像素来规定。（有时候包含“不关心”元素）<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612519136330-028aed68-9267-4fec-a803-32d26474aa4b.png#align=left&amp;display=inline&amp;height=150&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1200&amp;originWidth=2856&amp;size=4536255&amp;status=done&amp;style=none&amp;width=358" alt="image.png"><br>反射：<br>$$\hat{B}=｛w|w=-b，b\in B｝$$<br>$$\hat{B}为相对于其原点的反射。<br>$$<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612519118730-e56f8b31-0e69-4c32-9d10-ade372b60e21.png#align=left&amp;display=inline&amp;height=142&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=940&amp;originWidth=3568&amp;size=5937956&amp;status=done&amp;style=none&amp;width=538" alt="image.png"><br>平移：<br>$$(B)<em>{z}=｛c|c=b+z，b\in B｝$$<br>$$\begin{align*}<br>(B)</em>{z}是B中坐标(x,y)已被(x+z_{1},y+z_{2})代替的点集。<br>\end{align*}$$</p>
+<h2 id="第9章-形态学图像处理"><a href="#第9章-形态学图像处理" class="headerlink" title="第9章 形态学图像处理"></a>第9章 形态学图像处理</h2><h3 id="本章思维导图"><a href="#本章思维导图" class="headerlink" title="本章思维导图"></a>本章思维导图</h3><p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/12595208/1613019350569-02bf7df3-f388-4f3b-ae01-8dcaf4e6e018.jpeg" alt>### 9.1 预备知识<br>二维整数空间：像素的坐标<br>三维整数空间：像素的坐标+离散灰度值<br>高维整数空间：包含更多的图像分量，例如彩色分量、时变分量<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612518500866-317a9894-bc87-4551-adb6-1c72bff8e950.png#align=left&amp;display=inline&amp;height=245&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1320&amp;originWidth=3472&amp;size=6755434&amp;status=done&amp;style=none&amp;width=645" alt="image.png"><br>形态学运算使用<strong>集合</strong>来定义的，形态学集合包括<strong>目标元素</strong>和<strong>结构元（SE）</strong>两类元素的集合。<br>目标元素：前景像素的集合<br>结构元：根据前景像素和背景像素来规定。（有时候包含“不关心”元素）<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612519136330-028aed68-9267-4fec-a803-32d26474aa4b.png#align=left&amp;display=inline&amp;height=150&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1200&amp;originWidth=2856&amp;size=4536255&amp;status=done&amp;style=none&amp;width=358" alt="image.png"><br>反射：<br>$$\hat{B}=｛w|w=-b，b\in B｝$$<br>$$\hat{B}为相对于其原点的反射。<br>$$<br><img src="https://cdn.nlark.com/yuque/0/2021/png/12595208/1612519118730-e56f8b31-0e69-4c32-9d10-ade372b60e21.png#align=left&amp;display=inline&amp;height=142&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=940&amp;originWidth=3568&amp;size=5937956&amp;status=done&amp;style=none&amp;width=538" alt="image.png"><br>平移：<br>$$(B)<em>{z}=｛c|c=b+z，b\in B｝$$<br>$$<br>(B)</em>{z}是B中坐标(x,y)已被(x+z_{1},y+z_{2})代替的点集。<br>$$</p>
 
         </div>
         <!-- .entry-content -->
@@ -564,11 +564,11 @@
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="hojun.cn" class="profile gravatar"><img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg" itemprop="image" alt="hojun" height="70" width="70"></a>
+          <a href="hojun.cn" class="profile gravatar"><img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg" itemprop="image" alt="RobertCarlson" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="hojun.cn" itemprop="url" rel="author">hojun</a>
+            <a href="hojun.cn" itemprop="url" rel="author">RobertCarlson</a>
             </h3>
           </div>
         </div>
@@ -713,7 +713,7 @@ $(document).ready(function() {
   </section>
   <div id="mo-nav" class="">
   <div class="m-avatar">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6https://i.loli.net/2021/02/11/ke4Oyjs1uFpXVSz.jpg">
   </div>
   <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">一咻工作室APingStudio</p>
   <p style="text-align: center; word-spacing: 20px;">
