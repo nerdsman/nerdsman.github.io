@@ -358,29 +358,36 @@
           </header>
         
         <div class="entry-content">
-          <h1 id="演讲比赛流程管理系统"><a href="#演讲比赛流程管理系统" class="headerlink" title="演讲比赛流程管理系统"></a>演讲比赛流程管理系统</h1><h2 id="1、-演讲比赛程序需求"><a href="#1、-演讲比赛程序需求" class="headerlink" title="1、 演讲比赛程序需求"></a>1、 演讲比赛程序需求</h2><p><img src="1548154762048.png" alt="1548154762048"></p>
-<h3 id="1-1-比赛规则"><a href="#1-1-比赛规则" class="headerlink" title="1.1 比赛规则"></a>1.1 比赛规则</h3><ul>
+          <h1>演讲比赛流程管理系统</h1>
+<h2 id="1、-演讲比赛程序需求">1、 演讲比赛程序需求</h2>
+<p><img src="1548154762048.png" alt="1548154762048"></p>
+<h3 id="1-1-比赛规则">1.1 比赛规则</h3>
+<ul>
 <li>学校举行一场演讲比赛，共有<strong>12个人</strong>参加。<strong>比赛共两轮</strong>，第一轮为淘汰赛，第二轮为决赛。</li>
 <li>比赛方式：<strong>分组比赛，每组6个人</strong>；选手每次要随机分组，进行比赛</li>
-<li>每名选手都有对应的<strong>编号</strong>，如 10001 ~ 10012 </li>
+<li>每名选手都有对应的<strong>编号</strong>，如 10001 ~ 10012</li>
 <li>第一轮分为两个小组，每组6个人。 整体按照选手编号进行<strong>抽签</strong>后顺序演讲。</li>
 <li>当小组演讲完后，淘汰组内排名最后的三个选手，<strong>前三名晋级</strong>，进入下一轮的比赛。</li>
 <li>第二轮为决赛，<strong>前三名胜出</strong></li>
 <li>每轮比赛过后需要<strong>显示晋级选手的信息</strong></li>
 </ul>
-<h3 id="1-2-程序功能"><a href="#1-2-程序功能" class="headerlink" title="1.2 程序功能"></a>1.2 程序功能</h3><ul>
+<h3 id="1-2-程序功能">1.2 程序功能</h3>
+<ul>
 <li>开始演讲比赛：完成整届比赛的流程，每个比赛阶段需要给用户一个提示，用户按任意键后继续下一个阶段</li>
 <li>查看往届记录：查看之前比赛前三名结果，每次比赛都会记录到文件中，文件用.csv后缀名保存</li>
 <li>清空比赛记录：将文件中数据清空</li>
 <li>退出比赛程序：可以退出当前程序</li>
 </ul>
-<h3 id="1-3-程序效果图："><a href="#1-3-程序效果图：" class="headerlink" title="1.3 程序效果图："></a>1.3 程序效果图：</h3><p><img src="1548155966702.png" alt="1548155966702"></p>
-<h2 id="2、-项目创建"><a href="#2、-项目创建" class="headerlink" title="2、 项目创建"></a>2、 项目创建</h2><p>创建项目步骤如下：</p>
+<h3 id="1-3-程序效果图：">1.3 程序效果图：</h3>
+<p><img src="1548155966702.png" alt="1548155966702"></p>
+<h2 id="2、-项目创建">2、 项目创建</h2>
+<p>创建项目步骤如下：</p>
 <ul>
 <li>创建新项目</li>
 <li>添加文件</li>
 </ul>
-<h3 id="2-1-创建项目"><a href="#2-1-创建项目" class="headerlink" title="2.1 创建项目"></a>2.1 创建项目</h3><ul>
+<h3 id="2-1-创建项目">2.1 创建项目</h3>
+<ul>
 <li>打开vs2017后，点击创建新项目，创建新的C++项目</li>
 </ul>
 <p>如图：</p>
@@ -389,7 +396,8 @@
 <li>填写项目名称以及选取项目路径，点击确定生成项目</li>
 </ul>
 <p><img src="1548122271773.png" alt="1548122271773"></p>
-<h3 id="2-2-添加文件"><a href="#2-2-添加文件" class="headerlink" title="2.2 添加文件"></a>2.2 添加文件</h3><ul>
+<h3 id="2-2-添加文件">2.2 添加文件</h3>
+<ul>
 <li>右键源文件，进行添加文件操作</li>
 </ul>
 <p><img src="1548122420253.png" alt="1548122420253"></p>
@@ -404,19 +412,22 @@
 <ul>
 <li>至此，项目已创建完毕</li>
 </ul>
-<h2 id="3、-创建管理类"><a href="#3、-创建管理类" class="headerlink" title="3、 创建管理类"></a>3、 创建管理类</h2><p><strong>功能描述：</strong></p>
+<h2 id="3、-创建管理类">3、 创建管理类</h2>
+<p><strong>功能描述：</strong></p>
 <ul>
 <li>提供菜单界面与用户交互</li>
 <li>对演讲比赛流程进行控制</li>
 <li>与文件的读写交互</li>
 </ul>
-<h3 id="3-1创建文件"><a href="#3-1创建文件" class="headerlink" title="3.1创建文件"></a>3.1创建文件</h3><ul>
+<h3 id="3-1创建文件">3.1创建文件</h3>
+<ul>
 <li>在头文件和源文件的文件夹下分别创建speechManager.h 和 speechManager.cpp文件</li>
 </ul>
 <p><img src="1548123402593.png" alt="1548123402593"></p>
-<h3 id="3-2-头文件实现"><a href="#3-2-头文件实现" class="headerlink" title="3.2 头文件实现"></a>3.2 头文件实现</h3><p>在speechManager.h中设计管理类</p>
+<h3 id="3-2-头文件实现">3.2 头文件实现</h3>
+<p>在speechManager.h中设计管理类</p>
 <p>代码如下：</p>
-<pre><code class="c++">#pragma once
+<pre><code class="language-c++">#pragma once
 #include&lt;iostream&gt;
 using namespace std;
 
@@ -425,16 +436,17 @@ class SpeechManager
 {
 public:
 
-    //构造函数
-    SpeechManager();
+	//构造函数
+	SpeechManager();
 
 
-    //析构函数
-    ~SpeechManager();
+	//析构函数
+	~SpeechManager();
 };
 </code></pre>
-<h3 id="3-3-源文件实现"><a href="#3-3-源文件实现" class="headerlink" title="3.3 源文件实现"></a>3.3 源文件实现</h3><p>在speechManager.cpp中将构造和析构函数空实现补全</p>
-<pre><code class="c++">#include &quot;speechManager.h&quot;
+<h3 id="3-3-源文件实现">3.3 源文件实现</h3>
+<p>在speechManager.cpp中将构造和析构函数空实现补全</p>
+<pre><code class="language-c++">#include &quot;speechManager.h&quot;
 
 SpeechManager::SpeechManager()
 {
@@ -447,41 +459,45 @@ SpeechManager::~SpeechManager()
 <ul>
 <li>至此演讲管理类以创建完毕</li>
 </ul>
-<h2 id="4、-菜单功能"><a href="#4、-菜单功能" class="headerlink" title="4、 菜单功能"></a>4、 菜单功能</h2><p>功能描述：与用户的沟通界面</p>
-<h3 id="4-1-添加成员函数"><a href="#4-1-添加成员函数" class="headerlink" title="4.1 添加成员函数"></a>4.1 添加成员函数</h3><p>在管理类speechManager.h中添加成员函数  <code>void show_Menu();</code></p>
+<h2 id="4、-菜单功能">4、 菜单功能</h2>
+<p>功能描述：与用户的沟通界面</p>
+<h3 id="4-1-添加成员函数">4.1 添加成员函数</h3>
+<p>在管理类speechManager.h中添加成员函数  <code>void show_Menu();</code></p>
 <p><img src="1548123942072.png" alt="1548123942072"></p>
-<h3 id="4-2-菜单功能实现"><a href="#4-2-菜单功能实现" class="headerlink" title="4.2 菜单功能实现"></a>4.2 菜单功能实现</h3><ul>
+<h3 id="4-2-菜单功能实现">4.2 菜单功能实现</h3>
+<ul>
 <li>在管理类speechManager.cpp中实现 show_Menu()函数</li>
 </ul>
-<pre><code class="c++">void SpeechManager::show_Menu()
+<pre><code class="language-c++">void SpeechManager::show_Menu()
 {
-    cout &lt;&lt; &quot;********************************************&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*************  欢迎参加演讲比赛 ************&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*************  1.开始演讲比赛  *************&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*************  2.查看往届记录  *************&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*************  3.清空比赛记录  *************&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;*************  0.退出比赛程序  *************&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;********************************************&quot; &lt;&lt; endl;
-    cout &lt;&lt; endl;
+	cout &lt;&lt; &quot;********************************************&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;*************  欢迎参加演讲比赛 ************&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;*************  1.开始演讲比赛  *************&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;*************  2.查看往届记录  *************&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;*************  3.清空比赛记录  *************&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;*************  0.退出比赛程序  *************&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;********************************************&quot; &lt;&lt; endl;
+	cout &lt;&lt; endl;
 }
 </code></pre>
-<h3 id="4-3-测试菜单功能"><a href="#4-3-测试菜单功能" class="headerlink" title="4.3 测试菜单功能"></a>4.3 测试菜单功能</h3><ul>
+<h3 id="4-3-测试菜单功能">4.3 测试菜单功能</h3>
+<ul>
 <li>在演讲比赛流程管理系统.cpp中测试菜单功能</li>
 </ul>
 <p>代码：</p>
-<pre><code class="c++">#include&lt;iostream&gt;
+<pre><code class="language-c++">#include&lt;iostream&gt;
 using namespace std;
 #include &quot;speechManager.h&quot;
 
 int main() {
 
-    SpeechManager sm;
+	SpeechManager sm;
 
-    sm.show_Menu();
+	sm.show_Menu();
 
-    system(&quot;pause&quot;);
+	system(&quot;pause&quot;);
 
-    return 0;
+	return 0;
 }
 </code></pre>
 <ul>
@@ -491,169 +507,180 @@ int main() {
 <ul>
 <li>菜单界面搭建完毕</li>
 </ul>
-<h2 id="5、-退出功能"><a href="#5、-退出功能" class="headerlink" title="5、 退出功能"></a>5、 退出功能</h2><h3 id="5-1-提供功能接口"><a href="#5-1-提供功能接口" class="headerlink" title="5.1  提供功能接口"></a>5.1  提供功能接口</h3><ul>
+<h2 id="5、-退出功能">5、 退出功能</h2>
+<h3 id="5-1-提供功能接口">5.1  提供功能接口</h3>
+<ul>
 <li>在main函数中提供分支选择，提供每个功能接口</li>
 </ul>
 <p>代码：</p>
-<pre><code class="c++">int main() {
+<pre><code class="language-c++">int main() {
 
-    SpeechManager sm;
+	SpeechManager sm;
 
-    int choice = 0; //用来存储用户的选项
+	int choice = 0; //用来存储用户的选项
 
-    while (true)
-    {
-        sm.show_Menu();
+	while (true)
+	{
+		sm.show_Menu();
 
-        cout &lt;&lt; &quot;请输入您的选择： &quot; &lt;&lt; endl;
-        cin &gt;&gt; choice; // 接受用户的选项
+		cout &lt;&lt; &quot;请输入您的选择： &quot; &lt;&lt; endl;
+		cin &gt;&gt; choice; // 接受用户的选项
 
-        switch (choice)
-        {
-        case 1:  //开始比赛
-            break;
-        case 2:  //查看记录
-            break;
-        case 3:  //清空记录
-            break;
-        case 0:  //退出系统
-            break;
-        default:
-            system(&quot;cls&quot;); //清屏
-            break;
-        }
-    }
+		switch (choice)
+		{
+		case 1:  //开始比赛
+			break;
+		case 2:  //查看记录
+			break;
+		case 3:  //清空记录
+			break;
+		case 0:  //退出系统
+			break;
+		default:
+			system(&quot;cls&quot;); //清屏
+			break;
+		}
+	}
 
-    system(&quot;pause&quot;);
+	system(&quot;pause&quot;);
 
-    return 0;
+	return 0;
 }
 </code></pre>
-<h3 id="5-2-实现退出功能"><a href="#5-2-实现退出功能" class="headerlink" title="5.2 实现退出功能"></a>5.2 实现退出功能</h3><p>在speechManager.h中提供退出系统的成员函数 <code>void exitSystem();</code></p>
+<h3 id="5-2-实现退出功能">5.2 实现退出功能</h3>
+<p>在speechManager.h中提供退出系统的成员函数 <code>	void exitSystem();</code></p>
 <p>在speechManager.cpp中提供具体的功能实现</p>
-<pre><code class="c++">void SpeechManager::exitSystem()
+<pre><code class="language-c++">void SpeechManager::exitSystem()
 {
-    cout &lt;&lt; &quot;欢迎下次使用&quot; &lt;&lt; endl;
-    system(&quot;pause&quot;);
-    exit(0);
+	cout &lt;&lt; &quot;欢迎下次使用&quot; &lt;&lt; endl;
+	system(&quot;pause&quot;);
+	exit(0);
 }
 </code></pre>
-<h3 id="5-3测试功能"><a href="#5-3测试功能" class="headerlink" title="5.3测试功能"></a>5.3测试功能</h3><p>在main函数分支 0  选项中，调用退出程序的接口</p>
+<h3 id="5-3测试功能">5.3测试功能</h3>
+<p>在main函数分支 0  选项中，调用退出程序的接口</p>
 <p><img src="1548124853576.png" alt="1548124853576"></p>
 <p>运行测试效果如图：</p>
 <p><img src="1548124888578.png" alt="1548124888578"></p>
-<h2 id="6、演讲比赛功能"><a href="#6、演讲比赛功能" class="headerlink" title="6、演讲比赛功能"></a>6、演讲比赛功能</h2><h3 id="6-1-功能分析"><a href="#6-1-功能分析" class="headerlink" title="6.1 功能分析"></a>6.1 功能分析</h3><p>比赛流程分析：</p>
-<p>抽签 → 开始演讲比赛 → 显示第一轮比赛结果 → </p>
+<h2 id="6、演讲比赛功能">6、演讲比赛功能</h2>
+<h3 id="6-1-功能分析">6.1 功能分析</h3>
+<p>比赛流程分析：</p>
+<p>抽签 → 开始演讲比赛 → 显示第一轮比赛结果 →</p>
 <p>抽签 → 开始演讲比赛 → 显示前三名结果 → 保存分数</p>
-<h3 id="6-2-创建选手类"><a href="#6-2-创建选手类" class="headerlink" title="6.2 创建选手类"></a>6.2 创建选手类</h3><ul>
+<h3 id="6-2-创建选手类">6.2 创建选手类</h3>
+<ul>
 <li>选手类中的属性包含：选手姓名、分数</li>
 <li>头文件中创建 speaker.h文件，并添加代码：</li>
 </ul>
-<pre><code class="C++">#pragma once
+<pre><code class="language-C++">#pragma once
 #include&lt;iostream&gt;
 using namespace std;
 
 class Speaker
 {
 public:
-    string m_Name;  //姓名
-    double m_Score[2]; //分数  最多有两轮得分
+	string m_Name;  //姓名
+	double m_Score[2]; //分数  最多有两轮得分
 };
 </code></pre>
-<h3 id="6-3-比赛"><a href="#6-3-比赛" class="headerlink" title="6.3 比赛"></a>6.3 比赛</h3><h4 id="6-3-1-成员属性添加"><a href="#6-3-1-成员属性添加" class="headerlink" title="6.3.1 成员属性添加"></a>6.3.1 成员属性添加</h4><ul>
+<h3 id="6-3-比赛">6.3 比赛</h3>
+<h4 id="6-3-1-成员属性添加">6.3.1 成员属性添加</h4>
+<ul>
 <li>在speechManager.h中添加属性</li>
 </ul>
-<pre><code class="C++">    //比赛选手 容器  12人
-    vector&lt;int&gt;v1;
+<pre><code class="language-C++">	//比赛选手 容器  12人
+	vector&lt;int&gt;v1;
 
-    //第一轮晋级容器  6人
-    vector&lt;int&gt;v2;
+	//第一轮晋级容器  6人
+	vector&lt;int&gt;v2;
 
-    //胜利前三名容器  3人
-    vector&lt;int&gt;vVictory;
+	//胜利前三名容器  3人
+	vector&lt;int&gt;vVictory;
 
-    //存放编号 以及对应的 具体选手 容器
-    map&lt;int, Speaker&gt; m_Speaker;
+	//存放编号 以及对应的 具体选手 容器
+	map&lt;int, Speaker&gt; m_Speaker;
 </code></pre>
-<h4 id="6-3-2-初始化属性"><a href="#6-3-2-初始化属性" class="headerlink" title="6.3.2 初始化属性"></a>6.3.2 初始化属性</h4><ul>
+<h4 id="6-3-2-初始化属性">6.3.2 初始化属性</h4>
+<ul>
 <li>在speechManager.h中提供开始比赛的的成员函数 <code>void initSpeech();</code></li>
 </ul>
-<pre><code class="c++">    //初始化属性
-    void initSpeech();
+<pre><code class="language-c++">	//初始化属性
+	void initSpeech();
 </code></pre>
 <ul>
 <li>在speechManager.cpp中实现<code>void initSpeech();</code></li>
 </ul>
-<pre><code class="c++">void SpeechManager::initSpeech()
+<pre><code class="language-c++">void SpeechManager::initSpeech()
 {
-    //容器保证为空
-    this-&gt;v1.clear();  
-    this-&gt;v2.clear();
-    this-&gt;vVictory.clear();
-    this-&gt;m_Speaker.clear();
-    //初始化比赛轮数
-    this-&gt;m_Index = 1;
+	//容器保证为空
+	this-&gt;v1.clear();  
+	this-&gt;v2.clear();
+	this-&gt;vVictory.clear();
+	this-&gt;m_Speaker.clear();
+	//初始化比赛轮数
+	this-&gt;m_Index = 1;
 }
 </code></pre>
 <ul>
 <li>SpeechManager构造函数中调用<code>void initSpeech();</code></li>
 </ul>
-<pre><code class="c++">SpeechManager::SpeechManager()
+<pre><code class="language-c++">SpeechManager::SpeechManager()
 {
-    //初始化属性
-    this-&gt;initSpeech();
+	//初始化属性
+	this-&gt;initSpeech();
 }
 </code></pre>
-<h4 id="6-3-3-创建选手"><a href="#6-3-3-创建选手" class="headerlink" title="6.3.3 创建选手"></a>6.3.3 创建选手</h4><ul>
+<h4 id="6-3-3-创建选手">6.3.3 创建选手</h4>
+<ul>
 <li>在speechManager.h中提供开始比赛的的成员函数 <code>void createSpeaker();</code></li>
 </ul>
-<pre><code class="C++">    //初始化创建12名选手
-    void createSpeaker();
+<pre><code class="language-C++">	//初始化创建12名选手
+	void createSpeaker();
 </code></pre>
 <ul>
 <li>在speechManager.cpp中实现<code>void createSpeaker();</code></li>
 </ul>
-<pre><code class="C++">void SpeechManager::createSpeaker()
+<pre><code class="language-C++">void SpeechManager::createSpeaker()
 {
-    string nameSeed = &quot;ABCDEFGHIJKL&quot;;
-    for (int i = 0; i &lt; nameSeed.size(); i++)
-    {
-        string name = &quot;选手&quot;;
-        name += nameSeed[i];
+	string nameSeed = &quot;ABCDEFGHIJKL&quot;;
+	for (int i = 0; i &lt; nameSeed.size(); i++)
+	{
+		string name = &quot;选手&quot;;
+		name += nameSeed[i];
 
-        Speaker sp;
-        sp.m_Name = name;
-        for (int i = 0; i &lt; 2; i++)
-        {
-            sp.m_Score[i] = 0;
-        }
+		Speaker sp;
+		sp.m_Name = name;
+		for (int i = 0; i &lt; 2; i++)
+		{
+			sp.m_Score[i] = 0;
+		}
 
-        //12名选手编号
-        this-&gt;v1.push_back(i + 10001);
+		//12名选手编号
+		this-&gt;v1.push_back(i + 10001);
 
-        //选手编号 以及对应的选手 存放到map容器中
-        this-&gt;m_Speaker.insert(make_pair(i + 10001, sp));
-    }
+		//选手编号 以及对应的选手 存放到map容器中
+		this-&gt;m_Speaker.insert(make_pair(i + 10001, sp));
+	}
 }
 </code></pre>
 <ul>
 <li>SpeechManager类的 构造函数中调用<code>void createSpeaker();</code></li>
 </ul>
-<pre><code class="C++">SpeechManager::SpeechManager()
+<pre><code class="language-C++">SpeechManager::SpeechManager()
 {
     //初始化属性
-    this-&gt;initSpeech();
-
-    //创建选手
-    this-&gt;createSpeaker();
+	this-&gt;initSpeech();
+    
+	//创建选手
+	this-&gt;createSpeaker();
 }
 </code></pre>
 <ul>
 <li>测试 在main函数中，可以在创建完管理对象后，使用下列代码测试12名选手初始状态</li>
 </ul>
-<pre><code class="C++">for (map&lt;int, Speaker&gt;::iterator it = sm.m_Speaker.begin(); it != sm.m_Speaker.end(); it++)
+<pre><code class="language-C++">for (map&lt;int, Speaker&gt;::iterator it = sm.m_Speaker.begin(); it != sm.m_Speaker.end(); it++)
 {
-    cout  &lt;&lt; &quot;选手编号：&quot; &lt;&lt; it-&gt;first 
+	cout  &lt;&lt; &quot;选手编号：&quot; &lt;&lt; it-&gt;first 
           &lt;&lt; &quot; 姓名： &quot; &lt;&lt; it-&gt;second.m_Name 
           &lt;&lt; &quot; 成绩： &quot; &lt;&lt; it-&gt;second.m_Score[0] &lt;&lt; endl;
 }
@@ -666,78 +693,82 @@ public:
 <ul>
 <li>测试完毕后，可以将测试代码删除或注释。</li>
 </ul>
-<h4 id="6-3-4-开始比赛成员函数添加"><a href="#6-3-4-开始比赛成员函数添加" class="headerlink" title="6.3.4 开始比赛成员函数添加"></a>6.3.4 开始比赛成员函数添加</h4><ul>
+<h4 id="6-3-4-开始比赛成员函数添加">6.3.4 开始比赛成员函数添加</h4>
+<ul>
 <li>在speechManager.h中提供开始比赛的的成员函数 <code>void startSpeech();</code></li>
 <li>该函数功能是主要控制比赛的流程</li>
 </ul>
-<pre><code class="C++">    //开始比赛 - 比赛流程控制
-    void startSpeech();
+<pre><code class="language-C++">	//开始比赛 - 比赛流程控制
+	void startSpeech();
 </code></pre>
 <ul>
 <li>在speechManager.cpp中将startSpeech的空实现先写入</li>
 <li>我们可以先将整个比赛的流程 写到函数中</li>
 </ul>
-<pre><code class="C++">//开始比赛
+<pre><code class="language-C++">//开始比赛
 void SpeechManager::startSpeech()
 {
-    //第一轮比赛
-    //1、抽签
+	//第一轮比赛
+	//1、抽签
+	
+	//2、比赛
 
-    //2、比赛
+	//3、显示晋级结果
 
-    //3、显示晋级结果
+	//第二轮比赛
 
-    //第二轮比赛
+	//1、抽签
 
-    //1、抽签
+	//2、比赛
 
-    //2、比赛
+	//3、显示最终结果
 
-    //3、显示最终结果
-
-    //4、保存分数
+	//4、保存分数
 }
 
 </code></pre>
-<h4 id="6-3-5-抽签"><a href="#6-3-5-抽签" class="headerlink" title="6.3.5 抽签"></a>6.3.5 抽签</h4><p><strong>功能描述：</strong></p>
+<h4 id="6-3-5-抽签">6.3.5 抽签</h4>
+<p><strong>功能描述：</strong></p>
 <ul>
-<li>正式比赛前，所有选手的比赛顺序需要打乱，我们只需要将存放选手编号的容器  打乱次序即可</li>
+<li>
+<p>正式比赛前，所有选手的比赛顺序需要打乱，我们只需要将存放选手编号的容器  打乱次序即可</p>
+</li>
+<li>
+<p>在speechManager.h中提供抽签的的成员函数 <code>void speechDraw();</code></p>
+</li>
 </ul>
-<ul>
-<li>在speechManager.h中提供抽签的的成员函数 <code>void speechDraw();</code></li>
-</ul>
-<pre><code class="C++">    //抽签
-    void speechDraw();
+<pre><code class="language-C++">	//抽签
+	void speechDraw();
 </code></pre>
 <ul>
 <li>在speechManager.cpp中实现成员函数 <code>void speechDraw();</code></li>
 </ul>
-<pre><code class="C++">void SpeechManager::speechDraw()
+<pre><code class="language-C++">void SpeechManager::speechDraw()
 {
-    cout &lt;&lt; &quot;第 &lt;&lt; &quot; &lt;&lt; this-&gt;m_Index &lt;&lt; &quot; &gt;&gt; 轮比赛选手正在抽签&quot;&lt;&lt;endl;
-    cout &lt;&lt; &quot;---------------------&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;抽签后演讲顺序如下：&quot; &lt;&lt; endl;
-    if (this-&gt;m_Index == 1)
-    {
-        random_shuffle(v1.begin(), v1.end());
-        for (vector&lt;int&gt;::iterator it = v1.begin(); it != v1.end(); it++)
-        {
-            cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
-        }
-        cout &lt;&lt; endl;
-    }
-    else
-    {
-        random_shuffle(v2.begin(), v2.end());
-        for (vector&lt;int&gt;::iterator it = v2.begin(); it != v2.end(); it++)
-        {
-            cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
-        }
-        cout &lt;&lt; endl;
-    }
-    cout &lt;&lt; &quot;---------------------&quot; &lt;&lt; endl;
-    system(&quot;pause&quot;);
-    cout &lt;&lt; endl;
+	cout &lt;&lt; &quot;第 &lt;&lt; &quot; &lt;&lt; this-&gt;m_Index &lt;&lt; &quot; &gt;&gt; 轮比赛选手正在抽签&quot;&lt;&lt;endl;
+	cout &lt;&lt; &quot;---------------------&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;抽签后演讲顺序如下：&quot; &lt;&lt; endl;
+	if (this-&gt;m_Index == 1)
+	{
+		random_shuffle(v1.begin(), v1.end());
+		for (vector&lt;int&gt;::iterator it = v1.begin(); it != v1.end(); it++)
+		{
+			cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+		}
+		cout &lt;&lt; endl;
+	}
+	else
+	{
+		random_shuffle(v2.begin(), v2.end());
+		for (vector&lt;int&gt;::iterator it = v2.begin(); it != v2.end(); it++)
+		{
+			cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+		}
+		cout &lt;&lt; endl;
+	}
+	cout &lt;&lt; &quot;---------------------&quot; &lt;&lt; endl;
+	system(&quot;pause&quot;);
+	cout &lt;&lt; endl;
 }
 </code></pre>
 <ul>
@@ -752,91 +783,92 @@ void SpeechManager::startSpeech()
 <li>测试</li>
 </ul>
 <p><img src="1548143610682.png" alt="1548143610682"></p>
-<h4 id="6-3-6-开始比赛"><a href="#6-3-6-开始比赛" class="headerlink" title="6.3.6 开始比赛"></a>6.3.6 开始比赛</h4><ul>
+<h4 id="6-3-6-开始比赛">6.3.6 开始比赛</h4>
+<ul>
 <li>在speechManager.h中提供比赛的的成员函数 <code>void speechContest();</code></li>
 </ul>
-<pre><code class="C++">    //比赛
-    void speechContest();
+<pre><code class="language-C++">	//比赛
+	void speechContest();
 </code></pre>
 <ul>
 <li>在speechManager.cpp中实现成员函数 <code>void speechContest();</code></li>
 </ul>
-<pre><code class="C++">void SpeechManager::speechContest()
+<pre><code class="language-C++">void SpeechManager::speechContest()
 {
-    cout &lt;&lt; &quot;------------- 第&quot;&lt;&lt; this-&gt;m_Index &lt;&lt; &quot;轮正式比赛开始：------------- &quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;------------- 第&quot;&lt;&lt; this-&gt;m_Index &lt;&lt; &quot;轮正式比赛开始：------------- &quot; &lt;&lt; endl;
 
-    multimap&lt;double, int, greater&lt;int&gt;&gt; groupScore; //临时容器，保存key分数 value 选手编号
+	multimap&lt;double, int, greater&lt;int&gt;&gt; groupScore; //临时容器，保存key分数 value 选手编号
 
-    int num = 0; //记录人员数，6个为1组
+	int num = 0; //记录人员数，6个为1组
 
-    vector &lt;int&gt;v_Src;   //比赛的人员容器
-    if (this-&gt;m_Index == 1)
-    {
-        v_Src = v1;
-    }
-    else
-    {
-        v_Src = v2;
-    }
+	vector &lt;int&gt;v_Src;   //比赛的人员容器
+	if (this-&gt;m_Index == 1)
+	{
+		v_Src = v1;
+	}
+	else
+	{
+		v_Src = v2;
+	}
 
-    //遍历所有参赛选手
-    for (vector&lt;int&gt;::iterator it = v_Src.begin(); it != v_Src.end(); it++)
-    {
-        num++;
+	//遍历所有参赛选手
+	for (vector&lt;int&gt;::iterator it = v_Src.begin(); it != v_Src.end(); it++)
+	{
+		num++;
 
-        //评委打分
-        deque&lt;double&gt;d;
-        for (int i = 0; i &lt; 10; i++)
-        {
-            double score = (rand() % 401 + 600) / 10.f;  // 600 ~ 1000
-            //cout &lt;&lt; score &lt;&lt; &quot; &quot;;
-            d.push_back(score);
-        }
+		//评委打分
+		deque&lt;double&gt;d;
+		for (int i = 0; i &lt; 10; i++)
+		{
+			double score = (rand() % 401 + 600) / 10.f;  // 600 ~ 1000
+			//cout &lt;&lt; score &lt;&lt; &quot; &quot;;
+			d.push_back(score);
+		}
 
-        sort(d.begin(), d.end(), greater&lt;double&gt;());                //排序
-        d.pop_front();                                                //去掉最高分
-        d.pop_back();                                                //去掉最低分
+		sort(d.begin(), d.end(), greater&lt;double&gt;());				//排序
+		d.pop_front();												//去掉最高分
+		d.pop_back();												//去掉最低分
 
-        double sum = accumulate(d.begin(), d.end(), 0.0f);                //获取总分
-        double avg = sum / (double)d.size();                                    //获取平均分
+		double sum = accumulate(d.begin(), d.end(), 0.0f);				//获取总分
+		double avg = sum / (double)d.size();									//获取平均分
 
-        //每个人平均分
-        //cout &lt;&lt; &quot;编号： &quot; &lt;&lt; *it  &lt;&lt; &quot; 选手： &quot; &lt;&lt; this-&gt;m_Speaker[*it].m_Name &lt;&lt; &quot; 获取平均分为： &quot; &lt;&lt; avg &lt;&lt; endl;  //打印分数
-        this-&gt;m_Speaker[*it].m_Score[this-&gt;m_Index - 1] = avg;
+		//每个人平均分
+		//cout &lt;&lt; &quot;编号： &quot; &lt;&lt; *it  &lt;&lt; &quot; 选手： &quot; &lt;&lt; this-&gt;m_Speaker[*it].m_Name &lt;&lt; &quot; 获取平均分为： &quot; &lt;&lt; avg &lt;&lt; endl;  //打印分数
+		this-&gt;m_Speaker[*it].m_Score[this-&gt;m_Index - 1] = avg;
 
-        //6个人一组，用临时容器保存
-        groupScore.insert(make_pair(avg, *it));
-        if (num % 6 == 0)
-        {
+		//6个人一组，用临时容器保存
+		groupScore.insert(make_pair(avg, *it));
+		if (num % 6 == 0)
+		{
 
-            cout &lt;&lt; &quot;第&quot; &lt;&lt; num / 6 &lt;&lt; &quot;小组比赛名次：&quot; &lt;&lt; endl;
-            for (multimap&lt;double, int, greater&lt;int&gt;&gt;::iterator it = groupScore.begin(); it != groupScore.end(); it++)
-            {
-                cout &lt;&lt; &quot;编号: &quot; &lt;&lt; it-&gt;second &lt;&lt; &quot; 姓名： &quot; &lt;&lt; this-&gt;m_Speaker[it-&gt;second].m_Name &lt;&lt; &quot; 成绩： &quot; &lt;&lt; this-&gt;m_Speaker[it-&gt;second].m_Score[this-&gt;m_Index - 1] &lt;&lt; endl;
-            }
+			cout &lt;&lt; &quot;第&quot; &lt;&lt; num / 6 &lt;&lt; &quot;小组比赛名次：&quot; &lt;&lt; endl;
+			for (multimap&lt;double, int, greater&lt;int&gt;&gt;::iterator it = groupScore.begin(); it != groupScore.end(); it++)
+			{
+				cout &lt;&lt; &quot;编号: &quot; &lt;&lt; it-&gt;second &lt;&lt; &quot; 姓名： &quot; &lt;&lt; this-&gt;m_Speaker[it-&gt;second].m_Name &lt;&lt; &quot; 成绩： &quot; &lt;&lt; this-&gt;m_Speaker[it-&gt;second].m_Score[this-&gt;m_Index - 1] &lt;&lt; endl;
+			}
 
-            int count = 0;
-            //取前三名
-            for (multimap&lt;double, int, greater&lt;int&gt;&gt;::iterator it = groupScore.begin(); it != groupScore.end() &amp;&amp; count &lt; 3; it++, count++)
-            {
-                if (this-&gt;m_Index == 1)
-                {
-                    v2.push_back((*it).second);
-                }
-                else
-                {
-                    vVictory.push_back((*it).second);
-                }
-            }
+			int count = 0;
+			//取前三名
+			for (multimap&lt;double, int, greater&lt;int&gt;&gt;::iterator it = groupScore.begin(); it != groupScore.end() &amp;&amp; count &lt; 3; it++, count++)
+			{
+				if (this-&gt;m_Index == 1)
+				{
+					v2.push_back((*it).second);
+				}
+				else
+				{
+					vVictory.push_back((*it).second);
+				}
+			}
 
-            groupScore.clear();
+			groupScore.clear();
 
-            cout &lt;&lt; endl;
+			cout &lt;&lt; endl;
 
-        }
-    }
-    cout &lt;&lt; &quot;------------- 第&quot; &lt;&lt; this-&gt;m_Index &lt;&lt; &quot;轮比赛完毕  ------------- &quot; &lt;&lt; endl;
-    system(&quot;pause&quot;);
+		}
+	}
+	cout &lt;&lt; &quot;------------- 第&quot; &lt;&lt; this-&gt;m_Index &lt;&lt; &quot;轮比赛完毕  ------------- &quot; &lt;&lt; endl;
+	system(&quot;pause&quot;);
 }
 </code></pre>
 <ul>
@@ -847,37 +879,38 @@ void SpeechManager::startSpeech()
 <li>再次运行代码，测试比赛</li>
 </ul>
 <p><img src="1548144765146.png" alt="1548144765146"></p>
-<h4 id="6-3-7-显示比赛分数"><a href="#6-3-7-显示比赛分数" class="headerlink" title="6.3.7 显示比赛分数"></a>6.3.7 显示比赛分数</h4><ul>
+<h4 id="6-3-7-显示比赛分数">6.3.7 显示比赛分数</h4>
+<ul>
 <li>在speechManager.h中提供比赛的的成员函数 <code>void showScore();</code></li>
 </ul>
-<pre><code class="C++">    //显示比赛结果
-    void showScore();
+<pre><code class="language-C++">	//显示比赛结果
+	void showScore();
 </code></pre>
 <ul>
 <li>在speechManager.cpp中实现成员函数 <code>void  showScore();</code></li>
 </ul>
-<pre><code class="C++">void SpeechManager::showScore()
+<pre><code class="language-C++">void SpeechManager::showScore()
 {
-    cout &lt;&lt; &quot;---------第&quot; &lt;&lt; this-&gt;m_Index &lt;&lt; &quot;轮晋级选手信息如下：-----------&quot; &lt;&lt; endl;
-    vector&lt;int&gt;v;
-    if (this-&gt;m_Index == 1)
-    {
-        v = v2;
-    }
-    else
-    {
-        v = vVictory;
-    }
+	cout &lt;&lt; &quot;---------第&quot; &lt;&lt; this-&gt;m_Index &lt;&lt; &quot;轮晋级选手信息如下：-----------&quot; &lt;&lt; endl;
+	vector&lt;int&gt;v;
+	if (this-&gt;m_Index == 1)
+	{
+		v = v2;
+	}
+	else
+	{
+		v = vVictory;
+	}
 
-    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++)
-    {
-        cout &lt;&lt; &quot;选手编号：&quot; &lt;&lt; *it &lt;&lt; &quot; 姓名： &quot; &lt;&lt; m_Speaker[*it].m_Name &lt;&lt; &quot; 得分： &quot; &lt;&lt; m_Speaker[*it].m_Score[this-&gt;m_Index - 1] &lt;&lt; endl;
-    }
-    cout &lt;&lt; endl;
+	for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++)
+	{
+		cout &lt;&lt; &quot;选手编号：&quot; &lt;&lt; *it &lt;&lt; &quot; 姓名： &quot; &lt;&lt; m_Speaker[*it].m_Name &lt;&lt; &quot; 得分： &quot; &lt;&lt; m_Speaker[*it].m_Score[this-&gt;m_Index - 1] &lt;&lt; endl;
+	}
+	cout &lt;&lt; endl;
 
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
-    this-&gt;show_Menu(); 
+	system(&quot;pause&quot;);
+	system(&quot;cls&quot;);
+	this-&gt;show_Menu(); 
 }
 </code></pre>
 <ul>
@@ -888,14 +921,16 @@ void SpeechManager::startSpeech()
 <li>运行代码，测试效果</li>
 </ul>
 <p><img src="1548146961550.png" alt="1548146961550"></p>
-<h4 id="6-3-8-第二轮比赛"><a href="#6-3-8-第二轮比赛" class="headerlink" title="6.3.8 第二轮比赛"></a>6.3.8 第二轮比赛</h4><p>第二轮比赛流程同第一轮，只是比赛的轮是+1，其余流程不变</p>
+<h4 id="6-3-8-第二轮比赛">6.3.8 第二轮比赛</h4>
+<p>第二轮比赛流程同第一轮，只是比赛的轮是+1，其余流程不变</p>
 <ul>
 <li>在startSpeech比赛流程控制的函数中，加入第二轮的流程</li>
 </ul>
 <p><img src="1548148593215.png" alt="1548148593215"></p>
 <p>测试，将整个比赛流程都跑通</p>
 <p><img src="1548148536395.png" alt="1548148536395"></p>
-<h3 id="6-4-保存分数"><a href="#6-4-保存分数" class="headerlink" title="6.4 保存分数"></a>6.4 保存分数</h3><p><strong>功能描述：</strong></p>
+<h3 id="6-4-保存分数">6.4 保存分数</h3>
+<p><strong>功能描述：</strong></p>
 <ul>
 <li>将每次演讲比赛的得分记录到文件中</li>
 </ul>
@@ -903,29 +938,29 @@ void SpeechManager::startSpeech()
 <ul>
 <li>在speechManager.h中添加保存记录的成员函数 <code>void saveRecord();</code></li>
 </ul>
-<pre><code class="C++">    //保存记录
-    void saveRecord();
+<pre><code class="language-C++">	//保存记录
+	void saveRecord();
 </code></pre>
 <ul>
 <li>在speechManager.cpp中实现成员函数 <code>void saveRecord();</code></li>
 </ul>
-<pre><code class="C++">void SpeechManager::saveRecord()
+<pre><code class="language-C++">void SpeechManager::saveRecord()
 {
-    ofstream ofs;
-    ofs.open(&quot;speech.csv&quot;, ios::out | ios::app); // 用输出的方式打开文件  -- 写文件
+	ofstream ofs;
+	ofs.open(&quot;speech.csv&quot;, ios::out | ios::app); // 用输出的方式打开文件  -- 写文件
 
-    //将每个人数据写入到文件中
-    for (vector&lt;int&gt;::iterator it = vVictory.begin(); it != vVictory.end(); it++)
-    {
-        ofs &lt;&lt; *it &lt;&lt; &quot;,&quot;
-            &lt;&lt; m_Speaker[*it].m_Score[1] &lt;&lt; &quot;,&quot;;
-    }
-    ofs &lt;&lt; endl;
-
-    //关闭文件
-    ofs.close();
-
-    cout &lt;&lt; &quot;记录已经保存&quot; &lt;&lt; endl;
+	//将每个人数据写入到文件中
+	for (vector&lt;int&gt;::iterator it = vVictory.begin(); it != vVictory.end(); it++)
+	{
+		ofs &lt;&lt; *it &lt;&lt; &quot;,&quot;
+			&lt;&lt; m_Speaker[*it].m_Score[1] &lt;&lt; &quot;,&quot;;
+	}
+	ofs &lt;&lt; endl;
+    
+	//关闭文件
+	ofs.close();
+    
+	cout &lt;&lt; &quot;记录已经保存&quot; &lt;&lt; endl;
 }
 </code></pre>
 <ul>
@@ -939,111 +974,116 @@ void SpeechManager::startSpeech()
 <p>利用记事本打开文件 speech.csv，里面保存了前三名选手的编号以及得分</p>
 <p><img src="1548150047975.png" alt="1548150047975"></p>
 <p>至此，整个演讲比赛功能制作完毕！</p>
-<h2 id="7、-查看记录"><a href="#7、-查看记录" class="headerlink" title="7、 查看记录"></a>7、 查看记录</h2><h3 id="7-1-读取记录分数"><a href="#7-1-读取记录分数" class="headerlink" title="7.1 读取记录分数"></a>7.1 读取记录分数</h3><ul>
+<h2 id="7、-查看记录">7、 查看记录</h2>
+<h3 id="7-1-读取记录分数">7.1 读取记录分数</h3>
+<ul>
 <li>在speechManager.h中添加保存记录的成员函数 <code>void loadRecord();</code></li>
 <li>添加判断文件是否为空的标志  <code>bool fileIsEmpty;</code></li>
-<li>添加往届记录的容器<code>map&lt;int, vector&lt;string&gt;&gt; m_Record;</code>   </li>
+<li>添加往届记录的容器<code>map&lt;int, vector&lt;string&gt;&gt; m_Record;</code></li>
 </ul>
 <p>其中m_Record 中的key代表第几届，value记录具体的信息</p>
-<pre><code class="C++">    //读取记录
-    void loadRecord();
+<pre><code class="language-C++">	//读取记录
+	void loadRecord();
 
-    //文件为空的标志
-    bool fileIsEmpty;
+	//文件为空的标志
+	bool fileIsEmpty;
 
-    //往届记录
-    map&lt;int, vector&lt;string&gt;&gt; m_Record;
+	//往届记录
+	map&lt;int, vector&lt;string&gt;&gt; m_Record;
 </code></pre>
 <ul>
 <li>在speechManager.cpp中实现成员函数 <code>void loadRecord();</code></li>
 </ul>
-<pre><code class="C++">void SpeechManager::loadRecord()
+<pre><code class="language-C++">void SpeechManager::loadRecord()
 {
-    ifstream ifs(&quot;speech.csv&quot;, ios::in); //输入流对象 读取文件
+	ifstream ifs(&quot;speech.csv&quot;, ios::in); //输入流对象 读取文件
 
-    if (!ifs.is_open())
-    {
-        this-&gt;fileIsEmpty = true;
-        cout &lt;&lt; &quot;文件不存在！&quot; &lt;&lt; endl;
-        ifs.close();
-        return;
-    }
+	if (!ifs.is_open())
+	{
+		this-&gt;fileIsEmpty = true;
+		cout &lt;&lt; &quot;文件不存在！&quot; &lt;&lt; endl;
+		ifs.close();
+		return;
+	}
 
-    char ch;
-    ifs &gt;&gt; ch;
-    if (ifs.eof())
-    {
-        cout &lt;&lt; &quot;文件为空!&quot; &lt;&lt; endl;
-        this-&gt;fileIsEmpty = true;
-        ifs.close();
-        return;
-    }
+	char ch;
+	ifs &gt;&gt; ch;
+	if (ifs.eof())
+	{
+		cout &lt;&lt; &quot;文件为空!&quot; &lt;&lt; endl;
+		this-&gt;fileIsEmpty = true;
+		ifs.close();
+		return;
+	}
 
-    //文件不为空
-    this-&gt;fileIsEmpty = false;
+	//文件不为空
+	this-&gt;fileIsEmpty = false;
 
-    ifs.putback(ch); //读取的单个字符放回去
+	ifs.putback(ch); //读取的单个字符放回去
 
-    string data;
-    int index = 0;
-    while (ifs &gt;&gt; data)
-    {
-        //cout &lt;&lt; data &lt;&lt; endl;
-        vector&lt;string&gt;v;
+	string data;
+	int index = 0;
+	while (ifs &gt;&gt; data)
+	{
+		//cout &lt;&lt; data &lt;&lt; endl;
+		vector&lt;string&gt;v;
 
-        int pos = -1;
-        int start = 0;
+		int pos = -1;
+		int start = 0;
 
-        while (true)
-        {
-            pos = data.find(&quot;,&quot;, start); //从0开始查找 &#39;,&#39;
-            if (pos == -1)
-            {
-                break; //找不到break返回
-            }
-            string tmp = data.substr(start, pos - start); //找到了,进行分割 参数1 起始位置，参数2 截取长度
-            v.push_back(tmp);
-            start = pos + 1;
-        }
+		while (true)
+		{
+			pos = data.find(&quot;,&quot;, start); //从0开始查找 ','
+			if (pos == -1)
+			{
+				break; //找不到break返回
+			}
+			string tmp = data.substr(start, pos - start); //找到了,进行分割 参数1 起始位置，参数2 截取长度
+			v.push_back(tmp);
+			start = pos + 1;
+		}
 
-        this-&gt;m_Record.insert(make_pair(index, v));
-        index++;
-    }
+		this-&gt;m_Record.insert(make_pair(index, v));
+		index++;
+	}
 
-    ifs.close();
+	ifs.close();
 }
 </code></pre>
 <ul>
 <li>在SpeechManager构造函数中调用获取往届记录函数</li>
 </ul>
 <p><img src="1548151977242.png" alt="1548151977242"></p>
-<h3 id="7-2-查看记录功能"><a href="#7-2-查看记录功能" class="headerlink" title="7.2 查看记录功能"></a>7.2 查看记录功能</h3><ul>
+<h3 id="7-2-查看记录功能">7.2 查看记录功能</h3>
+<ul>
 <li>在speechManager.h中添加保存记录的成员函数 <code>void showRecord();</code></li>
 </ul>
-<pre><code class="C++">    //显示往届得分
-    void showRecord();
+<pre><code class="language-C++">	//显示往届得分
+	void showRecord();
 </code></pre>
 <ul>
 <li>在speechManager.cpp中实现成员函数 <code>void showRecord();</code></li>
 </ul>
-<pre><code class="C++">void SpeechManager::showRecord()
+<pre><code class="language-C++">void SpeechManager::showRecord()
 {
-    for (int i = 0; i &lt; this-&gt;m_Record.size(); i++)
-    {
-        cout &lt;&lt; &quot;第&quot; &lt;&lt; i + 1 &lt;&lt; &quot;届 &quot; &lt;&lt;
-            &quot;冠军编号：&quot; &lt;&lt; this-&gt;m_Record[i][0] &lt;&lt; &quot; 得分：&quot; &lt;&lt; this-&gt;m_Record[i][1] &lt;&lt; &quot; &quot;
-            &quot;亚军编号：&quot; &lt;&lt; this-&gt;m_Record[i][2] &lt;&lt; &quot; 得分：&quot; &lt;&lt; this-&gt;m_Record[i][3] &lt;&lt; &quot; &quot;
-            &quot;季军编号：&quot; &lt;&lt; this-&gt;m_Record[i][4] &lt;&lt; &quot; 得分：&quot; &lt;&lt; this-&gt;m_Record[i][5] &lt;&lt; endl;
-    }
+	for (int i = 0; i &lt; this-&gt;m_Record.size(); i++)
+	{
+		cout &lt;&lt; &quot;第&quot; &lt;&lt; i + 1 &lt;&lt; &quot;届 &quot; &lt;&lt;
+			&quot;冠军编号：&quot; &lt;&lt; this-&gt;m_Record[i][0] &lt;&lt; &quot; 得分：&quot; &lt;&lt; this-&gt;m_Record[i][1] &lt;&lt; &quot; &quot;
+			&quot;亚军编号：&quot; &lt;&lt; this-&gt;m_Record[i][2] &lt;&lt; &quot; 得分：&quot; &lt;&lt; this-&gt;m_Record[i][3] &lt;&lt; &quot; &quot;
+			&quot;季军编号：&quot; &lt;&lt; this-&gt;m_Record[i][4] &lt;&lt; &quot; 得分：&quot; &lt;&lt; this-&gt;m_Record[i][5] &lt;&lt; endl;
+	}
     system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
+	system(&quot;cls&quot;);
 }
 </code></pre>
-<h3 id="7-3-测试功能"><a href="#7-3-测试功能" class="headerlink" title="7.3 测试功能"></a>7.3 测试功能</h3><p>在main函数分支 2  选项中，调用查看记录的接口</p>
+<h3 id="7-3-测试功能">7.3 测试功能</h3>
+<p>在main函数分支 2  选项中，调用查看记录的接口</p>
 <p><img src="1548152359604.png" alt="1548152359604"></p>
 <p>显示效果如图：（本次测试添加了4条记录）</p>
 <p><img src="1548152394715.png" alt="1548152394715"></p>
-<h3 id="7-4-bug解决"><a href="#7-4-bug解决" class="headerlink" title="7.4 bug解决"></a>7.4 bug解决</h3><p>目前程序中有几处bug未解决：</p>
+<h3 id="7-4-bug解决">7.4 bug解决</h3>
+<p>目前程序中有几处bug未解决：</p>
 <ol>
 <li>查看往届记录，若文件不存在或为空，并未提示</li>
 </ol>
@@ -1068,52 +1108,55 @@ void SpeechManager::startSpeech()
 <li>每次记录都是一样的</li>
 </ol>
 <p>解决方式：在main函数一开始 添加随机数种子</p>
-<pre><code class="C++">srand((unsigned int)time(NULL));
+<pre><code class="language-C++">srand((unsigned int)time(NULL));
 </code></pre>
 <p>所有bug解决后 测试：</p>
 <p><img src="1548153571603.png" alt="1548153571603"></p>
-<h2 id="8、-清空记录"><a href="#8、-清空记录" class="headerlink" title="8、 清空记录"></a>8、 清空记录</h2><h3 id="8-1-清空记录功能实现"><a href="#8-1-清空记录功能实现" class="headerlink" title="8.1 清空记录功能实现"></a>8.1 清空记录功能实现</h3><ul>
+<h2 id="8、-清空记录">8、 清空记录</h2>
+<h3 id="8-1-清空记录功能实现">8.1 清空记录功能实现</h3>
+<ul>
 <li>在speechManager.h中添加保存记录的成员函数 <code>void clearRecord();</code></li>
 </ul>
-<pre><code class="C++">    //清空记录
-    void clearRecord();
+<pre><code class="language-C++">	//清空记录
+	void clearRecord();
 </code></pre>
 <ul>
 <li>在speechManager.cpp中实现成员函数 <code>void clearRecord();</code></li>
 </ul>
-<pre><code class="C++">void SpeechManager::clearRecord()
+<pre><code class="language-C++">void SpeechManager::clearRecord()
 {
-    cout &lt;&lt; &quot;确认清空？&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;1、确认&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;2、返回&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;确认清空？&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;1、确认&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;2、返回&quot; &lt;&lt; endl;
 
-    int select = 0;
-    cin &gt;&gt; select;
+	int select = 0;
+	cin &gt;&gt; select;
 
-    if (select == 1)
-    {
-        //打开模式 ios::trunc 如果存在删除文件并重新创建
-        ofstream ofs(&quot;speech.csv&quot;, ios::trunc);
-        ofs.close();
+	if (select == 1)
+	{
+		//打开模式 ios::trunc 如果存在删除文件并重新创建
+		ofstream ofs(&quot;speech.csv&quot;, ios::trunc);
+		ofs.close();
 
-        //初始化属性
-        this-&gt;initSpeech();
+		//初始化属性
+		this-&gt;initSpeech();
 
-        //创建选手
-        this-&gt;createSpeaker();
+		//创建选手
+		this-&gt;createSpeaker();
 
-        //获取往届记录
-        this-&gt;loadRecord();
+		//获取往届记录
+		this-&gt;loadRecord();
+		
 
+		cout &lt;&lt; &quot;清空成功！&quot; &lt;&lt; endl;
+	}
 
-        cout &lt;&lt; &quot;清空成功！&quot; &lt;&lt; endl;
-    }
-
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);
+	system(&quot;pause&quot;);
+	system(&quot;cls&quot;);
 }
 </code></pre>
-<h3 id="8-2-测试清空"><a href="#8-2-测试清空" class="headerlink" title="8.2 测试清空"></a>8.2 测试清空</h3><p>在main函数分支 3  选项中，调用清空比赛记录的接口</p>
+<h3 id="8-2-测试清空">8.2 测试清空</h3>
+<p>在main函数分支 3  选项中，调用清空比赛记录的接口</p>
 <p><img src="1548154674242.png" alt="1548154674242"></p>
 <p>运行程序，测试清空记录：</p>
 <p><img src="1548154004738.png" alt="1548154004738"></p>

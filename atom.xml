@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2021-02-13T02:48:43.787Z</updated>
+  <updated>2021-02-13T10:14:58.701Z</updated>
   <id>/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="/2021/02/11/%E3%80%8A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%AC%E5%9B%9B%E7%89%88%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <id>/2021/02/11/《数字图像处理第四版》读书笔记/</id>
     <published>2021-02-11T06:17:36.000Z</published>
-    <updated>2021-02-13T02:48:43.787Z</updated>
+    <updated>2021-02-13T10:14:58.701Z</updated>
     
     <summary type="html">
     
@@ -69,7 +69,10 @@
       
         
         
-          &lt;h1 id=&quot;vi-——-终端中的编辑器&quot;&gt;&lt;a href=&quot;#vi-——-终端中的编辑器&quot; class=&quot;headerlink&quot; title=&quot;vi —— 终端中的编辑器&quot;&gt;&lt;/a&gt;&lt;code&gt;vi&lt;/code&gt; —— 终端中的编辑器&lt;/h1&gt;&lt;h2 id=&quot;目标&quot;&gt;&lt;a
+          &lt;h1&gt;&lt;code&gt;vi&lt;/code&gt; —— 终端中的编辑器&lt;/h1&gt;
+&lt;h2 id=&quot;目标&quot;&gt;目标&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vi&lt;/code&gt;
         
       
     
@@ -95,7 +98,9 @@
       
         
         
-          &lt;h2 id=&quot;C核心编程&quot;&gt;&lt;a href=&quot;#C核心编程&quot; class=&quot;headerlink&quot; title=&quot;C核心编程&quot;&gt;&lt;/a&gt;C核心编程&lt;/h2&gt;&lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1 
+          &lt;h2 id=&quot;C核心编程&quot;&gt;C核心编程&lt;/h2&gt;
+&lt;h2 id=&quot;1-前言&quot;&gt;1  前言&lt;/h2&gt;
+&lt;h3 id=&quot;1-1-听课要求&quot;&gt;1.1
         
       
     
@@ -123,7 +128,9 @@
       
         
         
-          &lt;h1 id=&quot;机房预约系统&quot;&gt;&lt;a href=&quot;#机房预约系统&quot; class=&quot;headerlink&quot; title=&quot;机房预约系统&quot;&gt;&lt;/a&gt;机房预约系统&lt;/h1&gt;&lt;h2 id=&quot;1、机房预约系统需求&quot;&gt;&lt;a href=&quot;#1、机房预约系统需求&quot;
+          &lt;h1&gt;机房预约系统&lt;/h1&gt;
+&lt;h2 id=&quot;1、机房预约系统需求&quot;&gt;1、机房预约系统需求&lt;/h2&gt;
+&lt;h3 id=&quot;1-1-系统简介&quot;&gt;1.1
         
       
     
@@ -153,7 +160,10 @@
       
         
         
-          &lt;h1 id=&quot;演讲比赛流程管理系统&quot;&gt;&lt;a href=&quot;#演讲比赛流程管理系统&quot; class=&quot;headerlink&quot; title=&quot;演讲比赛流程管理系统&quot;&gt;&lt;/a&gt;演讲比赛流程管理系统&lt;/h1&gt;&lt;h2 id=&quot;1、-演讲比赛程序需求&quot;&gt;&lt;a
+          &lt;h1&gt;演讲比赛流程管理系统&lt;/h1&gt;
+&lt;h2 id=&quot;1、-演讲比赛程序需求&quot;&gt;1、 演讲比赛程序需求&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;1548154762048.png&quot; alt=&quot;1548154762048&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-1-比赛规则&quot;&gt;1.1
         
       
     
@@ -183,7 +193,12 @@
       
         
         
-          &lt;h1 id=&quot;C-提高编程&quot;&gt;&lt;a href=&quot;#C-提高编程&quot; class=&quot;headerlink&quot;
+          &lt;h1&gt;C++提高编程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;本阶段主要针对C++==泛型编程==和==STL==技术做详细讲解，探讨C++更深层的使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;1-模板&quot;&gt;1 模板&lt;/h2&gt;
+&lt;h3 id=&quot;1-1-模板的概念&quot;&gt;1.1
         
       
     
@@ -213,7 +228,8 @@
       
         
         
-          &lt;h1 id=&quot;职工管理系统&quot;&gt;&lt;a href=&quot;#职工管理系统&quot; class=&quot;headerlink&quot; title=&quot;职工管理系统&quot;&gt;&lt;/a&gt;职工管理系统&lt;/h1&gt;&lt;h2 id=&quot;1、管理系统需求&quot;&gt;&lt;a href=&quot;#1、管理系统需求&quot; class=&quot;headerlink&quot;
+          &lt;h1&gt;职工管理系统&lt;/h1&gt;
+&lt;h2
         
       
     
@@ -243,8 +259,9 @@
       
         
         
-          &lt;h1 id=&quot;C-核心编程&quot;&gt;&lt;a href=&quot;#C-核心编程&quot; class=&quot;headerlink&quot; title=&quot;C++核心编程&quot;&gt;&lt;/a&gt;C++核心编程&lt;/h1&gt;&lt;p&gt;本阶段主要针对C++==面向对象==编程技术做详细讲解，探讨C++中的核心和精髓。&lt;/p&gt;
-&lt;h2
+          &lt;h1&gt;C++核心编程&lt;/h1&gt;
+&lt;p&gt;本阶段主要针对C++==面向对象==编程技术做详细讲解，探讨C++中的核心和精髓。&lt;/p&gt;
+&lt;h2 id=&quot;1-内存分区模型&quot;&gt;1
         
       
     
@@ -274,7 +291,9 @@
       
         
         
-          &lt;h1 id=&quot;C-基础入门&quot;&gt;&lt;a href=&quot;#C-基础入门&quot; class=&quot;headerlink&quot; title=&quot;C++基础入门&quot;&gt;&lt;/a&gt;C++基础入门&lt;/h1&gt;&lt;h2 id=&quot;1-C-初识&quot;&gt;&lt;a href=&quot;#1-C-初识&quot; class=&quot;headerlink&quot;
+          &lt;h1&gt;C++基础入门&lt;/h1&gt;
+&lt;h2 id=&quot;1-C-初识&quot;&gt;1 C++初识&lt;/h2&gt;
+&lt;h3 id=&quot;1-1-第一个C-程序&quot;&gt;1.1 
         
       
     
@@ -304,7 +323,8 @@
       
         
         
-          &lt;h1 id=&quot;通讯录管理系统&quot;&gt;&lt;a href=&quot;#通讯录管理系统&quot; class=&quot;headerlink&quot; title=&quot;通讯录管理系统&quot;&gt;&lt;/a&gt;通讯录管理系统&lt;/h1&gt;&lt;h2 id=&quot;1、系统需求&quot;&gt;&lt;a href=&quot;#1、系统需求&quot; class=&quot;headerlink&quot;
+          &lt;h1&gt;通讯录管理系统&lt;/h1&gt;
+&lt;h2
         
       
     
@@ -334,7 +354,9 @@
       
         
         
-          &lt;p&gt;一年前的这个时候，是我第一次做视频，第一次录音，效果和自己想表达的，都很不理想！&lt;br&gt;那么，现在我打算重制这个视频。&lt;br&gt;我还想和某些人说一声，这个世界上没有什么是一尘不染的，我们都在吸进灰尘，这并不妨碍我们变得好一点，相信美好的一面啊。我觉得一个人有缺点才是有血有肉的
+          &lt;p&gt;一年前的这个时候，是我第一次做视频，第一次录音，效果和自己想表达的，都很不理想！&lt;br&gt;
+那么，现在我打算重制这个视频。&lt;br&gt;
+我还想和某些人说一声，这个世界上没有什么是一尘不染的，我们都在吸进灰尘，这并不妨碍我们变得好一点，相信美好的一面啊。我觉得一个人有缺点才是有血有
         
       
     
@@ -360,7 +382,8 @@
       
         
         
-          &lt;p&gt;在清日两国交涉之际，驻扎在牙山的清军提督叶志超派出一支部队前往全州侦查，总兵聂士成为求战功，与叶志超商议后，自己率兵前往全州剿灭东学党，袁世凯得知后，急忙电告聂士成迅速撤回牙山，大规模行动不适合两国谈判的进行。然而，总兵聂士成并没有听从。&lt;br&gt;7月10日，经多次袁世凯劝告
+          &lt;p&gt;在清日两国交涉之际，驻扎在牙山的清军提督叶志超派出一支部队前往全州侦查，总兵聂士成为求战功，与叶志超商议后，自己率兵前往全州剿灭东学党，袁世凯得知后，急忙电告聂士成迅速撤回牙山，大规模行动不适合两国谈判的进行。然而，总兵聂士成并没有听从。&lt;br&gt;
+7月10日，经多次袁世凯劝
         
       
     
@@ -449,7 +472,11 @@
         
         
           &lt;p&gt;表示作用域和所属关系，用来调用类内的静态成员函数，或者定义类的成员函数。&lt;/p&gt;
-&lt;p&gt;PS：&lt;br&gt;静态成员函数的作用：&lt;br&gt;静态成员函数总结：&lt;br&gt;静态成员函数是类中的特殊的成员函数&lt;br&gt;静态成员函数没有隐藏的this指针：当调用一个对象的非静态成员函数时，系统会
+&lt;p&gt;PS：&lt;br&gt;
+静态成员函数的作用：&lt;br&gt;
+静态成员函数总结：&lt;br&gt;
+静态成员函数是类中的特殊的成员函数&lt;br&gt;
+静态成员函数没有隐藏的this指针：当调用一个对象的非静态成员函数时
         
       
     
