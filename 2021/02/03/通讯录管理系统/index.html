@@ -393,12 +393,75 @@
 <li>在main函数中调用封装好的函数</li>
 </ul>
 <p><strong>代码：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//菜单界面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">showMenu</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"***************************"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*****  1、添加联系人  *****"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*****  2、显示联系人  *****"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*****  3、删除联系人  *****"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*****  4、查找联系人  *****"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*****  5、修改联系人  *****"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*****  6、清空联系人  *****"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*****  0、退出通讯录  *****"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"***************************"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	showMenu();</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">#include&lt;iostream&gt;
+using namespace std;
+
+//菜单界面
+void showMenu()
+{
+    cout &lt;&lt; &quot;***************************&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  1、添加联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  2、显示联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  3、删除联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  4、查找联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  5、修改联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  6、清空联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  0、退出通讯录  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***************************&quot; &lt;&lt; endl;
+}
+
+int main() {
+
+    showMenu();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+}
+</code></pre>
 <h2 id="4、退出功能"><a href="#4、退出功能" class="headerlink" title="4、退出功能"></a>4、退出功能</h2><p>功能描述：退出通讯录系统</p>
 <p>思路：根据用户不同的选择，进入不同的功能，可以选择switch分支结构，将整个架构进行搭建</p>
 <p>当用户选择0时候，执行退出，选择其他先不做操作，也不会退出程序</p>
 <p><strong>代码：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> select = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		showMenu();</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; select;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">switch</span> (select)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:  <span class="comment">//添加联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:  <span class="comment">//显示联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:  <span class="comment">//删除联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:  <span class="comment">//查找联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:  <span class="comment">//修改联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>:  <span class="comment">//清空联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span>:  <span class="comment">//退出通讯录</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"欢迎下次使用"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			system(<span class="string">"pause"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">int main() {
+
+    int select = 0;
+
+    while (true)
+    {
+        showMenu();
+
+        cin &gt;&gt; select;
+
+        switch (select)
+        {
+        case 1:  //添加联系人
+            break;
+        case 2:  //显示联系人
+            break;
+        case 3:  //删除联系人
+            break;
+        case 4:  //查找联系人
+            break;
+        case 5:  //修改联系人
+            break;
+        case 6:  //清空联系人
+            break;
+        case 0:  //退出通讯录
+            cout &lt;&lt; &quot;欢迎下次使用&quot; &lt;&lt; endl;
+            system(&quot;pause&quot;);
+            return 0;
+            break;
+        default:
+            break;
+        }
+    }
+
+    system(&quot;pause&quot;);
+
+    return 0;
+}
+</code></pre>
 <p>效果图：</p>
 <p><img src="1544163868043.png" alt="1544163868043"></p>
 <h2 id="5、添加联系人"><a href="#5、添加联系人" class="headerlink" title="5、添加联系人"></a>5、添加联系人</h2><p>功能描述：</p>
@@ -413,18 +476,105 @@
 </ul>
 <h3 id="5-1-设计联系人结构体"><a href="#5-1-设计联系人结构体" class="headerlink" title="5.1 设计联系人结构体"></a>5.1 设计联系人结构体</h3><p>联系人信息包括：姓名、性别、年龄、联系电话、家庭住址</p>
 <p>设计如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  //string头文件</span></span></span><br><span class="line"><span class="comment">//联系人结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="built_in">string</span> m_Name; <span class="comment">//姓名</span></span><br><span class="line">	<span class="keyword">int</span> m_Sex; <span class="comment">//性别：1男 2女</span></span><br><span class="line">	<span class="keyword">int</span> m_Age; <span class="comment">//年龄</span></span><br><span class="line">	<span class="built_in">string</span> m_Phone; <span class="comment">//电话</span></span><br><span class="line">	<span class="built_in">string</span> m_Addr; <span class="comment">//住址</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">#include &lt;string&gt;  //string头文件
+//联系人结构体
+struct Person
+{
+    string m_Name; //姓名
+    int m_Sex; //性别：1男 2女
+    int m_Age; //年龄
+    string m_Phone; //电话
+    string m_Addr; //住址
+};
+</code></pre>
 <h3 id="5-2-设计通讯录结构体"><a href="#5-2-设计通讯录结构体" class="headerlink" title="5.2 设计通讯录结构体"></a>5.2 设计通讯录结构体</h3><p>设计时候可以在通讯录结构体中，维护一个容量为1000的存放联系人的数组，并记录当前通讯录中联系人数量</p>
 <p>设计如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 1000 <span class="comment">//最大人数</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//通讯录结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Addressbooks</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span> <span class="title">personArray</span>[<span class="title">MAX</span>];</span> <span class="comment">//通讯录中保存的联系人数组</span></span><br><span class="line">	<span class="keyword">int</span> m_Size; <span class="comment">//通讯录中人员个数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">#define MAX 1000 //最大人数
+
+//通讯录结构体
+struct Addressbooks
+{
+    struct Person personArray[MAX]; //通讯录中保存的联系人数组
+    int m_Size; //通讯录中人员个数
+};
+</code></pre>
 <h3 id="5-3-main函数中创建通讯录"><a href="#5-3-main函数中创建通讯录" class="headerlink" title="5.3 main函数中创建通讯录"></a>5.3 main函数中创建通讯录</h3><p>添加联系人函数封装好后，在main函数中创建一个通讯录变量，这个就是我们需要一直维护的通讯录</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mian函数起始位置添加：</span><br><span class="line"></span><br><span class="line">	<span class="comment">//创建通讯录</span></span><br><span class="line">	Addressbooks <span class="built_in">abs</span>;</span><br><span class="line">	<span class="comment">//初始化通讯录中人数</span></span><br><span class="line">	<span class="built_in">abs</span>.m_Size = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="c++">mian函数起始位置添加：
+
+    //创建通讯录
+    Addressbooks abs;
+    //初始化通讯录中人数
+    abs.m_Size = 0;
+</code></pre>
 <h3 id="5-4-封装添加联系人函数"><a href="#5-4-封装添加联系人函数" class="headerlink" title="5.4 封装添加联系人函数"></a>5.4 封装添加联系人函数</h3><p>思路：添加联系人前先判断通讯录是否已满，如果满了就不再添加，未满情况将新联系人信息逐个加入到通讯录</p>
 <p>添加联系人代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、添加联系人信息</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addPerson</span><span class="params">(Addressbooks *<span class="built_in">abs</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//判断电话本是否满了</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">abs</span>-&gt;m_Size == MAX)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"通讯录已满，无法添加"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//姓名</span></span><br><span class="line">		<span class="built_in">string</span> name;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入姓名："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; name;</span><br><span class="line">		<span class="built_in">abs</span>-&gt;personArray[<span class="built_in">abs</span>-&gt;m_Size].m_Name = name;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入性别："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"1 -- 男"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"2 -- 女"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//性别</span></span><br><span class="line">		<span class="keyword">int</span> sex = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; sex;</span><br><span class="line">			<span class="keyword">if</span> (sex == <span class="number">1</span> || sex == <span class="number">2</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">abs</span>-&gt;personArray[<span class="built_in">abs</span>-&gt;m_Size].m_Sex = sex;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有误，请重新输入"</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//年龄</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入年龄："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">int</span> age = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; age;</span><br><span class="line">		<span class="built_in">abs</span>-&gt;personArray[<span class="built_in">abs</span>-&gt;m_Size].m_Age = age;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//联系电话</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入联系电话："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">string</span> phone = <span class="string">""</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; phone;</span><br><span class="line">		<span class="built_in">abs</span>-&gt;personArray[<span class="built_in">abs</span>-&gt;m_Size].m_Phone = phone;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//家庭住址</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入家庭住址："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">string</span> address;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; address;</span><br><span class="line">		<span class="built_in">abs</span>-&gt;personArray[<span class="built_in">abs</span>-&gt;m_Size].m_Addr = address;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//更新通讯录人数</span></span><br><span class="line">		<span class="built_in">abs</span>-&gt;m_Size++;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"添加成功"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		system(<span class="string">"pause"</span>);</span><br><span class="line">		system(<span class="string">"cls"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">//1、添加联系人信息
+void addPerson(Addressbooks *abs)
+{
+    //判断电话本是否满了
+    if (abs-&gt;m_Size == MAX)
+    {
+        cout &lt;&lt; &quot;通讯录已满，无法添加&quot; &lt;&lt; endl;
+        return;
+    }
+    else
+    {
+        //姓名
+        string name;
+        cout &lt;&lt; &quot;请输入姓名：&quot; &lt;&lt; endl;
+        cin &gt;&gt; name;
+        abs-&gt;personArray[abs-&gt;m_Size].m_Name = name;
+
+        cout &lt;&lt; &quot;请输入性别：&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;1 -- 男&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;2 -- 女&quot; &lt;&lt; endl;
+
+        //性别
+        int sex = 0;
+        while (true)
+        {
+            cin &gt;&gt; sex;
+            if (sex == 1 || sex == 2)
+            {
+                abs-&gt;personArray[abs-&gt;m_Size].m_Sex = sex;
+                break;
+            }
+            cout &lt;&lt; &quot;输入有误，请重新输入&quot;;
+        }
+
+        //年龄
+        cout &lt;&lt; &quot;请输入年龄：&quot; &lt;&lt; endl;
+        int age = 0;
+        cin &gt;&gt; age;
+        abs-&gt;personArray[abs-&gt;m_Size].m_Age = age;
+
+        //联系电话
+        cout &lt;&lt; &quot;请输入联系电话：&quot; &lt;&lt; endl;
+        string phone = &quot;&quot;;
+        cin &gt;&gt; phone;
+        abs-&gt;personArray[abs-&gt;m_Size].m_Phone = phone;
+
+        //家庭住址
+        cout &lt;&lt; &quot;请输入家庭住址：&quot; &lt;&lt; endl;
+        string address;
+        cin &gt;&gt; address;
+        abs-&gt;personArray[abs-&gt;m_Size].m_Addr = address;
+
+        //更新通讯录人数
+        abs-&gt;m_Size++;
+
+        cout &lt;&lt; &quot;添加成功&quot; &lt;&lt; endl;
+        system(&quot;pause&quot;);
+        system(&quot;cls&quot;);
+    }
+}
+</code></pre>
 <h3 id="5-5-测试添加联系人功能"><a href="#5-5-测试添加联系人功能" class="headerlink" title="5.5 测试添加联系人功能"></a>5.5 测试添加联系人功能</h3><p>选择界面中，如果玩家选择了1，代表添加联系人，我们可以测试下该功能</p>
 <p>在switch case 语句中，case1里添加：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">1</span>:  <span class="comment">//添加联系人</span></span><br><span class="line">	addPerson(&amp;<span class="built_in">abs</span>);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">case 1:  //添加联系人
+    addPerson(&amp;abs);
+    break;
+</code></pre>
 <p>测试效果如图：</p>
 <p><img src="1544165554002.png" alt="1544165554002"></p>
 <h2 id="6、显示联系人"><a href="#6、显示联系人" class="headerlink" title="6、显示联系人"></a>6、显示联系人</h2><p>功能描述：显示通讯录中已有的联系人信息</p>
@@ -435,9 +585,35 @@
 </ul>
 <h3 id="6-1-封装显示联系人函数"><a href="#6-1-封装显示联系人函数" class="headerlink" title="6.1 封装显示联系人函数"></a>6.1 封装显示联系人函数</h3><p>思路：判断如果当前通讯录中没有人员，就提示记录为空，人数大于0，显示通讯录中信息</p>
 <p>显示联系人代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2、显示所有联系人信息</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">showPerson</span><span class="params">(Addressbooks * <span class="built_in">abs</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">abs</span>-&gt;m_Size == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"当前记录为空"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">abs</span>-&gt;m_Size; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"姓名："</span> &lt;&lt; <span class="built_in">abs</span>-&gt;personArray[i].m_Name &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"性别："</span> &lt;&lt; (<span class="built_in">abs</span>-&gt;personArray[i].m_Sex == <span class="number">1</span> ? <span class="string">"男"</span> : <span class="string">"女"</span>) &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"年龄："</span> &lt;&lt; <span class="built_in">abs</span>-&gt;personArray[i].m_Age &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"电话："</span> &lt;&lt; <span class="built_in">abs</span>-&gt;personArray[i].m_Phone &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"住址："</span> &lt;&lt; <span class="built_in">abs</span>-&gt;personArray[i].m_Addr &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">//2、显示所有联系人信息
+void showPerson(Addressbooks * abs)
+{
+    if (abs-&gt;m_Size == 0)
+    {
+        cout &lt;&lt; &quot;当前记录为空&quot; &lt;&lt; endl;
+    }
+    else
+    {
+        for (int i = 0; i &lt; abs-&gt;m_Size; i++)
+        {
+            cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; abs-&gt;personArray[i].m_Name &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;性别：&quot; &lt;&lt; (abs-&gt;personArray[i].m_Sex == 1 ? &quot;男&quot; : &quot;女&quot;) &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; abs-&gt;personArray[i].m_Age &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;电话：&quot; &lt;&lt; abs-&gt;personArray[i].m_Phone &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;住址：&quot; &lt;&lt; abs-&gt;personArray[i].m_Addr &lt;&lt; endl;
+        }
+    }
+
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+
+}
+</code></pre>
 <h3 id="6-2-测试显示联系人功能"><a href="#6-2-测试显示联系人功能" class="headerlink" title="6.2 测试显示联系人功能"></a>6.2 测试显示联系人功能</h3><p>在switch case语句中，case 2 里添加</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">2</span>:  <span class="comment">//显示联系人</span></span><br><span class="line">	showPerson(&amp;<span class="built_in">abs</span>);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">case 2:  //显示联系人
+    showPerson(&amp;abs);
+    break;
+</code></pre>
 <p>测试效果如图：</p>
 <p><img src="1544166401582.png" alt="1544166401582"></p>
 <h2 id="7、删除联系人"><a href="#7、删除联系人" class="headerlink" title="7、删除联系人"></a>7、删除联系人</h2><p>功能描述：按照姓名进行删除指定联系人</p>
@@ -451,13 +627,54 @@
 <p>删除联系人前，我们需要先判断用户输入的联系人是否存在，如果存在删除，不存在提示用户没有要删除的联系人</p>
 <p>因此我们可以把检测联系人是否存在封装成一个函数中，如果存在，返回联系人在通讯录中的位置，不存在返回-1</p>
 <p>检测联系人是否存在代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断是否存在查询的人员，存在返回在数组中索引位置，不存在返回-1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isExist</span><span class="params">(Addressbooks * <span class="built_in">abs</span>, <span class="built_in">string</span> name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">abs</span>-&gt;m_Size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">abs</span>-&gt;personArray[i].m_Name == name)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">//判断是否存在查询的人员，存在返回在数组中索引位置，不存在返回-1
+int isExist(Addressbooks * abs, string name)
+{
+    for (int i = 0; i &lt; abs-&gt;m_Size; i++)
+    {
+        if (abs-&gt;personArray[i].m_Name == name)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+</code></pre>
 <h3 id="7-2-封装删除联系人函数"><a href="#7-2-封装删除联系人函数" class="headerlink" title="7.2 封装删除联系人函数"></a>7.2 封装删除联系人函数</h3><p>根据用户输入的联系人判断该通讯录中是否有此人</p>
 <p>查找到进行删除，并提示删除成功</p>
 <p>查不到提示查无此人。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3、删除指定联系人信息</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deletePerson</span><span class="params">(Addressbooks * <span class="built_in">abs</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入您要删除的联系人"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">string</span> name;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> ret = isExist(<span class="built_in">abs</span>, name);</span><br><span class="line">	<span class="keyword">if</span> (ret != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = ret; i &lt; <span class="built_in">abs</span>-&gt;m_Size; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">abs</span>-&gt;personArray[i] = <span class="built_in">abs</span>-&gt;personArray[i + <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">         <span class="built_in">abs</span>-&gt;m_Size--;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"删除成功"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"查无此人"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">//3、删除指定联系人信息
+void deletePerson(Addressbooks * abs)
+{
+    cout &lt;&lt; &quot;请输入您要删除的联系人&quot; &lt;&lt; endl;
+    string name;
+    cin &gt;&gt; name;
+
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        for (int i = ret; i &lt; abs-&gt;m_Size; i++)
+        {
+            abs-&gt;personArray[i] = abs-&gt;personArray[i + 1];
+        }
+         abs-&gt;m_Size--;
+        cout &lt;&lt; &quot;删除成功&quot; &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
+    }
+
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+</code></pre>
 <h3 id="7-3-测试删除联系人功能"><a href="#7-3-测试删除联系人功能" class="headerlink" title="7.3 测试删除联系人功能"></a>7.3 测试删除联系人功能</h3><p>在switch case 语句中，case3里添加：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">3</span>:  <span class="comment">//删除联系人</span></span><br><span class="line">	deletePerson(&amp;<span class="built_in">abs</span>);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">case 3:  //删除联系人
+    deletePerson(&amp;abs);
+    break;
+</code></pre>
 <p>测试效果如图：</p>
 <p>存在情况：</p>
 <p><img src="1544167951559.png" alt="1544167951559"></p>
@@ -471,9 +688,37 @@
 </ul>
 <h3 id="8-1-封装查找联系人函数"><a href="#8-1-封装查找联系人函数" class="headerlink" title="8.1 封装查找联系人函数"></a>8.1 封装查找联系人函数</h3><p>实现思路：判断用户指定的联系人是否存在，如果存在显示信息，不存在则提示查无此人。</p>
 <p>查找联系人代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//4、查找指定联系人信息</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findPerson</span><span class="params">(Addressbooks * <span class="built_in">abs</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入您要查找的联系人"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">string</span> name;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> ret = isExist(<span class="built_in">abs</span>, name);</span><br><span class="line">	<span class="keyword">if</span> (ret != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"姓名："</span> &lt;&lt; <span class="built_in">abs</span>-&gt;personArray[ret].m_Name &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"性别："</span> &lt;&lt; <span class="built_in">abs</span>-&gt;personArray[ret].m_Sex &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"年龄："</span> &lt;&lt; <span class="built_in">abs</span>-&gt;personArray[ret].m_Age &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"电话："</span> &lt;&lt; <span class="built_in">abs</span>-&gt;personArray[ret].m_Phone &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"住址："</span> &lt;&lt; <span class="built_in">abs</span>-&gt;personArray[ret].m_Addr &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"查无此人"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">//4、查找指定联系人信息
+void findPerson(Addressbooks * abs)
+{
+    cout &lt;&lt; &quot;请输入您要查找的联系人&quot; &lt;&lt; endl;
+    string name;
+    cin &gt;&gt; name;
+
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Name &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;性别：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Sex &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Age &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;电话：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Phone &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;住址：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Addr &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
+    }
+
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+
+}
+</code></pre>
 <h3 id="8-2-测试查找指定联系人"><a href="#8-2-测试查找指定联系人" class="headerlink" title="8.2 测试查找指定联系人"></a>8.2 测试查找指定联系人</h3><p>在switch case 语句中，case4里添加：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">4</span>:  <span class="comment">//查找联系人</span></span><br><span class="line">	findPerson(&amp;<span class="built_in">abs</span>);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">case 4:  //查找联系人
+    findPerson(&amp;abs);
+    break;
+</code></pre>
 <p>测试效果如图</p>
 <p>存在情况：</p>
 <p><img src="1544170057646.png" alt="1544170057646"></p>
@@ -487,9 +732,74 @@
 </ul>
 <h3 id="9-1-封装修改联系人函数"><a href="#9-1-封装修改联系人函数" class="headerlink" title="9.1 封装修改联系人函数"></a>9.1 封装修改联系人函数</h3><p>实现思路：查找用户输入的联系人，如果查找成功进行修改操作，查找失败提示查无此人</p>
 <p>修改联系人代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//5、修改指定联系人信息</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modifyPerson</span><span class="params">(Addressbooks * <span class="built_in">abs</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入您要修改的联系人"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">string</span> name;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> ret = isExist(<span class="built_in">abs</span>, name);</span><br><span class="line">	<span class="keyword">if</span> (ret != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//姓名</span></span><br><span class="line">		<span class="built_in">string</span> name;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入姓名："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; name;</span><br><span class="line">		<span class="built_in">abs</span>-&gt;personArray[ret].m_Name = name;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入性别："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"1 -- 男"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"2 -- 女"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//性别</span></span><br><span class="line">		<span class="keyword">int</span> sex = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; sex;</span><br><span class="line">			<span class="keyword">if</span> (sex == <span class="number">1</span> || sex == <span class="number">2</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">abs</span>-&gt;personArray[ret].m_Sex = sex;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有误，请重新输入"</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//年龄</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入年龄："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">int</span> age = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; age;</span><br><span class="line">		<span class="built_in">abs</span>-&gt;personArray[ret].m_Age = age;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//联系电话</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入联系电话："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">string</span> phone = <span class="string">""</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; phone;</span><br><span class="line">		<span class="built_in">abs</span>-&gt;personArray[ret].m_Phone = phone;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//家庭住址</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入家庭住址："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">string</span> address;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; address;</span><br><span class="line">		<span class="built_in">abs</span>-&gt;personArray[ret].m_Addr = address;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"修改成功"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"查无此人"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">//5、修改指定联系人信息
+void modifyPerson(Addressbooks * abs)
+{
+    cout &lt;&lt; &quot;请输入您要修改的联系人&quot; &lt;&lt; endl;
+    string name;
+    cin &gt;&gt; name;
+
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        //姓名
+        string name;
+        cout &lt;&lt; &quot;请输入姓名：&quot; &lt;&lt; endl;
+        cin &gt;&gt; name;
+        abs-&gt;personArray[ret].m_Name = name;
+
+        cout &lt;&lt; &quot;请输入性别：&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;1 -- 男&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;2 -- 女&quot; &lt;&lt; endl;
+
+        //性别
+        int sex = 0;
+        while (true)
+        {
+            cin &gt;&gt; sex;
+            if (sex == 1 || sex == 2)
+            {
+                abs-&gt;personArray[ret].m_Sex = sex;
+                break;
+            }
+            cout &lt;&lt; &quot;输入有误，请重新输入&quot;;
+        }
+
+        //年龄
+        cout &lt;&lt; &quot;请输入年龄：&quot; &lt;&lt; endl;
+        int age = 0;
+        cin &gt;&gt; age;
+        abs-&gt;personArray[ret].m_Age = age;
+
+        //联系电话
+        cout &lt;&lt; &quot;请输入联系电话：&quot; &lt;&lt; endl;
+        string phone = &quot;&quot;;
+        cin &gt;&gt; phone;
+        abs-&gt;personArray[ret].m_Phone = phone;
+
+        //家庭住址
+        cout &lt;&lt; &quot;请输入家庭住址：&quot; &lt;&lt; endl;
+        string address;
+        cin &gt;&gt; address;
+        abs-&gt;personArray[ret].m_Addr = address;
+
+        cout &lt;&lt; &quot;修改成功&quot; &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
+    }
+
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+
+}
+</code></pre>
 <h3 id="9-2-测试修改联系人功能"><a href="#9-2-测试修改联系人功能" class="headerlink" title="9.2 测试修改联系人功能"></a>9.2 测试修改联系人功能</h3><p>在switch case 语句中，case 5里添加：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">5</span>:  <span class="comment">//修改联系人</span></span><br><span class="line">	modifyPerson(&amp;<span class="built_in">abs</span>);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">case 5:  //修改联系人
+    modifyPerson(&amp;abs);
+    break;
+</code></pre>
 <p>测试效果如图：</p>
 <p>查不到指定联系人情况：</p>
 <p><img src="1544172265676.png" alt="1544172265676"></p>
@@ -505,9 +815,20 @@
 </ul>
 <h3 id="10-1-封装清空联系人函数"><a href="#10-1-封装清空联系人函数" class="headerlink" title="10.1 封装清空联系人函数"></a>10.1 封装清空联系人函数</h3><p>实现思路： 将通讯录所有联系人信息清除掉，只要将通讯录记录的联系人数量置为0，做逻辑清空即可。</p>
 <p>清空联系人代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//6、清空所有联系人</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cleanPerson</span><span class="params">(Addressbooks * <span class="built_in">abs</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">abs</span>-&gt;m_Size = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"通讯录已清空"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">//6、清空所有联系人
+void cleanPerson(Addressbooks * abs)
+{
+    abs-&gt;m_Size = 0;
+    cout &lt;&lt; &quot;通讯录已清空&quot; &lt;&lt; endl;
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+</code></pre>
 <h3 id="10-2-测试清空联系人"><a href="#10-2-测试清空联系人" class="headerlink" title="10.2  测试清空联系人"></a>10.2  测试清空联系人</h3><p>在switch case 语句中，case 6 里添加：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">6</span>:  <span class="comment">//清空联系人</span></span><br><span class="line">	cleanPerson(&amp;<span class="built_in">abs</span>);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">case 6:  //清空联系人
+    cleanPerson(&amp;abs);
+    break;
+</code></pre>
 <p>测试效果如图：</p>
 <p>清空通讯录</p>
 <p><img src="1544172909693.png" alt="1544172909693"></p>

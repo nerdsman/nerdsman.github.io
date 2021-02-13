@@ -406,11 +406,24 @@
 <h4 id="查询软连接命令（知道）"><a href="#查询软连接命令（知道）" class="headerlink" title="查询软连接命令（知道）"></a>查询软连接命令（知道）</h4><ul>
 <li>在很多 <code>Linux</code> 发行版中直接把 <code>vi</code> 做成 <code>vim</code> 的软连接</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找 vi 的运行文件</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">which</span> vi</span><br><span class="line">$ ls -l /usr/bin/vi</span><br><span class="line">$ ls -l /etc/alternatives/vi</span><br><span class="line">$ ls -l /usr/bin/vim.basic</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找 vim 的运行文件</span></span><br><span class="line">$ <span class="built_in">which</span> vim</span><br><span class="line">$ ls -l /usr/bin/vim</span><br><span class="line">$ ls -l /etc/alternatives/vim</span><br><span class="line">$ ls -l /usr/bin/vim.basic</span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># 查找 vi 的运行文件
+
+$ which vi
+$ ls -l /usr/bin/vi
+$ ls -l /etc/alternatives/vi
+$ ls -l /usr/bin/vim.basic
+
+# 查找 vim 的运行文件
+$ which vim
+$ ls -l /usr/bin/vim
+$ ls -l /etc/alternatives/vim
+$ ls -l /usr/bin/vim.basic 
+</code></pre>
 <h2 id="02-打开和新建文件"><a href="#02-打开和新建文件" class="headerlink" title="02. 打开和新建文件"></a>02. 打开和新建文件</h2><ul>
 <li>在终端中输入 <code>vi</code> <strong>在后面跟上文件名</strong> 即可</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi 文件名</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">$ vi 文件名
+</code></pre>
 <ul>
 <li>如果文件已经存在，会直接打开该文件</li>
 <li>如果文件不存在，会新建一个文件</li>
@@ -422,7 +435,8 @@
 <li><p>这个时候，可以使用以下命令打开文件</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi 文件名 +行数</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">$ vi 文件名 +行数
+</code></pre>
 <blockquote>
 <p>提示：如果只带上 <code>+</code> 而不指定行号，会直接定位到文件末尾</p>
 </blockquote>
@@ -821,8 +835,13 @@
 <ul>
 <li>删除命令可以和 <strong>移动命令</strong> 连用，以下是常见的组合命令：</li>
 </ul>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">* dw        # 从光标位置删除到单词末尾</span></span><br><span class="line"><span class="comment">* d0        # 从光标位置删除到一行的起始位置</span></span><br><span class="line"><span class="comment">* d&#125;        # 从光标位置删除到段落结尾</span></span><br><span class="line"><span class="comment">* ndd       # 从光标位置向下连续删除 n 行</span></span><br><span class="line"><span class="comment">* d代码行G   # 从光标所在行 删除到 指定代码行 之间的所有代码</span></span><br><span class="line"><span class="comment">* d'a       # 从光标所在行 删除到 标记a 之间的所有代码</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-6-复制、粘贴"><a href="#4-6-复制、粘贴" class="headerlink" title="4.6 复制、粘贴"></a>4.6 复制、粘贴</h3><ul>
+<pre><code>* dw        # 从光标位置删除到单词末尾
+* d0        # 从光标位置删除到一行的起始位置
+* d}        # 从光标位置删除到段落结尾
+* ndd       # 从光标位置向下连续删除 n 行
+* d代码行G   # 从光标所在行 删除到 指定代码行 之间的所有代码
+* d&#39;a       # 从光标所在行 删除到 标记a 之间的所有代码
+</code></pre><h3 id="4-6-复制、粘贴"><a href="#4-6-复制、粘贴" class="headerlink" title="4.6 复制、粘贴"></a>4.6 复制、粘贴</h3><ul>
 <li><code>vi</code> 中提供有一个 <strong>被复制文本的缓冲区</strong><ul>
 <li><strong>复制</strong> 命令会将选中的文字保存在缓冲区 </li>
 <li><strong>删除</strong> 命令删除的文字会被保存在缓冲区</li>
@@ -981,22 +1000,22 @@
 <li>在 <code>vi</code> 中查找和替换命令需要在 <strong>末行模式</strong> 下执行</li>
 <li>记忆命令格式：</li>
 </ul>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">:%s///g</span></span><br></pre></td></tr></table></figure>
-<h4 id="1-全局替换"><a href="#1-全局替换" class="headerlink" title="1) 全局替换"></a>1) 全局替换</h4><ul>
+<pre><code>:%s///g
+</code></pre><h4 id="1-全局替换"><a href="#1-全局替换" class="headerlink" title="1) 全局替换"></a>1) 全局替换</h4><ul>
 <li><strong>一次性</strong>替换文件中的 <strong>所有出现的旧文本</strong></li>
 <li>命令格式如下：</li>
 </ul>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">:%s/</span>旧文本/新文本/g</span><br></pre></td></tr></table></figure>
-<h4 id="2-可视区域替换"><a href="#2-可视区域替换" class="headerlink" title="2) 可视区域替换"></a>2) 可视区域替换</h4><ul>
+<pre><code>:%s/旧文本/新文本/g
+</code></pre><h4 id="2-可视区域替换"><a href="#2-可视区域替换" class="headerlink" title="2) 可视区域替换"></a>2) 可视区域替换</h4><ul>
 <li><strong>先选中</strong> 要替换文字的 <strong>范围</strong></li>
 <li>命令格式如下：</li>
 </ul>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="regexp">s/旧文本/新文本/g</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-确认替换"><a href="#3-确认替换" class="headerlink" title="3) 确认替换"></a>3) 确认替换</h4><ul>
+<pre><code>:s/旧文本/新文本/g
+</code></pre><h4 id="3-确认替换"><a href="#3-确认替换" class="headerlink" title="3) 确认替换"></a>3) 确认替换</h4><ul>
 <li>如果把末尾的 <code>g</code> 改成 <code>gc</code> 在替换的时候，会有提示！<strong>推荐使用！</strong></li>
 </ul>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">:%s/</span>旧文本/新文本/gc</span><br></pre></td></tr></table></figure>
-<ol>
+<pre><code>:%s/旧文本/新文本/gc
+</code></pre><ol>
 <li><code>y</code> - <code>yes</code> 替换</li>
 <li><code>n</code> - <code>no</code> 不替换</li>
 <li><code>a</code> - <code>all</code> 替换所有</li>
@@ -1281,8 +1300,9 @@
 <li><code>vimrc</code> 是 <code>vim</code> 的配置文件，可以设置 vim 的配置，包括：<strong>热键</strong>、<strong>配色</strong>、<strong>语法高亮</strong>、<strong>插件</strong> 等</li>
 <li><code>Linux</code> 中 <code>vimrc</code> 有两个位置，<strong>家目录下的配置文件优先级更高</strong></li>
 </ul>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">/etc/vim/vimrc</span></span><br><span class="line">~<span class="string">/.vimrc</span></span><br></pre></td></tr></table></figure>
-<ul>
+<pre><code>/etc/vim/vimrc
+~/.vimrc
+</code></pre><ul>
 <li>常用的插件有：<ul>
 <li>代码补全</li>
 <li>代码折叠</li>
