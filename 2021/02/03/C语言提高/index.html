@@ -358,10 +358,7 @@
           </header>
         
         <div class="entry-content">
-          <h2 id="C核心编程">C核心编程</h2>
-<h2 id="1-前言">1  前言</h2>
-<h3 id="1-1-听课要求">1.1 听课要求</h3>
-<ul>
+          <h2 id="C核心编程"><a href="#C核心编程" class="headerlink" title="C核心编程"></a>C核心编程</h2><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1  前言"></a>1  前言</h2><h3 id="1-1-听课要求"><a href="#1-1-听课要求" class="headerlink" title="1.1 听课要求"></a>1.1 听课要求</h3><ul>
 <li>专心听讲、积极思考；</li>
 <li>遇到不懂的暂时先记下，课后再问；</li>
 <li>准备一个笔记本，或者笔记软件（记事本、word、typroa、印象笔记等）</li>
@@ -374,8 +371,7 @@
 <li>如果时间允许，可以多去网上找对应阶段的学习资料面试题，</li>
 <li>注意作息，注意劳逸结合，积极锻炼。</li>
 </ul>
-<h3 id="1-2-技术层次">1.2 技术层次</h3>
-<table>
+<h3 id="1-2-技术层次"><a href="#1-2-技术层次" class="headerlink" title="1.2 技术层次"></a>1.2 技术层次</h3><table>
 <thead>
 <tr>
 <th>基础</th>
@@ -401,28 +397,23 @@
 </tr>
 </tbody>
 </table>
-<h2 id="2-内存分区">2 内存分区</h2>
-<h3 id="2-1-内存区域">2.1 内存区域</h3>
-<p>C/C++编译的程序占用的内存分为以下几个区域</p>
+<h2 id="2-内存分区"><a href="#2-内存分区" class="headerlink" title="2 内存分区"></a>2 内存分区</h2><h3 id="2-1-内存区域"><a href="#2-1-内存区域" class="headerlink" title="2.1 内存区域"></a>2.1 内存区域</h3><p>C/C++编译的程序占用的内存分为以下几个区域</p>
 <ul>
 <li>代码区</li>
 <li>全局区/静态区</li>
 <li>栈区</li>
 <li>堆区</li>
 </ul>
-<p><strong>划分：</strong></p>
-<p>​	程序运行前： 代码区、全局区/静态区</p>
-<p>​	程序运行后：栈区、堆区</p>
-<h3 id="2-2-内存四区">2.2  内存四区</h3>
-<h4 id="2-2-1-代码区">2.2.1  代码区</h4>
-<p>**作用：**存放CPU执行的二进制机器指令</p>
-<p><strong>特点：</strong></p>
+<p><strong>划分：</strong> </p>
+<p>​    程序运行前： 代码区、全局区/静态区</p>
+<p>​    程序运行后：栈区、堆区</p>
+<h3 id="2-2-内存四区"><a href="#2-2-内存四区" class="headerlink" title="2.2  内存四区"></a>2.2  内存四区</h3><h4 id="2-2-1-代码区"><a href="#2-2-1-代码区" class="headerlink" title="2.2.1  代码区"></a>2.2.1  代码区</h4><p><strong>作用：</strong>存放CPU执行的二进制机器指令</p>
+<p><strong>特点：</strong> </p>
 <ol>
 <li>只读</li>
 <li>共享</li>
 </ol>
-<h4 id="2-2-2-栈区">2.2.2 栈区</h4>
-<p><strong>特点：</strong></p>
+<h4 id="2-2-2-栈区"><a href="#2-2-2-栈区" class="headerlink" title="2.2.2 栈区"></a>2.2.2 栈区</h4><p><strong>特点：</strong></p>
 <ul>
 <li>栈是一种先进后出的内存结构，由编译器自动分配释放数据。</li>
 <li>主要存放函数的形式参数值、局部变量等。</li>
@@ -430,202 +421,180 @@
 <li>栈空间较小，不适合将大量数据存放在栈中</li>
 </ul>
 <p><strong>总结：</strong></p>
-<p>管理方式：编译器自动管理该区内存。<br>
-空间大小：提前规定、较小。<br>
-生命周期：函数使用完毕立即释放。</p>
+<p>管理方式：编译器自动管理该区内存。<br>空间大小：提前规定、较小。<br>生命周期：函数使用完毕立即释放。</p>
 <p><strong>注意事项：</strong></p>
 <ul>
 <li>不要返回局部变量的地址</li>
 </ul>
-<pre><code class="language-C">//栈区上开辟的数据由系统进行管理，不需要程序员管理开辟和释放
+<pre><code class="C">//栈区上开辟的数据由系统进行管理，不需要程序员管理开辟和释放
 int * func()
 {
-	int a = 10;
-	return &amp;a;
+    int a = 10;
+    return &amp;a;
 }
 //不管结果是否正确，这个值已经被释放了，不可以操作一块非法的内存空间
 void test01()
 {
-	int * p = func();
+    int * p = func();
 
-	printf(&quot;a = %d\n&quot;, *p);
-	printf(&quot;a = %d\n&quot;, *p); 
+    printf(&quot;a = %d\n&quot;, *p);
+    printf(&quot;a = %d\n&quot;, *p); 
 
 }
 </code></pre>
-<pre><code class="language-C">char * getString()
+<pre><code class="C">char * getString()
 {
-	char str[] = &quot;hello world&quot;;
-	return str;
+    char str[] = &quot;hello world&quot;;
+    return str;
 }
 
 void test02()
 {
-	char * p = NULL;
-	p = getString();
+    char * p = NULL;
+    p = getString();
 
-	printf(&quot;p = %s\n&quot;, p);
+    printf(&quot;p = %s\n&quot;, p);
 }
 </code></pre>
-<h4 id="2-2-3-堆区">2.2.3 堆区</h4>
-<h5 id="2-2-3-1-堆区基本概念">2.2.3.1 堆区基本概念</h5>
-<p><strong>特点：</strong></p>
+<h4 id="2-2-3-堆区"><a href="#2-2-3-堆区" class="headerlink" title="2.2.3 堆区"></a>2.2.3 堆区</h4><h5 id="2-2-3-1-堆区基本概念"><a href="#2-2-3-1-堆区基本概念" class="headerlink" title="2.2.3.1 堆区基本概念"></a>2.2.3.1 堆区基本概念</h5><p><strong>特点：</strong></p>
 <ul>
 <li>堆区由开发人员手动申请和释放，在释放之前，该块堆空间可一直使用。</li>
 <li>由程序员分配和释放，若程序员不释放，程序结束时由系统回收内存。</li>
 <li>堆空间一般没有软限制，只受限于硬件。会比栈空间更大，适宜存放较大数据。</li>
 </ul>
 <p><strong>总结：</strong></p>
-<p>管理方式：开发人员手动申请和释放。<br>
-空间大小：较大。<br>
-生命周期：手动释放之前一直存在，或程序结束由系统回收。</p>
+<p>管理方式：开发人员手动申请和释放。<br>空间大小：较大。<br>生命周期：手动释放之前一直存在，或程序结束由系统回收。</p>
 <p><strong>堆区使用：</strong></p>
-<pre><code class="language-C">int * getSpace()
+<pre><code class="C">int * getSpace()
 {
-	int * p =  malloc(sizeof(int)* 5);
-	if (p == NULL)
-	{
-		return;
-	}
-	for (int i = 0; i &lt; 5;i++)
-	{
-		p[i] = i + 100; //所有在连续空间上开辟的数据，都可以利用下标进行索引
-	}
-	return p;
+    int * p =  malloc(sizeof(int)* 5);
+    if (p == NULL)
+    {
+        return;
+    }
+    for (int i = 0; i &lt; 5;i++)
+    {
+        p[i] = i + 100; //所有在连续空间上开辟的数据，都可以利用下标进行索引
+    }
+    return p;
 }
 
 void test01()
 {
-	int * p = getSpace();
-	for (int i = 0; i &lt; 5;i++)
-	{
-		printf(&quot;%d\n&quot;, p[i]);
-	}
-	//堆区的数据  自己开辟，自己管理释放
-	free(p);
-	p = NULL;
+    int * p = getSpace();
+    for (int i = 0; i &lt; 5;i++)
+    {
+        printf(&quot;%d\n&quot;, p[i]);
+    }
+    //堆区的数据  自己开辟，自己管理释放
+    free(p);
+    p = NULL;
 }
 </code></pre>
-<h5 id="2-2-3-2-堆区注意事项">2.2.3.2 堆区注意事项</h5>
-<p><strong>注意事项：</strong></p>
+<h5 id="2-2-3-2-堆区注意事项"><a href="#2-2-3-2-堆区注意事项" class="headerlink" title="2.2.3.2 堆区注意事项"></a>2.2.3.2 堆区注意事项</h5><p><strong>注意事项：</strong></p>
 <p>主调函数中没有给指针分配内存，被调函数需要利用高级指针进行分屏</p>
 <p>分析以下代码运行的结果</p>
-<pre><code class="language-C">void allocateSpace(char * pp)
+<pre><code class="C">void allocateSpace(char * pp)
 {
-	char * temp = malloc(100);
-	memset(temp, 0, 100);
-	strcpy(temp, &quot;hello world&quot;);
-	pp = temp;
+    char * temp = malloc(100);
+    memset(temp, 0, 100);
+    strcpy(temp, &quot;hello world&quot;);
+    pp = temp;
 }
 
 void test02()
 {
-	char * p = NULL;
-	allocateSpace(p);
-	printf(&quot;%s\n&quot;, p);
+    char * p = NULL;
+    allocateSpace(p);
+    printf(&quot;%s\n&quot;, p);
 }
 </code></pre>
 <p><strong>解决方式1</strong></p>
-<pre><code class="language-C">//利用高级指针
+<pre><code class="C">//利用高级指针
 void allocateSpac2(char ** pp)
 {
-	char * temp = malloc(100);
-	memset(temp, 0, 100);
-	strcpy(temp, &quot;hello world&quot;);
-	*pp = temp;
-	printf(&quot;aaa%s\n&quot;, *pp);
+    char * temp = malloc(100);
+    memset(temp, 0, 100);
+    strcpy(temp, &quot;hello world&quot;);
+    *pp = temp;
+    printf(&quot;aaa%s\n&quot;, *pp);
 }
 
 void test03()
 {
-	char * p = NULL;
-	allocateSpac2(&amp;p);
-	printf(&quot;%s\n&quot;, p);
+    char * p = NULL;
+    allocateSpac2(&amp;p);
+    printf(&quot;%s\n&quot;, p);
 }
 </code></pre>
 <p><strong>解决方式2</strong></p>
-<pre><code class="language-C">//利用返回值
+<pre><code class="C">//利用返回值
 char* allocateSpace3()
 {
-	char *temp = malloc(100);
-	memset(temp, 0, 100);
+    char *temp = malloc(100);
+    memset(temp, 0, 100);
 
-	strcpy(temp, &quot;hello world&quot;);
-	return temp;
+    strcpy(temp, &quot;hello world&quot;);
+    return temp;
 }
 void test04()
 {
-	char *p = NULL;
-	p = allocateSpace3();
-	printf(&quot;%s\n&quot;, p);
+    char *p = NULL;
+    p = allocateSpace3();
+    printf(&quot;%s\n&quot;, p);
 }
 </code></pre>
-<h5 id="2-2-3-3-calloc和realloc">2.2.3.3 calloc和realloc</h5>
-<p>内存申请我们可使用三个函数来完成，分别为：malloc、calloc、realloc，内存释放我们只需要使用 free 函数。</p>
+<h5 id="2-2-3-3-calloc和realloc"><a href="#2-2-3-3-calloc和realloc" class="headerlink" title="2.2.3.3 calloc和realloc"></a>2.2.3.3 calloc和realloc</h5><p>内存申请我们可使用三个函数来完成，分别为：malloc、calloc、realloc，内存释放我们只需要使用 free 函数。 </p>
 <ol>
-<li>malloc 函数:<br>
-原型：<code>void *malloc(unsigned int num_bytes)</code><br>
-用法：分配长度为 num_bytes 字节的内存块。<br>
-说明：如果分配成功则返回指向被分配内存的指针，否则返回 NULL。</li>
-<li>calloc 函数:<br>
-原型：<code>void *calloc(int num_elems, int elem_size)</code><br>
-用法：为具有 num_elems 个长度为 elem_size 元素的数组分配内存。<br>
-说明：如果分配成功则返回指向被分配内存的指针，否则返回 NULL。</li>
-<li>realloc 函数:<br>
-原型：<code>void *realloc(void *mem_address, unsigned int newsize)</code><br>
-作用：改变 mem_address 所指内存区域的大小为 newsize 长度。<br>
-说明：如果重新分配成功则返回指向被分配内存的指针，否则返回 NULL。</li>
-<li>free 函数:<br>
-原型：<code>void free(void *p);</code><br>
-作用：释放指针 p 所指向的的内存空间。<br>
-说明：p所指向的内存空间必须是用 calloc,malloc,realloc 所分配的内存。如果 p 为 NULL则不做任何操作。</li>
+<li>malloc 函数:<br>原型：<code>void *malloc(unsigned int num_bytes)</code><br>用法：分配长度为 num_bytes 字节的内存块。<br>说明：如果分配成功则返回指向被分配内存的指针，否则返回 NULL。</li>
+<li>calloc 函数:<br>原型：<code>void *calloc(int num_elems, int elem_size)</code><br>用法：为具有 num_elems 个长度为 elem_size 元素的数组分配内存。<br>说明：如果分配成功则返回指向被分配内存的指针，否则返回 NULL。</li>
+<li>realloc 函数:<br>原型：<code>void *realloc(void *mem_address, unsigned int newsize)</code><br>作用：改变 mem_address 所指内存区域的大小为 newsize 长度。<br>说明：如果重新分配成功则返回指向被分配内存的指针，否则返回 NULL。</li>
+<li>free 函数:<br>原型：<code>void free(void *p);</code><br>作用：释放指针 p 所指向的的内存空间。<br>说明：p所指向的内存空间必须是用 calloc,malloc,realloc 所分配的内存。如果 p 为 NULL则不做任何操作。</li>
 </ol>
 <p><strong>calloc案例：</strong></p>
-<pre><code class="language-C">//1. calloc
+<pre><code class="C">//1. calloc
 void test01()
 {
-	int *p =  calloc(10,sizeof(int));  
-	for (int i = 0; i &lt; 10; ++i)
-	{
-		p[i] = i + 1;
-	}
-	for (int i = 0; i &lt; 10; ++i)
-	{
-		printf(&quot;%d\n&quot;, p[i]);
-	}
-	if (p != NULL)
-	{
-		free(p);
-		p = NULL;
-	}
+    int *p =  calloc(10,sizeof(int));  
+    for (int i = 0; i &lt; 10; ++i)
+    {
+        p[i] = i + 1;
+    }
+    for (int i = 0; i &lt; 10; ++i)
+    {
+        printf(&quot;%d\n&quot;, p[i]);
+    }
+    if (p != NULL)
+    {
+        free(p);
+        p = NULL;
+    }
 }
 </code></pre>
 <p><strong>realloc案例：</strong></p>
-<pre><code class="language-C">void test02()
+<pre><code class="C">void test02()
 {
-	int *p = malloc(sizeof(int)* 10);
-	for (int i = 0; i &lt; 10; ++i)
-	{
-		p[i] = i + 1;
-	}
-	for (int i = 0; i &lt; 10; ++i)
-	{
-		printf(&quot;%d &quot;, p[i]);
-	}
-	printf(&quot;%d\n&quot;, p);
-    
-	p = realloc(p, sizeof(int)* 200);   
-	printf(&quot;%d\n&quot;,p);
+    int *p = malloc(sizeof(int)* 10);
+    for (int i = 0; i &lt; 10; ++i)
+    {
+        p[i] = i + 1;
+    }
+    for (int i = 0; i &lt; 10; ++i)
+    {
+        printf(&quot;%d &quot;, p[i]);
+    }
+    printf(&quot;%d\n&quot;, p);
 
-	for (int i = 0; i &lt; 15; ++i)
-	{
-		printf(&quot;%d &quot;, p[i]);
-	}
+    p = realloc(p, sizeof(int)* 200);   
+    printf(&quot;%d\n&quot;,p);
+
+    for (int i = 0; i &lt; 15; ++i)
+    {
+        printf(&quot;%d &quot;, p[i]);
+    }
 }
 </code></pre>
-<h4 id="2-2-4-全局-静态区">2.2.4 全局/静态区</h4>
-<h5 id="2-2-4-1-基本概念">2.2.4.1 基本概念</h5>
-<p><strong>特点：</strong></p>
+<h4 id="2-2-4-全局-静态区"><a href="#2-2-4-全局-静态区" class="headerlink" title="2.2.4 全局/静态区"></a>2.2.4 全局/静态区</h4><h5 id="2-2-4-1-基本概念"><a href="#2-2-4-1-基本概念" class="headerlink" title="2.2.4.1 基本概念"></a>2.2.4.1 基本概念</h5><p><strong>特点：</strong></p>
 <ul>
 <li>全局/静态区存储<strong>全局变量、静态变量、常量</strong>，该区变量在程序运行期间一直存在</li>
 <li>程序结束由系统回收。</li>
@@ -633,93 +602,89 @@ void test01()
 <li>该区变量当未初始化时，会有有默认值初始化。</li>
 </ul>
 <p><strong>总结：</strong></p>
-<p>管理方式：编译器自动管理该区内存。<br>
-生命周期：程序结束释放。</p>
-<h5 id="2-2-4-2-全局变量">2.2.4.2 全局变量</h5>
-<pre><code class="language-C">//其他文件中声明第二行代码
+<p>管理方式：编译器自动管理该区内存。<br>生命周期：程序结束释放。</p>
+<h5 id="2-2-4-2-全局变量"><a href="#2-2-4-2-全局变量" class="headerlink" title="2.2.4.2 全局变量"></a>2.2.4.2 全局变量</h5><pre><code class="C">//其他文件中声明第二行代码
 extern int g_a = 10; //c语言中 默认全局变量前 加了关键字 extern
 
 void test01()
 {
-	extern int g_a;
-	printf(&quot;g_a = %d\n&quot;, g_a);
+    extern int g_a;
+    printf(&quot;g_a = %d\n&quot;, g_a);
 }
 </code></pre>
-<pre><code class="language-C">extern int g_b;
+<pre><code class="C">extern int g_b;
 void test02()
 {
-	printf(&quot;g_b = %d\n&quot;, g_b);
+    printf(&quot;g_b = %d\n&quot;, g_b);
 }
 </code></pre>
-<h5 id="2-2-4-3-静态变量">2.2.4.3 静态变量</h5>
-<pre><code class="language-C">void func()
+<h5 id="2-2-4-3-静态变量"><a href="#2-2-4-3-静态变量" class="headerlink" title="2.2.4.3 静态变量"></a>2.2.4.3 静态变量</h5><pre><code class="C">void func()
 {
-	static int s_a = 10; //静态变量只初始化一次
-	s_a++;
-	printf(&quot;%d\n&quot;, s_a);
+    static int s_a = 10; //静态变量只初始化一次
+    s_a++;
+    printf(&quot;%d\n&quot;, s_a);
 }
 
 void test03()
 {
-	func();
-	func();
-	func();
+    func();
+    func();
+    func();
 }
 </code></pre>
-<pre><code class="language-C">void test04()
+<pre><code class="C">void test04()
 {
-	static int s_a; //如果未初始化，默认为0
-	printf(&quot;%d\n&quot;, s_a);
+    static int s_a; //如果未初始化，默认为0
+    printf(&quot;%d\n&quot;, s_a);
 }
 </code></pre>
-<h5 id="2-2-3-4-常量">2.2.3.4 常量</h5>
-<ol>
+<h5 id="2-2-3-4-常量"><a href="#2-2-3-4-常量" class="headerlink" title="2.2.3.4 常量"></a>2.2.3.4 常量</h5><ol>
 <li>const修饰的变量</li>
 <li>字符串常量</li>
 </ol>
 <p><strong>const修饰的变量：</strong></p>
-<pre><code class="language-C">//全局常量
+<pre><code class="C">//全局常量
 const int a = 10; //全局常量存放到常量区，收到常量区的保护
 
 void test01()
 {
     //a = 20; //直接修改失败
-	int * p = &amp;a;
-	*p = 30;  //间接修改 语法通过，运行失败
-	printf(&quot;a = %d &quot;, a); 
+    int * p = &amp;a;
+    *p = 30;  //间接修改 语法通过，运行失败
+    printf(&quot;a = %d &quot;, a); 
 
 
-	//局部常量
-	const int b = 10; //b分配到了栈上,可以通过间接方式对其进行修改
-	//b = 30; //直接修改失败
-	int * p2 = &amp;b;
-	*p2 = 30;
-	printf(&quot;b = %d\n&quot;, b); //间接修改成功，C语言下const修饰的局部常量为伪常量
+    //局部常量
+    const int b = 10; //b分配到了栈上,可以通过间接方式对其进行修改
+    //b = 30; //直接修改失败
+    int * p2 = &amp;b;
+    *p2 = 30;
+    printf(&quot;b = %d\n&quot;, b); //间接修改成功，C语言下const修饰的局部常量为伪常量
 }
 
 </code></pre>
-<p><strong>结论：</strong></p>
-<p>​	全局修改失败，局部修改成功</p>
+<p><strong>结论：</strong> </p>
+<p>​    全局修改失败，局部修改成功</p>
 <p><strong>字符串常量：</strong></p>
-<pre><code class="language-C">//1、字符串常量 是可以共享的
+<pre><code class="C">//1、字符串常量 是可以共享的
 void test01()
 {
-	char * p1= &quot;hello world&quot;;
-	char * p2 = &quot;hello world&quot;;
-	char * p3 = &quot;hello world&quot;;
-	printf(&quot;%d\n&quot;,&amp;&quot;hello world&quot;);
-	printf(&quot;%d\n&quot;, p1);
-	printf(&quot;%d\n&quot;, p2);
-	printf(&quot;%d\n&quot;, p3);
+    char * p1= &quot;hello world&quot;;
+    char * p2 = &quot;hello world&quot;;
+    char * p3 = &quot;hello world&quot;;
+    printf(&quot;%d\n&quot;,&amp;&quot;hello world&quot;);
+    printf(&quot;%d\n&quot;, p1);
+    printf(&quot;%d\n&quot;, p2);
+    printf(&quot;%d\n&quot;, p3);
 }
 
 //2、vs下 不可以修改字符串常量中的内存
 void test02()
 {
-	char * p1 = &quot;hello world&quot;;
-	printf(&quot;%d\n&quot;, p1);
-	printf(&quot;%c\n&quot;, p1[0]);
-	//p1[0] = 'W'; //不允许修改 常量区内容
+    char * p1 = &quot;hello world&quot;;
+    printf(&quot;%d\n&quot;, p1);
+    printf(&quot;%c\n&quot;, p1[0]);
+    //p1[0] = &#39;W&#39;; //不允许修改 常量区内容
 }
 </code></pre>
 <p>上述案例中字符串常量修改失败，但这不是绝对的</p>
@@ -729,46 +694,43 @@ void test02()
 <li>有些编译器可修改字符串常量，有些编译器则不可修改字符串常量</li>
 </ul>
 <p><strong>结论： 尽量不要去修改字符串常量</strong></p>
-<h3 id="2-3-函数调用模型">2.3 函数调用模型</h3>
-<h4 id="2-3-1-宏函数">2.3.1 宏函数</h4>
-<p><strong>宏函数概念：</strong></p>
+<h3 id="2-3-函数调用模型"><a href="#2-3-函数调用模型" class="headerlink" title="2.3 函数调用模型"></a>2.3 函数调用模型</h3><h4 id="2-3-1-宏函数"><a href="#2-3-1-宏函数" class="headerlink" title="2.3.1 宏函数"></a>2.3.1 宏函数</h4><p><strong>宏函数概念：</strong></p>
 <ul>
 <li>宏函数和宏常量都是利用#define定义出来的内容</li>
 <li>在项目中，经常把一些短小而又频繁使用的函数写成宏函数</li>
 <li>这是由于宏函数没有普通函数参数压栈、跳转、返回等时间上的开销，可以调高程序的效率。</li>
 </ul>
 <p><strong>注意事项：</strong> 宏函数通常需要加括号，保证运算的完整</p>
-<pre><code class="language-C">#define MYADD(x,y)  ((x) + (y)) //不是函数 ，宏函数
+<pre><code class="C">#define MYADD(x,y)  ((x) + (y)) //不是函数 ，宏函数
 
 //普通函数下的a、b都要进行入栈，函数执行后出栈
 int  myAdd(int a ,int b)
 {
-	return a + b;
+    return a + b;
 }
 //宏函数  在一定的场景下  要比普通的函数效率高，把频繁使用并且短小的函数 可以写成宏函数
 //宏函数在编译阶段就替换源码
 //而没有普通函数入栈出栈的开销，以空间换时间
 void test01()
 {
-	int a = 10;
-	int b = 20;
-	printf(&quot;a + b = %d\n&quot;, MYADD(a, b)); //  ((a) + (b))
+    int a = 10;
+    int b = 20;
+    printf(&quot;a + b = %d\n&quot;, MYADD(a, b)); //  ((a) + (b))
 }
 </code></pre>
-<p>**总结：**将频繁短小的函数可以封装为宏函数，以空间换时间。</p>
-<h4 id="2-3-2-函数调用流程">2.3.2 函数调用流程</h4>
-<p>在2.3.1中我们学会了宏函数，其中讲到了普通函数执行的时候会有些时间的开销</p>
+<p><strong>总结：</strong>将频繁短小的函数可以封装为宏函数，以空间换时间。</p>
+<h4 id="2-3-2-函数调用流程"><a href="#2-3-2-函数调用流程" class="headerlink" title="2.3.2 函数调用流程"></a>2.3.2 函数调用流程</h4><p>在2.3.1中我们学会了宏函数，其中讲到了普通函数执行的时候会有些时间的开销</p>
 <p>下面我通过以下案例来分析下 ，一个简单的函数调用流程</p>
-<pre><code class="language-C">int func(int a,int b){
-	int t_a = a;
-	int t_b = b;
-	return t_a + t_b;
+<pre><code class="C">int func(int a,int b){
+    int t_a = a;
+    int t_b = b;
+    return t_a + t_b;
 }
 
 int main(){
-	int ret = 0;
-	ret = func(10, 20);
-	return EXIT_SUCCESS;
+    int ret = 0;
+    ret = func(10, 20);
+    return EXIT_SUCCESS;
 }
 </code></pre>
 <p>通过上面的案例，我们知道一个普通函数的调用流程</p>
@@ -778,11 +740,10 @@ int main(){
 <li>当被调函数执行完毕后，a、b这两个参数是由主调函数mian去管理释放还是被调函数func管理释放？</li>
 </ol>
 <p>带着这两个问题来看<strong>2.3.3 调用惯例</strong></p>
-<h4 id="2-3-3-调用惯例">2.3.3 调用惯例</h4>
-<p><strong>调用惯例概念：</strong></p>
+<h4 id="2-3-3-调用惯例"><a href="#2-3-3-调用惯例" class="headerlink" title="2.3.3 调用惯例"></a>2.3.3 调用惯例</h4><p><strong>调用惯例概念：</strong></p>
 <p>函数的调用方（主调函数）和被调用方（）对于函数是如何调用的必须有一个明确的约定，</p>
 <p>只有双方都遵循同样的约定，函数才能够被正确的调用，这样的约定被称为<strong>调用惯例</strong></p>
-<p>C/C++语言中存在多个调用惯例，默认使用的调用惯例为 <strong>cdecl</strong></p>
+<p>C/C++语言中存在多个调用惯例，默认使用的调用惯例为 <strong>cdecl</strong> </p>
 <p><strong>注: cdecl不是标准的关键字，在不同的编译器里可能有不同的写法，例如gcc里就不存在_cdecl这样的关键字</strong></p>
 <p>调用惯例包含的内容有：</p>
 <table>
@@ -821,231 +782,216 @@ int main(){
 </tr>
 </tbody>
 </table>
-<h4 id="2-3-4-栈的生长方向">2.3.4 栈的生长方向</h4>
-<p>**作用：**了解栈中元素与元素之间的存储方式</p>
-<pre><code class="language-C">//栈的生长方向   自上而下  ，栈底高地址  栈顶低地址
+<h4 id="2-3-4-栈的生长方向"><a href="#2-3-4-栈的生长方向" class="headerlink" title="2.3.4 栈的生长方向"></a>2.3.4 栈的生长方向</h4><p><strong>作用：</strong>了解栈中元素与元素之间的存储方式</p>
+<pre><code class="C">//栈的生长方向   自上而下  ，栈底高地址  栈顶低地址
 void test01()
 {
-	int a = 10;
-	int b = 20;
-	int c = 30;
-	int d = 40;
+    int a = 10;
+    int b = 20;
+    int c = 30;
+    int d = 40;
 
-	printf(&quot;%d\n&quot;, &amp;a); 
-	printf(&quot;%d\n&quot;, &amp;b);
-	printf(&quot;%d\n&quot;, &amp;c);
-	printf(&quot;%d\n&quot;, &amp;d);
+    printf(&quot;%d\n&quot;, &amp;a); 
+    printf(&quot;%d\n&quot;, &amp;b);
+    printf(&quot;%d\n&quot;, &amp;c);
+    printf(&quot;%d\n&quot;, &amp;d);
 }
 </code></pre>
-<p>**结论：**栈底高地址  栈顶低地址</p>
-<h4 id="2-3-5-内存存储方式">2.3.5 内存存储方式</h4>
-<p>内存中的多字节数据相对于内存地址有大端和小端之分。</p>
+<p><strong>结论：</strong>栈底高地址  栈顶低地址</p>
+<h4 id="2-3-5-内存存储方式"><a href="#2-3-5-内存存储方式" class="headerlink" title="2.3.5 内存存储方式"></a>2.3.5 内存存储方式</h4><p>内存中的多字节数据相对于内存地址有大端和小端之分。</p>
 <p>小端模式：==高==位字节数据保存在内存的==高==地址中，==低==位字节数据保存在内存的==低==地址中</p>
 <p>大端模式：==高==位字节数据保存在内存的==低==地址中，==低==位字节数据保存在内存的==高==地址中</p>
 <p><strong>验证方式：</strong></p>
-<pre><code class="language-C">	int a = 0x11223344;
-	char * p = &amp;a; //char * 改变指针步长，一次跳一个字节 
+<pre><code class="C">    int a = 0x11223344;
+    char * p = &amp;a; //char * 改变指针步长，一次跳一个字节 
 
-	printf(&quot;%x\n&quot;, *p);      // 44  低地址  -- 低位字节
-	printf(&quot;%x\n&quot;, *(p+1));
-	printf(&quot;%x\n&quot;, *(p+2));
-	printf(&quot;%x\n&quot;, *(p+3));  // 11  高地址  --  高位字节
+    printf(&quot;%x\n&quot;, *p);      // 44  低地址  -- 低位字节
+    printf(&quot;%x\n&quot;, *(p+1));
+    printf(&quot;%x\n&quot;, *(p+2));
+    printf(&quot;%x\n&quot;, *(p+3));  // 11  高地址  --  高位字节
 </code></pre>
-<h2 id="3-指针进阶">3 指针进阶</h2>
-<h3 id="3-1-空指针和野指针">3.1 空指针和野指针</h3>
-<h4 id="3-1-1-空指针">3.1.1 空指针</h4>
-<p>​	含义：特殊的指针变量，表示不指向任何东西</p>
-<p>​	作用：指针变量创建的时候，可以初始化为NULL</p>
-<p>​	注意：不要对空指针进行解引用操作</p>
-<h4 id="3-1-2-野指针">3.1.2 野指针</h4>
-<p>​	含义：野指针指向一个已释放的内存或者未申请过的内存空间</p>
-<p>​	注意：不要对野指针进行解引用操作</p>
-<pre><code class="language-C">void test01(){
-	char *p = NULL;
-	//给p指向的内存区域拷贝内容
-	strcpy(p, &quot;1111&quot;); //err
+<h2 id="3-指针进阶"><a href="#3-指针进阶" class="headerlink" title="3 指针进阶"></a>3 指针进阶</h2><h3 id="3-1-空指针和野指针"><a href="#3-1-空指针和野指针" class="headerlink" title="3.1 空指针和野指针"></a>3.1 空指针和野指针</h3><h4 id="3-1-1-空指针"><a href="#3-1-1-空指针" class="headerlink" title="3.1.1 空指针"></a>3.1.1 空指针</h4><p>​    含义：特殊的指针变量，表示不指向任何东西</p>
+<p>​    作用：指针变量创建的时候，可以初始化为NULL</p>
+<p>​    注意：不要对空指针进行解引用操作</p>
+<h4 id="3-1-2-野指针"><a href="#3-1-2-野指针" class="headerlink" title="3.1.2 野指针"></a>3.1.2 野指针</h4><p>​    含义：野指针指向一个已释放的内存或者未申请过的内存空间</p>
+<p>​    注意：不要对野指针进行解引用操作</p>
+<pre><code class="C">void test01(){
+    char *p = NULL;
+    //给p指向的内存区域拷贝内容
+    strcpy(p, &quot;1111&quot;); //err
 
-	char *q = 0x1122;
-	//给q指向的内存区域拷贝内容
-	strcpy(q, &quot;2222&quot;); //err		
+    char *q = 0x1122;
+    //给q指向的内存区域拷贝内容
+    strcpy(q, &quot;2222&quot;); //err        
 }
 </code></pre>
-<h4 id="3-1-3-常见的野指针">3.1.3 常见的野指针</h4>
-<ol>
+<h4 id="3-1-3-常见的野指针"><a href="#3-1-3-常见的野指针" class="headerlink" title="3.1.3 常见的野指针"></a>3.1.3 常见的野指针</h4><ol>
 <li>指针变量为初始化</li>
 <li>释放堆区的指针后未置空</li>
 <li>指针操作超越了变量作用域</li>
 </ol>
-<pre><code class="language-C">int* func()
+<pre><code class="C">int* func()
 {
-	int a = 10; 
-	int * p = &amp;a; 
-	return p;
+    int a = 10; 
+    int * p = &amp;a; 
+    return p;
 }
 
 void test02()
 {
-	//1 指针变量未初始化
-	int * p1;
-	//printf(&quot;%d\n&quot;, *p1);
+    //1 指针变量未初始化
+    int * p1;
+    //printf(&quot;%d\n&quot;, *p1);
 
-	//2 指针释放后未置空
-	int * p2 = (int*)malloc(sizeof(int));
-	*p2 = 100;
-	free(p2);
-	printf(&quot;%d\n&quot;, *p2); //乱码 已经释放了
+    //2 指针释放后未置空
+    int * p2 = (int*)malloc(sizeof(int));
+    *p2 = 100;
+    free(p2);
+    printf(&quot;%d\n&quot;, *p2); //乱码 已经释放了
 
-	//3 指针操作超越变量作用域
-	int * p3 = func();
-	printf(&quot;%d\n&quot;, *p3);
+    //3 指针操作超越变量作用域
+    int * p3 = func();
+    printf(&quot;%d\n&quot;, *p3);
 }
 </code></pre>
 <p>注意： <code>空指针可以free，但是野指针不可以</code></p>
-<h3 id="3-2-指针步长的意义">3.2 指针步长的意义</h3>
-<p>作用：清楚不同类型的指针有何不同的意义</p>
+<h3 id="3-2-指针步长的意义"><a href="#3-2-指针步长的意义" class="headerlink" title="3.2 指针步长的意义"></a>3.2 指针步长的意义</h3><p>作用：清楚不同类型的指针有何不同的意义</p>
 <ul>
 <li>指针变量+1后跳跃字节数量不同</li>
 <li>解引用的时候，取出字节数量不同</li>
 </ul>
-<pre><code class="language-C">void test01()
+<pre><code class="C">void test01()
 {
-	char * p = NULL;
-	printf(&quot;%d\n&quot;, p);
-	printf(&quot;%d\n&quot;, p+1);
+    char * p = NULL;
+    printf(&quot;%d\n&quot;, p);
+    printf(&quot;%d\n&quot;, p+1);
 
-	int * p1 = NULL;
-	printf(&quot;%d\n&quot;, p1);
-	printf(&quot;%d\n&quot;, p1 + 1);
+    int * p1 = NULL;
+    printf(&quot;%d\n&quot;, p1);
+    printf(&quot;%d\n&quot;, p1 + 1);
 }
 
 //2、解引用时候  取多少字节数
 void test02()
 {
-	char buf[1024] = { 0 }; //1024字节
-	int a = 1000;  //4字节
-	memcpy(buf+1, &amp;a, sizeof(int));
-	char * p = buf;
-	printf(&quot;%d\n&quot;,  *(int*)(p+1) );
+    char buf[1024] = { 0 }; //1024字节
+    int a = 1000;  //4字节
+    memcpy(buf+1, &amp;a, sizeof(int));
+    char * p = buf;
+    printf(&quot;%d\n&quot;,  *(int*)(p+1) );
 }
 </code></pre>
 <p>练习：在下面结构体中利用地址偏移，找到结构体中d属性的位置以及打印该属性</p>
-<pre><code class="language-C">struct Person
+<pre><code class="C">struct Person
 {
-	char a; 0 ~ 3
-	int b;  4 ~ 7
-	char buf[64];  8 ~ 71
-	int d;   72 ~ 75
+    char a; 0 ~ 3
+    int b;  4 ~ 7
+    char buf[64];  8 ~ 71
+    int d;   72 ~ 75
 };
 
 void test03()
 {
-	struct Person  p = { 'A', 10, &quot;hello world&quot;, 10000 };
+    struct Person  p = { &#39;A&#39;, 10, &quot;hello world&quot;, 10000 };
 
-	//自定义数据类型找偏移量 可以通过函数寻找
-	printf(&quot;%d\n&quot;, offsetof(struct Person, d));//#include &lt;stddef.h&gt;
+    //自定义数据类型找偏移量 可以通过函数寻找
+    printf(&quot;%d\n&quot;, offsetof(struct Person, d));//#include &lt;stddef.h&gt;
 
-	//打印d的数字
-	printf(&quot;d = %d\n&quot;, *(int*)((char *)&amp;p + offsetof(struct Person, d)));
+    //打印d的数字
+    printf(&quot;d = %d\n&quot;, *(int*)((char *)&amp;p + offsetof(struct Person, d)));
 }
 </code></pre>
-<h3 id="3-3-指针的间接赋值">3.3 指针的间接赋值</h3>
-<p>变量的修改方式有两种：直接修改、间接修改</p>
+<h3 id="3-3-指针的间接赋值"><a href="#3-3-指针的间接赋值" class="headerlink" title="3.3 指针的间接赋值"></a>3.3 指针的间接赋值</h3><p>变量的修改方式有两种：直接修改、间接修改</p>
 <p>通过指针可以进行间接赋值，间接赋值成立的条件为：</p>
 <ol>
 <li>两个变量（普通变量+指针变量） / (实参+形参)</li>
 <li>建立关系</li>
 <li>通过*操作指针指向的内存</li>
 </ol>
-<pre><code class="language-C">void changeValue(int *p)
+<pre><code class="C">void changeValue(int *p)
 {
-	*p = 1000;
+    *p = 1000;
 }
 
 void test01()
 {
-	//1 、一个普通变量 和一个指针变量  构成指针的间接赋值
-	int a = 10;
-	int * p = &amp;a;
-	*p = 100;
-	printf(&quot;a = %d\n&quot;, a);
+    //1 、一个普通变量 和一个指针变量  构成指针的间接赋值
+    int a = 10;
+    int * p = &amp;a;
+    *p = 100;
+    printf(&quot;a = %d\n&quot;, a);
 
-	//2、通过实参和形参 进行间接赋值
-	int a2 = 0;
-	changeValue(&amp;a2);
-	printf(&quot;a2 = %d\n&quot;, a2);
+    //2、通过实参和形参 进行间接赋值
+    int a2 = 0;
+    changeValue(&amp;a2);
+    printf(&quot;a2 = %d\n&quot;, a2);
 }
 </code></pre>
 <p>思考：如果我们可以提前知道变量的地址编号，是否也可以修改内存空间？</p>
-<h3 id="3-4-指针做函数参数输入输出特性">3.4 指针做函数参数输入输出特性</h3>
-<p>输入特性：主调函数分配内存，被调函数使用</p>
+<h3 id="3-4-指针做函数参数输入输出特性"><a href="#3-4-指针做函数参数输入输出特性" class="headerlink" title="3.4 指针做函数参数输入输出特性"></a>3.4 指针做函数参数输入输出特性</h3><p>输入特性：主调函数分配内存，被调函数使用</p>
 <p>输出特性：被调函数分配内存，主调函数使用</p>
-<h4 id="3-4-1-输入特性">3.4.1 输入特性</h4>
-<pre><code class="language-C">//栈区分配
+<h4 id="3-4-1-输入特性"><a href="#3-4-1-输入特性" class="headerlink" title="3.4.1 输入特性"></a>3.4.1 输入特性</h4><pre><code class="C">//栈区分配
 void fun(char *p)
 {
-	//给p指向的内存区域拷贝内容
-	strcpy(p, &quot;helloabcde&quot;);
+    //给p指向的内存区域拷贝内容
+    strcpy(p, &quot;helloabcde&quot;);
 }
 
 void test02(void)
 {
-	//栈上分配内存
-	//输入，主调函数分配内存
-	char buf[1024] = { 0 };
-	fun(buf);
-	printf(&quot;buf  = %s\n&quot;, buf);
+    //栈上分配内存
+    //输入，主调函数分配内存
+    char buf[1024] = { 0 };
+    fun(buf);
+    printf(&quot;buf  = %s\n&quot;, buf);
 }
 
 //堆区分配
 void printString(char * str)
 {
-	printf(&quot;%s\n&quot;, str);  
+    printf(&quot;%s\n&quot;, str);  
 }
 void test01()
 {
-	//堆区分配内存
-	char * p = malloc(sizeof(char)* 64);
-	memset(p, 0, 64);
-	strcpy(p, &quot;hello world&quot;);
-	printString(p);
+    //堆区分配内存
+    char * p = malloc(sizeof(char)* 64);
+    memset(p, 0, 64);
+    strcpy(p, &quot;hello world&quot;);
+    printString(p);
 }
 </code></pre>
-<h3 id="3-4-2-输出特性">3.4.2 输出特性</h3>
-<pre><code class="language-C">void allocteSpace( char  ** p)
+<h3 id="3-4-2-输出特性"><a href="#3-4-2-输出特性" class="headerlink" title="3.4.2 输出特性"></a>3.4.2 输出特性</h3><pre><code class="C">void allocteSpace( char  ** p)
 {
-	char  * tempP =  malloc(sizeof(char)* 64);
+    char  * tempP =  malloc(sizeof(char)* 64);
 
-	memset(tempP, 0, 64);
-	strcpy(tempP, &quot;hello world!!!&quot;);
-	*p = tempP;
+    memset(tempP, 0, 64);
+    strcpy(tempP, &quot;hello world!!!&quot;);
+    *p = tempP;
 
 }
 
 void test03()
 {
-	char *p = NULL;
-	allocteSpace(&amp;p);
-	printf(&quot;%s\n&quot;, p);
-	if (p!=NULL)
-	{
-		free(p);
-	}
-	p = NULL;
+    char *p = NULL;
+    allocteSpace(&amp;p);
+    printf(&quot;%s\n&quot;, p);
+    if (p!=NULL)
+    {
+        free(p);
+    }
+    p = NULL;
 }
 </code></pre>
-<h3 id="3-5-指针易错点">3.5 指针易错点</h3>
-<h4 id="3-5-1-指针越界">3.5.1 指针越界</h4>
-<pre><code class="language-C">void test01(){
-	char buf[8] = &quot;zhangtao&quot;;
-	printf(&quot;buf:%s\n&quot;,buf);
+<h3 id="3-5-指针易错点"><a href="#3-5-指针易错点" class="headerlink" title="3.5 指针易错点"></a>3.5 指针易错点</h3><h4 id="3-5-1-指针越界"><a href="#3-5-1-指针越界" class="headerlink" title="3.5.1 指针越界"></a>3.5.1 指针越界</h4><pre><code class="C">void test01(){
+    char buf[8] = &quot;zhangtao&quot;;
+    printf(&quot;buf:%s\n&quot;,buf);
 }
 </code></pre>
-<h4 id="3-5-2-返回局部变量地址">3.5.2 返回局部变量地址</h4>
-<pre><code class="language-C">char *getString()
+<h4 id="3-5-2-返回局部变量地址"><a href="#3-5-2-返回局部变量地址" class="headerlink" title="3.5.2 返回局部变量地址"></a>3.5.2 返回局部变量地址</h4><pre><code class="C">char *getString()
 {
-	char str[] = &quot;abcdedsgads&quot;; //栈区，
-	printf(&quot;getString - str = %s\n&quot;, str);
-	return str;
+    char str[] = &quot;abcdedsgads&quot;; //栈区，
+    printf(&quot;getString - str = %s\n&quot;, str);
+    return str;
 }
 void test02()
 {
@@ -1053,65 +999,61 @@ void test02()
     printf(&quot;test - str = %s\n&quot;, str);
 }
 </code></pre>
-<h4 id="3-5-3-同一块内存释放多次">3.5.3 同一块内存释放多次</h4>
-<pre><code class="language-C">void test03()
+<h4 id="3-5-3-同一块内存释放多次"><a href="#3-5-3-同一块内存释放多次" class="headerlink" title="3.5.3 同一块内存释放多次"></a>3.5.3 同一块内存释放多次</h4><pre><code class="C">void test03()
 {
     char *p = malloc(sizeof(char) * 64);
-	free(p);
-	free(p);
+    free(p);
+    free(p);
 }
 </code></pre>
-<h4 id="3-5-4-释放偏移后的指针">3.5.4 释放偏移后的指针</h4>
-<pre><code class="language-C">void test04()
+<h4 id="3-5-4-释放偏移后的指针"><a href="#3-5-4-释放偏移后的指针" class="headerlink" title="3.5.4 释放偏移后的指针"></a>3.5.4 释放偏移后的指针</h4><pre><code class="C">void test04()
 {
-	char str[] = &quot;hello world&quot;;
-	char *p = malloc(64);
-	for (int i = 0; i &lt;= strlen(str); i++)
-	{
-		*p = str[i];
-		++p;
-	}
-	free(p);
+    char str[] = &quot;hello world&quot;;
+    char *p = malloc(64);
+    for (int i = 0; i &lt;= strlen(str); i++)
+    {
+        *p = str[i];
+        ++p;
+    }
+    free(p);
 }
 </code></pre>
-<h3 id="3-6-二级指针输出输出特性">3.6 二级指针输出输出特性</h3>
-<h4 id="3-6-1-二级指针输入特性">3.6.1 二级指针输入特性</h4>
-<pre><code class="language-C">void printArray(int **arr , int len)
+<h3 id="3-6-二级指针输出输出特性"><a href="#3-6-二级指针输出输出特性" class="headerlink" title="3.6 二级指针输出输出特性"></a>3.6 二级指针输出输出特性</h3><h4 id="3-6-1-二级指针输入特性"><a href="#3-6-1-二级指针输入特性" class="headerlink" title="3.6.1 二级指针输入特性"></a>3.6.1 二级指针输入特性</h4><pre><code class="C">void printArray(int **arr , int len)
 {
-	
-	for (int i = 0; i &lt; 5;i++)
-	{
-		printf(&quot;数组中第%d个元素的值为%d \n&quot;, i + 1, *arr[i]); //值
-	}
+
+    for (int i = 0; i &lt; 5;i++)
+    {
+        printf(&quot;数组中第%d个元素的值为%d \n&quot;, i + 1, *arr[i]); //值
+    }
 }
 
 //堆区开辟空间
 void test01()
 {
-	int ** pArray = malloc(sizeof(int *)* 5);
+    int ** pArray = malloc(sizeof(int *)* 5);
 
-	//在栈中分配数据
-	int  a1 = 100;
-	int  a2 = 200;
-	int  a3 = 300;
-	int  a4 = 400;
-	int  a5 = 500;
+    //在栈中分配数据
+    int  a1 = 100;
+    int  a2 = 200;
+    int  a3 = 300;
+    int  a4 = 400;
+    int  a5 = 500;
 
-	pArray[0] = &amp;a1;
-	pArray[1] = &amp;a2;
-	pArray[2] = &amp;a3;
-	pArray[3] = &amp;a4;
-	pArray[4] = &amp;a5;
+    pArray[0] = &amp;a1;
+    pArray[1] = &amp;a2;
+    pArray[2] = &amp;a3;
+    pArray[3] = &amp;a4;
+    pArray[4] = &amp;a5;
 
-	int len = 5; 
-	printArray(pArray, len);
+    int len = 5; 
+    printArray(pArray, len);
 
-	//释放堆区空间
-	if (pArray != NULL)
-	{
-		free(pArray);
-		pArray = NULL;
-	}
+    //释放堆区空间
+    if (pArray != NULL)
+    {
+        free(pArray);
+        pArray = NULL;
+    }
 
 }
 
@@ -1119,99 +1061,93 @@ void test01()
 //在栈上开辟空间
 void test02()
 {
-	int * pArray[5]; //开辟到栈中
+    int * pArray[5]; //开辟到栈中
 
-	for (int i = 0; i &lt; 5;i++)
-	{
-		pArray[i] = malloc(4);
-		*(pArray[i]) = i + 100;
-	}
+    for (int i = 0; i &lt; 5;i++)
+    {
+        pArray[i] = malloc(4);
+        *(pArray[i]) = i + 100;
+    }
 
-	printArray(pArray, 5);
+    printArray(pArray, 5);
 
-	//释放堆区空间
-	for (int i = 0; i &lt; 5;i++)
-	{
-		if (pArray[i] != NULL)
-		{
-			free(pArray[i]);
-			pArray[i] = NULL;
-		}
-	}
+    //释放堆区空间
+    for (int i = 0; i &lt; 5;i++)
+    {
+        if (pArray[i] != NULL)
+        {
+            free(pArray[i]);
+            pArray[i] = NULL;
+        }
+    }
 }
 </code></pre>
-<h4 id="3-6-2-二级指针输出特性">3.6.2 二级指针输出特性</h4>
-<pre><code class="language-C">void allocateSpace(int ** p)
+<h4 id="3-6-2-二级指针输出特性"><a href="#3-6-2-二级指针输出特性" class="headerlink" title="3.6.2 二级指针输出特性"></a>3.6.2 二级指针输出特性</h4><pre><code class="C">void allocateSpace(int ** p)
 {
-	int *arr = malloc(sizeof(int)* 10);
-	for (int i = 0; i &lt; 10;i++)
-	{
-		arr[i] = i;
-	}
-	*p = arr;
+    int *arr = malloc(sizeof(int)* 10);
+    for (int i = 0; i &lt; 10;i++)
+    {
+        arr[i] = i;
+    }
+    *p = arr;
 }
 
 void printArray(int ** arr, int len)
 {
-	for (int i = 0; i &lt; len;i++)
-	{
-		printf(&quot;%d\n&quot;, (*arr)[i]);
-	}
+    for (int i = 0; i &lt; len;i++)
+    {
+        printf(&quot;%d\n&quot;, (*arr)[i]);
+    }
 }
 
 void freeSpace(int ** arr)
 {
-	if (*arr!=NULL)
-	{
-		free(*arr);
-		*arr = NULL;
-	}
+    if (*arr!=NULL)
+    {
+        free(*arr);
+        *arr = NULL;
+    }
 }
 
 void test01()
 {
-	int * p = NULL;
-	allocateSpace(&amp;p);
+    int * p = NULL;
+    allocateSpace(&amp;p);
 
 
-	printArray(&amp;p, 10);
+    printArray(&amp;p, 10);
 
-	freeSpace(&amp;p);
+    freeSpace(&amp;p);
 
-	if (p == NULL)
-	{
-		printf(&quot;数组指针已经置空\n&quot;);
-	}
+    if (p == NULL)
+    {
+        printf(&quot;数组指针已经置空\n&quot;);
+    }
 }
 </code></pre>
-<h2 id="4-位运算">4 位运算</h2>
-<h3 id="4-1-数据的存储方式">4.1 数据的存储方式</h3>
-<h4 id="4-1-1-printf格式化输出">4.1.1 printf格式化输出</h4>
-<p>作用：利用printf输出不同进制下的数字</p>
-<pre><code class="language-C">void test01()
+<h2 id="4-位运算"><a href="#4-位运算" class="headerlink" title="4 位运算"></a>4 位运算</h2><h3 id="4-1-数据的存储方式"><a href="#4-1-数据的存储方式" class="headerlink" title="4.1 数据的存储方式"></a>4.1 数据的存储方式</h3><h4 id="4-1-1-printf格式化输出"><a href="#4-1-1-printf格式化输出" class="headerlink" title="4.1.1 printf格式化输出"></a>4.1.1 printf格式化输出</h4><p>作用：利用printf输出不同进制下的数字</p>
+<pre><code class="C">void test01()
 {
-	int a = 10;
+    int a = 10;
 
-	printf(&quot;十进制：%d\n&quot;, a);
-	printf(&quot;八进制：%#o\n&quot;, a);
-	printf(&quot;十六进制：%#x\n&quot;, a);
-	printf(&quot;十六进制：%#X\n&quot;, a);
+    printf(&quot;十进制：%d\n&quot;, a);
+    printf(&quot;八进制：%#o\n&quot;, a);
+    printf(&quot;十六进制：%#x\n&quot;, a);
+    printf(&quot;十六进制：%#X\n&quot;, a);
 }
 
 void test02()
 {
-	int a = 123;		//十进制方式赋值
-	int b = 0123;		//八进制方式赋值， 以数字0开头
-	int c = 0xabc;	    //十六进制方式赋值
+    int a = 123;        //十进制方式赋值
+    int b = 0123;        //八进制方式赋值， 以数字0开头
+    int c = 0xabc;        //十六进制方式赋值
 
-	printf(&quot;十进制：%d\n&quot;, a);
-	printf(&quot;八进制：%#o\n&quot;, b);	//%o,为字母o,不是数字
-	printf(&quot;十六进制：%#x\n&quot;, c);
+    printf(&quot;十进制：%d\n&quot;, a);
+    printf(&quot;八进制：%#o\n&quot;, b);    //%o,为字母o,不是数字
+    printf(&quot;十六进制：%#x\n&quot;, c);
 }
 </code></pre>
-<h4 id="4-1-2-存储方式">4.1.2  存储方式</h4>
-<h5 id="4-1-2-1存数据">4.1.2.1存数据</h5>
-<p>在计算机中，数据有三种表现形式，分别为：原码、反码、补码</p>
+<h4 id="4-1-2-存储方式"><a href="#4-1-2-存储方式" class="headerlink" title="4.1.2  存储方式"></a>4.1.2  存储方式</h4><h5 id="4-1-2-1存数据"><a href="#4-1-2-1存数据" class="headerlink" title="4.1.2.1存数据"></a>4.1.2.1存数据</h5><p>在计算机中，数据有三种表现形式，分别为：原码、反码、补码</p>
 <ul>
 <li>原码：最高位为符号位，0代表正，1代表负</li>
 <li>反码：无符号或正数，原码 = 反码；负数反码 = 原码符号位不变，其余为取反</li>
@@ -1221,10 +1157,9 @@ void test02()
 <p><strong>总结：</strong></p>
 <ul>
 <li>无符号数以及有符号数的正数  源码 = 反码 = 补码</li>
-<li>符号数 负数  反码 = 原码 取反（不包括符号位） 补码 = 反码 + 1</li>
+<li>符号数 负数  反码 = 原码 取反（不包括符号位） 补码 = 反码 + 1  </li>
 </ul>
-<h5 id="4-4-2-2-补码意义">4.4.2.2 补码意义</h5>
-<ul>
+<h5 id="4-4-2-2-补码意义"><a href="#4-4-2-2-补码意义" class="headerlink" title="4.4.2.2 补码意义"></a>4.4.2.2 补码意义</h5><ul>
 <li>统一了零的编码</li>
 </ul>
 <table>
@@ -1282,8 +1217,7 @@ void test02()
 </tbody>
 </table>
 <ul>
-<li>
-<p>将减法运算转变为加法运算</p>
+<li><p>将减法运算转变为加法运算</p>
 <p>例如： 9 - 6</p>
 </li>
 </ul>
@@ -1357,8 +1291,7 @@ void test02()
 </tbody>
 </table>
 <p>最高位的1溢出，剩余8位二进制表示为3，结果正确</p>
-<h5 id="4-1-2-3-取数据">4.1.2.3 取数据</h5>
-<ol>
+<h5 id="4-1-2-3-取数据"><a href="#4-1-2-3-取数据" class="headerlink" title="4.1.2.3 取数据"></a>4.1.2.3 取数据</h5><ol>
 <li>无符号取数据： %u %lu   %llu  %o  %x  …</li>
 <li>有符号取数据： %d  %ld  %lld  %f  %llf …</li>
 </ol>
@@ -1369,153 +1302,148 @@ void test02()
 </ul>
 <p>注：程序中的八进制和十六进制的数据，不用考虑正负，按照无符号对待</p>
 <p>相关案例：</p>
-<pre><code class="language-C">void test01()
+<pre><code class="C">void test01()
 {
-	char num = -15;
-	//原码  1000 1111
-	//反码  1111 0001
-	//补码  1111 1010
-    
-	//有符号输出 
-	printf(&quot;%d\n&quot;, num); 
+    char num = -15;
+    //原码  1000 1111
+    //反码  1111 0001
+    //补码  1111 1010
 
-	//无符号输出
-	printf(&quot;%u\n&quot;, num &amp; 0x000000ff);
-	//编译器自动让结果与 前3个字节为1 的数字 做了按位或操作
-	/*
-		0000 0000 0000 0000 0000 0000 1111 0001  反码
-		1111 1111 1111 1111 1111 1111 0000 0000 |
-		1111 1111 1111 1111 1111 1111 1111 0001  结果
-	*/
+    //有符号输出 
+    printf(&quot;%d\n&quot;, num); 
+
+    //无符号输出
+    printf(&quot;%u\n&quot;, num &amp; 0x000000ff);
+    //编译器自动让结果与 前3个字节为1 的数字 做了按位或操作
+    /*
+        0000 0000 0000 0000 0000 0000 1111 0001  反码
+        1111 1111 1111 1111 1111 1111 0000 0000 |
+        1111 1111 1111 1111 1111 1111 1111 0001  结果
+    */
 }
 
 void test02()
 {
 
-	char num = 0x9b;  // 这个就是 1001  1011  就是补码 
-	//计算机原样存储  
-	// 有符号取
-	// 补码 1001  1011
-	// 原码 1110  0101   -（64 + 32 + 4 + 1） = - 101
-	printf(&quot;%d\n&quot;, num);
+    char num = 0x9b;  // 这个就是 1001  1011  就是补码 
+    //计算机原样存储  
+    // 有符号取
+    // 补码 1001  1011
+    // 原码 1110  0101   -（64 + 32 + 4 + 1） = - 101
+    printf(&quot;%d\n&quot;, num);
 
-	//无符号取
-	printf(&quot;%x\n&quot;, num &amp; 0x000000ff); //9b
-	printf(&quot;%u\n&quot;, num &amp; 0x000000ff); // 128 + 16 + 8 + 2 + 1 = 155
+    //无符号取
+    printf(&quot;%x\n&quot;, num &amp; 0x000000ff); //9b
+    printf(&quot;%u\n&quot;, num &amp; 0x000000ff); // 128 + 16 + 8 + 2 + 1 = 155
 }
 </code></pre>
-<h3 id="4-2-位运算">4.2 位运算</h3>
-<h4 id="4-2-1-位运算符">4.2.1 位运算符</h4>
-<ol>
+<h3 id="4-2-位运算"><a href="#4-2-位运算" class="headerlink" title="4.2 位运算"></a>4.2 位运算</h3><h4 id="4-2-1-位运算符"><a href="#4-2-1-位运算符" class="headerlink" title="4.2.1 位运算符"></a>4.2.1 位运算符</h4><ol>
 <li>按位取反 ==~==，对每个二进制位进行取反，0变1,1变0</li>
 <li>位与 ==&amp;==，   同真为真，其余为假</li>
 <li>位或 ==|==，    同假为假，其余为真</li>
 <li>位抑或 ==^==，相同为假，不同为真</li>
 </ol>
-<pre><code class="language-C">//1. 按位取反 ~
+<pre><code class="C">//1. 按位取反 ~
 void test01()
 {
-	int number = 2;
-	printf(&quot;~number : %d\n&quot;, ~number);
+    int number = 2;
+    printf(&quot;~number : %d\n&quot;, ~number);
 
-	int num = -2;
-	printf(&quot;%d\n&quot;, ~num); 
+    int num = -2;
+    printf(&quot;%d\n&quot;, ~num); 
 }
 
 //2. 位与 &amp;
 void test02()
 {
-	int number = 332;
-	if ((number &amp; 1) == 0)
-	{
-		printf(&quot;%d是偶数!\n&quot;,number);
-	}
-	else
-	{
-		printf(&quot;%d是奇数!\n&quot;,number);
-	}
+    int number = 332;
+    if ((number &amp; 1) == 0)
+    {
+        printf(&quot;%d是偶数!\n&quot;,number);
+    }
+    else
+    {
+        printf(&quot;%d是奇数!\n&quot;,number);
+    }
 
-	//number = number &amp; 0;
-	number &amp;= 0;
-	printf(&quot;number:%d\n&quot;, number);
+    //number = number &amp; 0;
+    number &amp;= 0;
+    printf(&quot;number:%d\n&quot;, number);
 }
 
 //3. 位或 |
 void test03()
 {
-	int num1 = 5;
-	int num2 = 3;
+    int num1 = 5;
+    int num2 = 3;
 
-	printf(&quot;num1 | num2 = %d\n&quot;, num1 | num2);
+    printf(&quot;num1 | num2 = %d\n&quot;, num1 | num2);
 }
 
 //4 位抑或 ^
 void test04()
 {
-	int num1 = 5;
-	int num2 = 10;
-    
-	printf(&quot;num1:%d num2:%d\n&quot;, num1, num2);
+    int num1 = 5;
+    int num2 = 10;
 
-	num1 = num1 ^ num2;
-	num2 = num1 ^ num2;
-	num1 = num1 ^ num2;
+    printf(&quot;num1:%d num2:%d\n&quot;, num1, num2);
 
-	printf(&quot;num1:%d num2:%d\n&quot;,num1,num2);
+    num1 = num1 ^ num2;
+    num2 = num1 ^ num2;
+    num1 = num1 ^ num2;
+
+    printf(&quot;num1:%d num2:%d\n&quot;,num1,num2);
 }
 </code></pre>
-<h4 id="4-2-2-移位运算符">4.2.2 移位运算符</h4>
-<ol>
+<h4 id="4-2-2-移位运算符"><a href="#4-2-2-移位运算符" class="headerlink" title="4.2.2 移位运算符"></a>4.2.2 移位运算符</h4><ol>
 <li>左移 &lt;&lt;，按二进制形式把所有的数字向左移动对应的位数，高位移出(舍弃)，低位的空位补 0。</li>
 <li>右移 &gt;&gt;，按二进制形式把所有的数字向右移动对应位移位数，低位移出(舍弃)，高位的空位补符号位</li>
 </ol>
-<pre><code class="language-C">//左移运算符 左移几位就相当于乘以2的几次方  
+<pre><code class="C">//左移运算符 左移几位就相当于乘以2的几次方  
 void test05()
 {
-	int number = 20;
-	printf(&quot;number = %d\n&quot;, number &lt;&lt;= 2);
-	printf(&quot;number = %d\n&quot;, number &gt;&gt;= 1);
+    int number = 20;
+    printf(&quot;number = %d\n&quot;, number &lt;&lt;= 2);
+    printf(&quot;number = %d\n&quot;, number &gt;&gt;= 1);
 }
 </code></pre>
 <p>注： 右移运算，对于无符号数据，高位用0填补，有符号正数用0，负数有些计算机系统用0，有些用1，不是绝对</p>
-<h2 id="5-数组进阶">5 数组进阶</h2>
-<h3 id="5-1-一维数组与数组名">5.1 一维数组与数组名</h3>
-<p>数组定义：一片连续内存空间里，放相同类型的数据元素</p>
+<h2 id="5-数组进阶"><a href="#5-数组进阶" class="headerlink" title="5 数组进阶"></a>5 数组进阶</h2><h3 id="5-1-一维数组与数组名"><a href="#5-1-一维数组与数组名" class="headerlink" title="5.1 一维数组与数组名"></a>5.1 一维数组与数组名</h3><p>数组定义：一片连续内存空间里，放相同类型的数据元素</p>
 <p>思考：一维数组的数组名是不是指向数组中第一个元素的指针？</p>
-<pre><code class="language-C">void printArray( int arr[] , int len) // int arr[] ====  int * arr 前者可读性高
+<pre><code class="C">void printArray( int arr[] , int len) // int arr[] ====  int * arr 前者可读性高
 {
-	for (int i = 0; i &lt; len;i++)
-	{
-		printf(&quot;%d\n&quot;, arr[i]); 
-	}
+    for (int i = 0; i &lt; len;i++)
+    {
+        printf(&quot;%d\n&quot;, arr[i]); 
+    }
 }
 
 void test01()
 {
 
-	int arr[5] = { 1, 2, 3, 4, 5 };
+    int arr[5] = { 1, 2, 3, 4, 5 };
 
-	//1、当sizeof数组名时候，统计是整个数组的大小
-	printf(&quot;sizeof(arr) = %d\n&quot;, sizeof(arr));
+    //1、当sizeof数组名时候，统计是整个数组的大小
+    printf(&quot;sizeof(arr) = %d\n&quot;, sizeof(arr));
 
-	//2、当对数组名 取地址的时候
-	printf(&quot;%d\n&quot;, &amp;arr);
-	printf(&quot;%d\n&quot;, &amp;arr + 1);
+    //2、当对数组名 取地址的时候
+    printf(&quot;%d\n&quot;, &amp;arr);
+    printf(&quot;%d\n&quot;, &amp;arr + 1);
 
-	//除了以上两种情况外 ， 数组名都指向数组中的首地址
-	int * p = arr; // 直接对int*p进行赋值，也不会报错
-	
-	//数组名 是个指针常量 
-	//arr = NULL;
-    
-	int len = sizeof(arr) / sizeof(int);
-	printArray(arr, len);
-    
-	//数组下标是否可以为负数?
-	p = p + 3;
-	printf(&quot;p[-1] = %d\n&quot;, p[-1]);
-	//上述代码等价于
-	printf(&quot;p[-1] = %d\n&quot;,  *(p-1) );
+    //除了以上两种情况外 ， 数组名都指向数组中的首地址
+    int * p = arr; // 直接对int*p进行赋值，也不会报错
+
+    //数组名 是个指针常量 
+    //arr = NULL;
+
+    int len = sizeof(arr) / sizeof(int);
+    printArray(arr, len);
+
+    //数组下标是否可以为负数?
+    p = p + 3;
+    printf(&quot;p[-1] = %d\n&quot;, p[-1]);
+    //上述代码等价于
+    printf(&quot;p[-1] = %d\n&quot;,  *(p-1) );
 }
 </code></pre>
 <p>结论： 一维数组数组名除了两种特殊情况外，可以理解为指向第一个元素的指针</p>
@@ -1524,83 +1452,81 @@ void test01()
 <li>sizeof数组名</li>
 <li>对数组名取地址</li>
 </ul>
-<h3 id="5-2-数组指针定义方式">5.2 数组指针定义方式</h3>
-<p>数组指针的定义方式：</p>
+<h3 id="5-2-数组指针定义方式"><a href="#5-2-数组指针定义方式" class="headerlink" title="5.2 数组指针定义方式"></a>5.2 数组指针定义方式</h3><p>数组指针的定义方式：</p>
 <ol>
 <li>先定义出数组的类型，再定义数组指针变量</li>
 <li>先定义数组指针的类型，再定义数组指针变量</li>
 <li>直接定义数组指针变量</li>
 </ol>
-<pre><code class="language-C">//1、先定义出数组的类型，再定义数组指针变量
+<pre><code class="C">//1、先定义出数组的类型，再定义数组指针变量
 void test01()
 {
-	int arr[] = { 1, 2, 3, 4, 5 };
+    int arr[] = { 1, 2, 3, 4, 5 };
 
-	typedef int(ARRAY_TYPE)[5]; //ARRAY_TYPE是一个数据类型，存放5个int元素的数组的类型
-	ARRAY_TYPE * arrP = &amp;arr; //arrP就是数组指针
+    typedef int(ARRAY_TYPE)[5]; //ARRAY_TYPE是一个数据类型，存放5个int元素的数组的类型
+    ARRAY_TYPE * arrP = &amp;arr; //arrP就是数组指针
 
-	// *arrP 是 arr
+    // *arrP 是 arr
 
-	for (int i = 0; i &lt; 5;i++)
-	{
-		//printf(&quot;%d\n&quot;, (*arrP)[i]);
-		printf(&quot;%d\n&quot;, *((*arrP)+i)  );
-	}
+    for (int i = 0; i &lt; 5;i++)
+    {
+        //printf(&quot;%d\n&quot;, (*arrP)[i]);
+        printf(&quot;%d\n&quot;, *((*arrP)+i)  );
+    }
 }
 
 //2、先定义数组指针的类型，再定义数组指针变量
 void test02()
 {
-	int arr[] = { 1, 2, 3, 4, 5 };
+    int arr[] = { 1, 2, 3, 4, 5 };
 
-	typedef int(*ARRAY_TYPE)[5];
+    typedef int(*ARRAY_TYPE)[5];
 
-	// *arrP 是 arr
-	ARRAY_TYPE arrP = &amp;arr;
+    // *arrP 是 arr
+    ARRAY_TYPE arrP = &amp;arr;
 
-	for (int i = 0; i &lt; 5; i++)
-	{
-		printf(&quot;%d\n&quot;, (*arrP)[i]);
-		printf(&quot;%d\n&quot;, *((*arrP) + i));
-	}
+    for (int i = 0; i &lt; 5; i++)
+    {
+        printf(&quot;%d\n&quot;, (*arrP)[i]);
+        printf(&quot;%d\n&quot;, *((*arrP) + i));
+    }
 }
 
 //3、直接定义数组指针变量
 void test03()
 {
-	int arr[] = { 1, 2, 3, 4, 5 };
+    int arr[] = { 1, 2, 3, 4, 5 };
 
-	int(*p)[5]  = &amp;arr;
+    int(*p)[5]  = &amp;arr;
 
-	//*p -&gt; arr
-	for (int i = 0; i &lt; 5; i++)
-	{
-		printf(&quot;%d\n&quot;, (*p)[i]);
-	}
+    //*p -&gt; arr
+    for (int i = 0; i &lt; 5; i++)
+    {
+        printf(&quot;%d\n&quot;, (*p)[i]);
+    }
 }
 </code></pre>
-<h3 id="5-3-二维数组与数组名">5.3 二维数组与数组名</h3>
-<p>知道一维数组数组名的意义后，我们应该能够推到出二维数组数组名的意义了</p>
-<pre><code class="language-C">void test01()
+<h3 id="5-3-二维数组与数组名"><a href="#5-3-二维数组与数组名" class="headerlink" title="5.3 二维数组与数组名"></a>5.3 二维数组与数组名</h3><p>知道一维数组数组名的意义后，我们应该能够推到出二维数组数组名的意义了</p>
+<pre><code class="C">void test01()
 {
-	int arr[3][3] = {  
-		{1,2,3},
-		{4,5,6},
-		{7,8,9}
-	};
+    int arr[3][3] = {  
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
 
-	//int arr2[3][3] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	//int arr3[][3] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    //int arr2[3][3] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    //int arr3[][3] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-	//二维数组名 等价与 一维数组的指针
-	//除了对二维数组名 sizeof  或者  取地址以外，那么二维数组名 都是指向第一个一维数组的首地址
+    //二维数组名 等价与 一维数组的指针
+    //除了对二维数组名 sizeof  或者  取地址以外，那么二维数组名 都是指向第一个一维数组的首地址
 
-	int(*pArray)[3] = arr;
+    int(*pArray)[3] = arr;
 
-	//通过数组名 访问元素
-	printf(&quot;arr[1][2] = %d\n&quot;, arr[1][2]);
-	printf(&quot;arr[1][2] = %d\n&quot;, *(*(pArray + 1) + 2));
-	printf(&quot;arr[1][2] = %d\n&quot;, *(*pArray + 5));
+    //通过数组名 访问元素
+    printf(&quot;arr[1][2] = %d\n&quot;, arr[1][2]);
+    printf(&quot;arr[1][2] = %d\n&quot;, *(*(pArray + 1) + 2));
+    printf(&quot;arr[1][2] = %d\n&quot;, *(*pArray + 5));
 }
 
 
@@ -1609,321 +1535,309 @@ void test03()
 //void printArray(int pArr[3][3], int len1, int len2)
 void printArray(int pArr[][3], int len1, int len2)
 {
-	for (int i = 0; i &lt; len1;i++)
-	{
-		for (int j = 0; j &lt; len2;j++)
-		{
-			//printf(&quot;%d &quot;, pArr[i][j]);
+    for (int i = 0; i &lt; len1;i++)
+    {
+        for (int j = 0; j &lt; len2;j++)
+        {
+            //printf(&quot;%d &quot;, pArr[i][j]);
 
-			printf(&quot;%d &quot;,  *(*(pArr + i) + j) );
-		}
-		printf(&quot;\n&quot;);;
-	}
+            printf(&quot;%d &quot;,  *(*(pArr + i) + j) );
+        }
+        printf(&quot;\n&quot;);;
+    }
 }
 
 void test02()
 {
-	int arr[3][3] = {
-		{ 1, 2, 3 },
-		{ 4, 5, 6 },
-		{ 7, 8, 9 }
-	};
+    int arr[3][3] = {
+        { 1, 2, 3 },
+        { 4, 5, 6 },
+        { 7, 8, 9 }
+    };
 
-	int row = sizeof(arr)/sizeof(arr[0]);
-	int col = sizeof(arr[0]) / sizeof(int);
-	printArray(arr, 3, 3);
+    int row = sizeof(arr)/sizeof(arr[0]);
+    int col = sizeof(arr[0]) / sizeof(int);
+    printArray(arr, 3, 3);
 }
 </code></pre>
-<h2 id="6-结构体进阶">6 结构体进阶</h2>
-<h3 id="6-1-结构体基本使用">6.1 结构体基本使用</h3>
-<p>**结构体作用：**内置数据类型不够用的时候，我们可以利用结构体创建自定义的数据类型</p>
+<h2 id="6-结构体进阶"><a href="#6-结构体进阶" class="headerlink" title="6 结构体进阶"></a>6 结构体进阶</h2><h3 id="6-1-结构体基本使用"><a href="#6-1-结构体基本使用" class="headerlink" title="6.1 结构体基本使用"></a>6.1 结构体基本使用</h3><p><strong>结构体作用：</strong>内置数据类型不够用的时候，我们可以利用结构体创建自定义的数据类型</p>
 <p>下面案例中可以看出结构体的基本使用</p>
-<pre><code class="language-C">struct Person
+<pre><code class="C">struct Person
 {
-	char name[64];
-	int age; //不要给自定义数据类型赋初始值，因为只是在做定义 自定义数据类型
+    char name[64];
+    int age; //不要给自定义数据类型赋初始值，因为只是在做定义 自定义数据类型
 };
 typedef struct Person myPerson;
 
 
 typedef struct Person1
 {
-	char name[64];
-	int age;
+    char name[64];
+    int age;
 }myPerson;  //给类型起别名
 
 void test01()
 {
-	myPerson p1 = {&quot;aaa&quot;,10};
+    myPerson p1 = {&quot;aaa&quot;,10};
 }
 
 
 //在定义结构体的时候  顺便定义了一个结构体变量
 struct Person2
 {
-	char name[64];
-	int age;
+    char name[64];
+    int age;
 }person2 = {&quot;bbb&quot;,40};  //如果是变量 可以给初始化
 
 void test02()
 {
-	person2.age = 20;
-	strcpy(person2.name, &quot;bbb&quot;);
+    person2.age = 20;
+    strcpy(person2.name, &quot;bbb&quot;);
 }
 
 struct
 {
-	char name[64];
-	int age;
+    char name[64];
+    int age;
 }person3 = {&quot;ddd&quot;,100};  
 //定义一个结构体变量 person3，后面无法使用这个类型，而这个类型只有一个变量
 
 void test03()
 {
-	person3.age = 30;
-	strcpy(person3.name, &quot;ccc&quot;);
+    person3.age = 30;
+    strcpy(person3.name, &quot;ccc&quot;);
 }
 
 //结构体使用
 struct Person
 {
-	char name[64];
-	int age; //不要给自定义数据类型赋初始值，因为只是在做定义 自定义数据类型
+    char name[64];
+    int age; //不要给自定义数据类型赋初始值，因为只是在做定义 自定义数据类型
 };  
 void test04()
 {
-	//在栈上使用
-	struct Person p1 = { &quot;aaa&quot;, 10 };
-	printf(&quot;p1 姓名： %s  , 年龄:  %d \n&quot;, p1.name, p1.age);
+    //在栈上使用
+    struct Person p1 = { &quot;aaa&quot;, 10 };
+    printf(&quot;p1 姓名： %s  , 年龄:  %d \n&quot;, p1.name, p1.age);
 
-	//在堆区使用
-	struct Person * p2 = malloc(sizeof(struct Person));
+    //在堆区使用
+    struct Person * p2 = malloc(sizeof(struct Person));
 
-	p2-&gt;age = 20;
-	strcpy(p2-&gt;name, &quot;bbb&quot;);
-	printf(&quot;p2 姓名： %s  , 年龄:  %d \n&quot;, p2-&gt;name, p2-&gt;age);
+    p2-&gt;age = 20;
+    strcpy(p2-&gt;name, &quot;bbb&quot;);
+    printf(&quot;p2 姓名： %s  , 年龄:  %d \n&quot;, p2-&gt;name, p2-&gt;age);
 
-	free(p2);
-	p2 = NULL;
+    free(p2);
+    p2 = NULL;
 
 }
 void printPerson( struct Person personArr[], int len)
 {
-	for (int i = 0; i &lt; len;i++)
-	{
-		printf(&quot;姓名： %s  , 年龄:  %d \n&quot;, personArr[i].name, personArr[i].age);
-	}
+    for (int i = 0; i &lt; len;i++)
+    {
+        printf(&quot;姓名： %s  , 年龄:  %d \n&quot;, personArr[i].name, personArr[i].age);
+    }
 }
 //结构体变量数组
 void test05()
 {
-	//栈上分配内存
-	struct Person persons[] =
-	{
-		{ &quot;aaa&quot;, 10 },
-		{ &quot;bbb&quot;, 20 },
-		{ &quot;ccc&quot;, 30 },
-		{ &quot;ddd&quot;, 40 },
-	};
-	int len = sizeof(persons) / sizeof(struct Person);
-	printPerson(persons, len);
+    //栈上分配内存
+    struct Person persons[] =
+    {
+        { &quot;aaa&quot;, 10 },
+        { &quot;bbb&quot;, 20 },
+        { &quot;ccc&quot;, 30 },
+        { &quot;ddd&quot;, 40 },
+    };
+    int len = sizeof(persons) / sizeof(struct Person);
+    printPerson(persons, len);
 
-	//堆区分配内存
-	struct Person * personPoint = malloc(sizeof(struct Person) * 4);
-	for (int i = 0; i &lt; 4;i++)
-	{
-		sprintf(personPoint[i].name, &quot;name_%d&quot;, i);
-		personPoint[i].age = i + 10;
-	}
+    //堆区分配内存
+    struct Person * personPoint = malloc(sizeof(struct Person) * 4);
+    for (int i = 0; i &lt; 4;i++)
+    {
+        sprintf(personPoint[i].name, &quot;name_%d&quot;, i);
+        personPoint[i].age = i + 10;
+    }
 
-	printPerson(personPoint, 4);
+    printPerson(personPoint, 4);
 
-	free(personPoint);
-	personPoint = NULL;
+    free(personPoint);
+    personPoint = NULL;
 }
 </code></pre>
-<h3 id="6-2-结构体赋值问题以及解决">6.2 结构体赋值问题以及解决</h3>
-<p>这设计到一个深浅拷贝的问题</p>
-<h4 id="6-2-1-结构体不包含指针的情况">6.2.1 结构体不包含指针的情况</h4>
-<pre><code class="language-C">struct Person
+<h3 id="6-2-结构体赋值问题以及解决"><a href="#6-2-结构体赋值问题以及解决" class="headerlink" title="6.2 结构体赋值问题以及解决"></a>6.2 结构体赋值问题以及解决</h3><p>这设计到一个深浅拷贝的问题</p>
+<h4 id="6-2-1-结构体不包含指针的情况"><a href="#6-2-1-结构体不包含指针的情况" class="headerlink" title="6.2.1 结构体不包含指针的情况"></a>6.2.1 结构体不包含指针的情况</h4><pre><code class="C">struct Person
 {
-	char name[64];
-	int age;
+    char name[64];
+    int age;
 };
 
 void test01()
 {
-	struct Person p1 = { &quot;Tom&quot;, 18 };
+    struct Person p1 = { &quot;Tom&quot;, 18 };
 
-	struct Person p2 = { &quot;Jerry&quot;, 20 };
+    struct Person p2 = { &quot;Jerry&quot;, 20 };
 
-	p1 = p2; //逐字节的进行拷贝
+    p1 = p2; //逐字节的进行拷贝
 
-	printf(&quot;P1 姓名 ： %s, 年龄： %d\n&quot;, p1.name, p1.age);
-	printf(&quot;P2 姓名 ： %s, 年龄： %d\n&quot;, p2.name, p2.age);
+    printf(&quot;P1 姓名 ： %s, 年龄： %d\n&quot;, p1.name, p1.age);
+    printf(&quot;P2 姓名 ： %s, 年龄： %d\n&quot;, p2.name, p2.age);
 }
 
 </code></pre>
 <p>6.2.2 结构体包含指针的情况</p>
-<pre><code class="language-C">struct Person2
+<pre><code class="C">struct Person2
 {
-	char * name;
-	int age;
+    char * name;
+    int age;
 };
 
 void test02()
 {
-	struct Person2 p1;
-	p1.name =  malloc(sizeof(char)* 64);
-	strcpy(p1.name, &quot;Tom&quot;);
-	p1.age = 18;
+    struct Person2 p1;
+    p1.name =  malloc(sizeof(char)* 64);
+    strcpy(p1.name, &quot;Tom&quot;);
+    p1.age = 18;
 
-	struct Person2 p2;
-	p2.name = malloc(sizeof(char)* 128);
-	strcpy(p2.name, &quot;Jerry&quot;);
-	p2.age = 20;
+    struct Person2 p2;
+    p2.name = malloc(sizeof(char)* 128);
+    strcpy(p2.name, &quot;Jerry&quot;);
+    p2.age = 20;
 
-	//赋值
-	//p1 = p2;
+    //赋值
+    //p1 = p2;
 
-	//解决方式  手动进行赋值操作
-	///////////////////////////////////
-	if (p1.name!=NULL)
-	{
-		free(p1.name);
-		p1.name = NULL;
-	}
+    //解决方式  手动进行赋值操作
+    ///////////////////////////////////
+    if (p1.name!=NULL)
+    {
+        free(p1.name);
+        p1.name = NULL;
+    }
 
-	p1.name = malloc(strlen(p2.name) + 1);
-	strcpy(p1.name, p2.name);
+    p1.name = malloc(strlen(p2.name) + 1);
+    strcpy(p1.name, p2.name);
 
-	p1.age = p2.age;
+    p1.age = p2.age;
 
-	////////////////////////////////////
+    ////////////////////////////////////
 
-	printf(&quot;P1 姓名 ： %s  年龄： %d\n&quot;, p1.name, p1.age);
-	printf(&quot;P2 姓名 ： %s, 年龄： %d\n&quot;, p2.name, p2.age);
+    printf(&quot;P1 姓名 ： %s  年龄： %d\n&quot;, p1.name, p1.age);
+    printf(&quot;P2 姓名 ： %s, 年龄： %d\n&quot;, p2.name, p2.age);
 
-	//堆区开辟的内容 自己管理释放
-	if (p1.name != NULL)
-	{
-		free(p1.name);
-		p1.name = NULL;
-	}
+    //堆区开辟的内容 自己管理释放
+    if (p1.name != NULL)
+    {
+        free(p1.name);
+        p1.name = NULL;
+    }
 
-	if (p2.name != NULL)
-	{
-		free(p2.name);
-		p2.name = NULL;
-	}
+    if (p2.name != NULL)
+    {
+        free(p2.name);
+        p2.name = NULL;
+    }
 
 }
 </code></pre>
 <p>总结：当结构体中包含堆区的指针，要利用深拷贝解决浅拷贝的问题</p>
-<h3 id="6-3-结构体偏移量">6.3 结构体偏移量</h3>
-<p>意义：能够计算出结构体中属性相对于首地址的偏移量</p>
+<h3 id="6-3-结构体偏移量"><a href="#6-3-结构体偏移量" class="headerlink" title="6.3 结构体偏移量"></a>6.3 结构体偏移量</h3><p>意义：能够计算出结构体中属性相对于首地址的偏移量</p>
 <p>案例：</p>
-<pre><code class="language-C">#include &lt;stddef.h&gt;
+<pre><code class="C">#include &lt;stddef.h&gt;
 struct Teacher
 {
-	char a;
-	int b;
+    char a;
+    int b;
 };
 
 void test01(){
 
-	struct Teacher  t1;
-	struct Teacher*p = &amp;t1;
+    struct Teacher  t1;
+    struct Teacher*p = &amp;t1;
 
 
-	int offsize1 = (int)&amp;(p-&gt;b) - (int)p;  //通过地址查看成员b 相对于结构体 Teacher的偏移量
-	int offsize2 = offsetof(struct Teacher, b);//通过宏函数查看
+    int offsize1 = (int)&amp;(p-&gt;b) - (int)p;  //通过地址查看成员b 相对于结构体 Teacher的偏移量
+    int offsize2 = offsetof(struct Teacher, b);//通过宏函数查看
 
-	printf(&quot;offsize1:%d \n&quot;, offsize1); //打印b属性对于首地址的偏移量
-	printf(&quot;offsize2:%d \n&quot;, offsize2);
+    printf(&quot;offsize1:%d \n&quot;, offsize1); //打印b属性对于首地址的偏移量
+    printf(&quot;offsize2:%d \n&quot;, offsize2);
 }
 
 //通过偏移量 打印成员数据
 void test02()
 {
-	struct Teacher t = { 'a', 10 };
-	//打印c2的数据
-	printf(&quot;t.b = %d\n&quot;, *(int *)((char*)&amp;a + offsetof(struct Teacher, b)));
+    struct Teacher t = { &#39;a&#39;, 10 };
+    //打印c2的数据
+    printf(&quot;t.b = %d\n&quot;, *(int *)((char*)&amp;a + offsetof(struct Teacher, b)));
 
-	printf(&quot;t.b = %d\n&quot;, *(int*)((int *)&amp;a + 1 ));
+    printf(&quot;t.b = %d\n&quot;, *(int*)((int *)&amp;a + 1 ));
 }
 //结构体嵌套结构体 计算偏移量方法
 struct Teacher2
 {
-	char a;
-	int  b;
-	struct Teacher c;
+    char a;
+    int  b;
+    struct Teacher c;
 };
 
 void test03()
 {
-	struct Teacher2 t = { 'a', 10, 'b', 20 };
+    struct Teacher2 t = { &#39;a&#39;, 10, &#39;b&#39;, 20 };
 
-	int offset1 = offsetof(struct Teacher2, c);
-	int offset2 = offsetof(struct Teacher, b);
+    int offset1 = offsetof(struct Teacher2, c);
+    int offset2 = offsetof(struct Teacher, b);
 
-	printf(&quot;%d\n&quot;, *(int *)(((char*)&amp;t + offset1) + offset2));
+    printf(&quot;%d\n&quot;, *(int *)(((char*)&amp;t + offset1) + offset2));
 
-	printf(&quot;%d\n&quot;, ((struct Teacher2 *)((char *)&amp;t + offset1))-&gt;b);
+    printf(&quot;%d\n&quot;, ((struct Teacher2 *)((char *)&amp;t + offset1))-&gt;b);
 }
 </code></pre>
-<h3 id="6-4-内存对齐">6.4 内存对齐</h3>
-<h4 id="6-4-1-内存对齐意义">6.4.1 内存对齐意义</h4>
-<p>内存的最小单元是一个字节</p>
+<h3 id="6-4-内存对齐"><a href="#6-4-内存对齐" class="headerlink" title="6.4 内存对齐"></a>6.4 内存对齐</h3><h4 id="6-4-1-内存对齐意义"><a href="#6-4-1-内存对齐意义" class="headerlink" title="6.4.1 内存对齐意义"></a>6.4.1 内存对齐意义</h4><p>内存的最小单元是一个字节</p>
 <p>CPU实际上将内存当成多个块，每次从内存中读取一个块，这个块的大小可能是2、4、8、16等，</p>
 <p>我们来分析下非内存对齐和内存对齐的优缺点在哪？</p>
-<p><img src="%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90.jpg" alt="内存对齐"></p>
+<p><img src="内存对齐.jpg" alt="内存对齐"></p>
 <p>如果没有对齐，为了访问一个变量可能产生二次访问。</p>
 <p>有了内存对齐，可以提高操作系统访问内存的效率。</p>
-<h4 id="6-4-2-结构体对齐计算规则">6.4.2 结构体对齐计算规则</h4>
-<ol>
+<h4 id="6-4-2-结构体对齐计算规则"><a href="#6-4-2-结构体对齐计算规则" class="headerlink" title="6.4.2 结构体对齐计算规则"></a>6.4.2 结构体对齐计算规则</h4><ol>
 <li>第一个属性 从偏移量0位置开始存储</li>
 <li>第二个属性开始，放在 min(该类型的大小 ,对齐模数) 的整数倍上</li>
 <li>整体计算完毕后算总大小，结构体总大小必须是 min(该结构体中最大数据类型 ,对齐模数) 整数倍,不足要补齐</li>
 </ol>
-<p><code>#pragma pack(show) </code>可以查看对齐模数</p>
+<p><code>#pragma pack(show)</code>可以查看对齐模数</p>
 <p>练习：</p>
-<pre><code class="language-C">struct Student{
-	int a;
-	char b; 
-	double c; 
-	float d;
+<pre><code class="C">struct Student{
+    int a;
+    char b; 
+    double c; 
+    float d;
 };
 
 void test01()
 {
-	printf(&quot;sizeof = %d\n&quot;, sizeof(struct Student));
+    printf(&quot;sizeof = %d\n&quot;, sizeof(struct Student));
 }
 
 //2、结构体嵌套结构体， 按照子结构体最大的类型计算
 struct Student2
 {
-	char a; 
-	struct Student b; 
-	double c; 
+    char a; 
+    struct Student b; 
+    double c; 
 };
 
 void test02()
 {
-	printf(&quot;sizeof = %d\n&quot;, sizeof(struct Student2));
+    printf(&quot;sizeof = %d\n&quot;, sizeof(struct Student2));
 }
 </code></pre>
-<h2 id="7-文件读写">7 文件读写</h2>
-<h3 id="7-1-文件基本概念">7.1 文件基本概念</h3>
-<h4 id="7-1-1-文件的基本概念">7.1.1 文件的基本概念</h4>
-<p>数据源的一种，最主要的作用是保存数据，如word、txt、头文件、源文件、exe等</p>
-<h4 id="7-1-2-文件的分类">7.1.2 文件的分类</h4>
-<p>文件可以分为</p>
+<h2 id="7-文件读写"><a href="#7-文件读写" class="headerlink" title="7 文件读写"></a>7 文件读写</h2><h3 id="7-1-文件基本概念"><a href="#7-1-文件基本概念" class="headerlink" title="7.1 文件基本概念"></a>7.1 文件基本概念</h3><h4 id="7-1-1-文件的基本概念"><a href="#7-1-1-文件的基本概念" class="headerlink" title="7.1.1 文件的基本概念"></a>7.1.1 文件的基本概念</h4><p>数据源的一种，最主要的作用是保存数据，如word、txt、头文件、源文件、exe等</p>
+<h4 id="7-1-2-文件的分类"><a href="#7-1-2-文件的分类" class="headerlink" title="7.1.2 文件的分类"></a>7.1.2 文件的分类</h4><p>文件可以分为</p>
 <ul>
 <li>磁盘文件</li>
 <li>设备文件</li>
 </ul>
-<p><strong>磁盘文件：</strong></p>
+<p><strong>磁盘文件：</strong> </p>
 <ul>
 <li>磁盘文件是计算机里的文件。存储信息不受断电的影响，存取速度相对于内存慢得多了</li>
 </ul>
@@ -1932,8 +1846,7 @@ void test02()
 <li>操作系统中把每一个与主机相连的输入、输出设备看作是一个文件</li>
 <li>例如 显示器称为标准输出文件, 键盘称为标准输入文件</li>
 </ul>
-<h4 id="7-1-3-磁盘文件的分类">7.1.3 磁盘文件的分类</h4>
-<p>计算机的存储在物理上是二进制的，所以物理上所有的磁盘文件本质上都是一样的：以字节为单位进行顺序存储。</p>
+<h4 id="7-1-3-磁盘文件的分类"><a href="#7-1-3-磁盘文件的分类" class="headerlink" title="7.1.3 磁盘文件的分类"></a>7.1.3 磁盘文件的分类</h4><p>计算机的存储在物理上是二进制的，所以物理上所有的磁盘文件本质上都是一样的：以字节为单位进行顺序存储。</p>
 <p>从用户或操作系统的角度，将文件分为：</p>
 <ul>
 <li>文本文件</li>
@@ -1951,37 +1864,33 @@ void test02()
 <li>把内存中的数据按其在内存中的存储形式原样输出到磁盘上</li>
 <li>如数5678的存储形式(二进制码)为：00010110  00101110</li>
 </ul>
-<h3 id="7-2-文件指针">7.2 文件指针</h3>
-<p>在C语言中，操作文件之前必须先打开文件；所谓“打开文件”，就是让程序和文件建立连接的过程。</p>
+<h3 id="7-2-文件指针"><a href="#7-2-文件指针" class="headerlink" title="7.2 文件指针"></a>7.2 文件指针</h3><p>在C语言中，操作文件之前必须先打开文件；所谓“打开文件”，就是让程序和文件建立连接的过程。</p>
 <p>打开文件之后，程序可以得到文件的相关信息，例如大小、类型、权限、创建者、更新时间等。</p>
 <p>操作系统为了操作文件，提供了一堆文件的操作函数，而函数通过文件指针识别不同的文件</p>
 <p>文件指针如下：</p>
-<pre><code class="language-C">typedef struct
+<pre><code class="C">typedef struct
 {
-	short           level;	//缓冲区&quot;满&quot;或者&quot;空&quot;的程度 
-	unsigned        flags;	//文件状态标志 
-	char            fd;		//文件描述符
-	unsigned char   hold;	//如无缓冲区不读取字符
-	short           bsize;	//缓冲区的大小
-	unsigned char   *buffer;//数据缓冲区的位置 
-	unsigned        ar;	 //指针，当前的指向 
-	unsigned        istemp;	//临时文件，指示器
-	short           token;	//用于有效性的检查 
+    short           level;    //缓冲区&quot;满&quot;或者&quot;空&quot;的程度 
+    unsigned        flags;    //文件状态标志 
+    char            fd;        //文件描述符
+    unsigned char   hold;    //如无缓冲区不读取字符
+    short           bsize;    //缓冲区的大小
+    unsigned char   *buffer;//数据缓冲区的位置 
+    unsigned        ar;     //指针，当前的指向 
+    unsigned        istemp;    //临时文件，指示器
+    short           token;    //用于有效性的检查 
 }FILE;
 </code></pre>
 <p>FILE是系统使用typedef定义出来的有关文件信息的一种结构体类型</p>
 <p>总结：如果我们想利用C语言操作一个文件，首先要获取到文件指针</p>
-<h3 id="7-3-文件打开与关闭">7.3 文件打开与关闭</h3>
-<h4 id="7-3-1-fopen函数">7.3.1 fopen函数</h4>
-<p>函数原型： <code>FILE *fopen(char *filename, char *mode);</code></p>
+<h3 id="7-3-文件打开与关闭"><a href="#7-3-文件打开与关闭" class="headerlink" title="7.3 文件打开与关闭"></a>7.3 文件打开与关闭</h3><h4 id="7-3-1-fopen函数"><a href="#7-3-1-fopen函数" class="headerlink" title="7.3.1 fopen函数"></a>7.3.1 fopen函数</h4><p>函数原型： <code>FILE *fopen(char *filename, char *mode);</code></p>
 <p>功能：打开文件</p>
 <p>参数：</p>
-<p>​	filename - 需要打开的文件名，根据需要加上路径</p>
-<p>​	mode - 打开文件的模式设置</p>
+<p>​    filename - 需要打开的文件名，根据需要加上路径</p>
+<p>​    mode - 打开文件的模式设置</p>
 <p>返回值：</p>
-<pre><code>成功：文件指针
-</code></pre>
-<p>​	失败：NULL</p>
+<pre><code>  成功：文件指针
+</code></pre><p>​    失败：NULL</p>
 <table>
 <thead>
 <tr>
@@ -2017,134 +1926,129 @@ void test02()
 </tbody>
 </table>
 <p>注：b是二进制模式的意思，b只是在Windows有效，在Linux用r和rb的结果是一样的</p>
-<h4 id="7-3-2-fclose函数">7.3.2 fclose函数</h4>
-<p>函数原型：<code>int fclose(FILE *fp);</code></p>
+<h4 id="7-3-2-fclose函数"><a href="#7-3-2-fclose函数" class="headerlink" title="7.3.2 fclose函数"></a>7.3.2 fclose函数</h4><p>函数原型：<code>int fclose(FILE *fp);</code></p>
 <ul>
 <li>打开的文件会占用内存资源，如果总是打开不关闭，会消耗很多内存</li>
 <li>一个进程同时打开的文件数是有限制的，超过最大同时打开文件数，再次调用fopen打开文件会失败</li>
 <li>如果没有明确的调用fclose关闭打开的文件，那么程序在退出的时候，操作系统会统一关闭</li>
 </ul>
-<h4 id="7-3-3-文件打开关闭案例">7.3.3 文件打开关闭案例</h4>
-<pre><code class="language-C">void test01()
+<h4 id="7-3-3-文件打开关闭案例"><a href="#7-3-3-文件打开关闭案例" class="headerlink" title="7.3.3 文件打开关闭案例"></a>7.3.3 文件打开关闭案例</h4><pre><code class="C">void test01()
 {
-	FILE *fp = NULL;
-	fp = fopen(&quot;a.txt&quot;, &quot;r&quot;); 
-	if (fp == NULL)
-	{
-		printf(&quot;打开失败\n&quot;);
-		return;
-	}
+    FILE *fp = NULL;
+    fp = fopen(&quot;a.txt&quot;, &quot;r&quot;); 
+    if (fp == NULL)
+    {
+        printf(&quot;打开失败\n&quot;);
+        return;
+    }
 
-	printf(&quot;打开成功\n&quot;);
+    printf(&quot;打开成功\n&quot;);
 
-	fclose(fp);
+    fclose(fp);
 }
 </code></pre>
-<h3 id="7-4-文件读写">7.4 文件读写</h3>
-<h4 id="7-4-1-按字符方式读写">7.4.1 按字符方式读写</h4>
-<p><strong>写文件 fputc</strong></p>
-<p>​	函数原型： <code>int fputc(int ch, FILE *stream)</code></p>
+<h3 id="7-4-文件读写"><a href="#7-4-文件读写" class="headerlink" title="7.4 文件读写"></a>7.4 文件读写</h3><h4 id="7-4-1-按字符方式读写"><a href="#7-4-1-按字符方式读写" class="headerlink" title="7.4.1 按字符方式读写"></a>7.4.1 按字符方式读写</h4><p><strong>写文件 fputc</strong></p>
+<p>​    函数原型： <code>int fputc(int ch, FILE *stream)</code></p>
 <p><strong>读文件 fgetc</strong></p>
-<p>​	函数原型：<code>int fgetc(FILE * stream)</code></p>
+<p>​    函数原型：<code>int fgetc(FILE * stream)</code></p>
 <p><strong>案例：</strong></p>
-<pre><code class="language-C">void test01()
+<pre><code class="C">void test01()
 {
-	//打开文件
-	FILE *fp = NULL;
-	fp = fopen(&quot;a.txt&quot;, &quot;w&quot;);
-	if (fp == NULL)
-	{
-		printf(&quot;打开失败\n&quot;);
-		return;
-	}
-	//操作文件
-	char buf[] = &quot;hello world\n&quot;;
-	int i = 0;
-	while (buf[i] != 0)
-	{
-		fputc(buf[i], fp);
-		i++;
-	}
-	//关闭文件
-	fclose(fp);
+    //打开文件
+    FILE *fp = NULL;
+    fp = fopen(&quot;a.txt&quot;, &quot;w&quot;);
+    if (fp == NULL)
+    {
+        printf(&quot;打开失败\n&quot;);
+        return;
+    }
+    //操作文件
+    char buf[] = &quot;hello world\n&quot;;
+    int i = 0;
+    while (buf[i] != 0)
+    {
+        fputc(buf[i], fp);
+        i++;
+    }
+    //关闭文件
+    fclose(fp);
 }
 </code></pre>
-<pre><code class="language-C">void test02()
+<pre><code class="C">void test02()
 {
-	//打开文件
-	FILE *fp = NULL;
-	fp = fopen(&quot;a.txt&quot;, &quot;r&quot;);
-	if (fp == NULL)
-	{
-		printf(&quot;打开失败\n&quot;);
-		return;
-	}
+    //打开文件
+    FILE *fp = NULL;
+    fp = fopen(&quot;a.txt&quot;, &quot;r&quot;);
+    if (fp == NULL)
+    {
+        printf(&quot;打开失败\n&quot;);
+        return;
+    }
 
-	//操作文件
-	char ch = 0;
-	while(  (ch = fgetc(fp)) != EOF  )
-	{
-		printf(&quot;ch = %c\n&quot;, ch);
-	}
+    //操作文件
+    char ch = 0;
+    while(  (ch = fgetc(fp)) != EOF  )
+    {
+        printf(&quot;ch = %c\n&quot;, ch);
+    }
 
-	//关闭文件
-	fclose(fp);
+    //关闭文件
+    fclose(fp);
 }
 
 </code></pre>
 <p>注：==EOF==为文件结束标志，可以用来判断文件是否读取到文件尾</p>
-<h4 id="7-4-2-按行方式读写">7.4.2 按行方式读写</h4>
-<p><strong>写文件 fputs</strong></p>
-<p>​	函数原型： <code>int fputs(const char *str, FILE *stream)</code></p>
+<h4 id="7-4-2-按行方式读写"><a href="#7-4-2-按行方式读写" class="headerlink" title="7.4.2 按行方式读写"></a>7.4.2 按行方式读写</h4><p><strong>写文件 fputs</strong></p>
+<p>​    函数原型： <code>int fputs(const char *str, FILE *stream)</code></p>
 <p><strong>读文件 fgets</strong></p>
-<p>​	函数原型：<code>int fgets(char *str, int size, FILE *stream)</code></p>
+<p>​    函数原型：<code>int fgets(char *str, int size, FILE *stream)</code></p>
 <p><strong>案例：</strong></p>
-<pre><code class="language-C">void test01()
+<pre><code class="C">void test01()
 {
-	char *buf[] = { 
+    char *buf[] = { 
         &quot;床前明月光\n&quot;,
         &quot;疑似地上霜\n&quot;,
         &quot;举头望明月\n&quot;,
         &quot;低头思故乡\n&quot; 
     };
 
-	FILE *fp = NULL;
-	fp = fopen(&quot;a.txt&quot;, &quot;w&quot;);
-	if (fp == NULL)
-	{
-		printf(&quot;打开失败\n&quot;);
-		return;
-	}
-	for (int i = 0; i &lt; sizeof(buf) / sizeof(buf[0]); i++)
-	{
-		fputs(buf[i], fp);
-	}
+    FILE *fp = NULL;
+    fp = fopen(&quot;a.txt&quot;, &quot;w&quot;);
+    if (fp == NULL)
+    {
+        printf(&quot;打开失败\n&quot;);
+        return;
+    }
+    for (int i = 0; i &lt; sizeof(buf) / sizeof(buf[0]); i++)
+    {
+        fputs(buf[i], fp);
+    }
 
-	fclose(fp);
+    fclose(fp);
 }
 </code></pre>
-<pre><code class="language-C">void test02()
+<pre><code class="C">void test02()
 {
-	FILE *fp = NULL;
-	fp = fopen(&quot;a.txt&quot;, &quot;r&quot;);
-	if (fp == NULL)
-	{
-		printf(&quot;打开失败\n&quot;);
-		return;
-	}
+    FILE *fp = NULL;
+    fp = fopen(&quot;a.txt&quot;, &quot;r&quot;);
+    if (fp == NULL)
+    {
+        printf(&quot;打开失败\n&quot;);
+        return;
+    }
 
-	char buf[1024] = { 0 };
-	while (!feof(fp)){
-		char temp[1024] = { 0 };
-		fgets(buf, 1024, fp);
-		if(feof(file_read))
-		{
-			break;
-		}
-		temp[strlen(buf)-1] = '\0';
-		printf(&quot;%s&quot;, buf);
-	}
-	fclose(fp);
+    char buf[1024] = { 0 };
+    while (!feof(fp)){
+        char temp[1024] = { 0 };
+        fgets(buf, 1024, fp);
+        if(feof(file_read))
+        {
+            break;
+        }
+        temp[strlen(buf)-1] = &#39;\0&#39;;
+        printf(&quot;%s&quot;, buf);
+    }
+    fclose(fp);
 }
 </code></pre>
 <p>注：</p>
@@ -2152,232 +2056,221 @@ void test02()
 <li>feof函数可以判断文件是否读取到了文件尾。如果是返回的值是1（真），否则为0（假）</li>
 <li>使用 feof 常用的逻辑结构是先读在判断</li>
 </ul>
-<h4 id="7-4-3-按格式化方式读写">7.4.3 按格式化方式读写</h4>
-<p><strong>写文件 fprintf</strong></p>
-<p>​	函数原型： <code>int fprintf(FILE * stream, const char * format, ...);</code></p>
+<h4 id="7-4-3-按格式化方式读写"><a href="#7-4-3-按格式化方式读写" class="headerlink" title="7.4.3 按格式化方式读写"></a>7.4.3 按格式化方式读写</h4><p><strong>写文件 fprintf</strong></p>
+<p>​    函数原型： <code>int fprintf(FILE * stream, const char * format, ...);</code></p>
 <p><strong>读文件 fscanf</strong></p>
-<p>​	函数原型：<code>int fscanf(FILE * stream, const char * format, ...);</code></p>
+<p>​    函数原型：<code>int fscanf(FILE * stream, const char * format, ...);</code></p>
 <p><strong>案例：</strong></p>
-<pre><code class="language-C">//格式化读写
+<pre><code class="C">//格式化读写
 struct Hero
 {
-	char name[16];
-	int atk;
-	int def;
+    char name[16];
+    int atk;
+    int def;
 };
 void test01()
 {
-	struct Hero hero[5] = {
-	{ &quot;亚瑟&quot;,110, 200 },
-	{ &quot;赵云&quot;,150, 150 },
-	{ &quot;韩信&quot;,170, 130 },
-	{ &quot;蔡文姬&quot;,100, 180 },
-	{ &quot;斧头帮帮主&quot;,999, 999 }
-	};
+    struct Hero hero[5] = {
+    { &quot;亚瑟&quot;,110, 200 },
+    { &quot;赵云&quot;,150, 150 },
+    { &quot;韩信&quot;,170, 130 },
+    { &quot;蔡文姬&quot;,100, 180 },
+    { &quot;斧头帮帮主&quot;,999, 999 }
+    };
 
-	FILE *fp = fopen(&quot;test1.txt&quot;, &quot;w&quot;);
-	if (fp == NULL)
-	{
-		printf(&quot;文件打开失败\n&quot;);
-		return;
-	}
+    FILE *fp = fopen(&quot;test1.txt&quot;, &quot;w&quot;);
+    if (fp == NULL)
+    {
+        printf(&quot;文件打开失败\n&quot;);
+        return;
+    }
 
-	for (int i = 0; i &lt; sizeof(hero) / sizeof(struct Hero); i++)
-	{
-		//1个中文两个字节
-		int len = fprintf(fp, &quot;%s %d %d\n&quot;, hero[i].name, hero[i].atk, hero[i].def); 
-		printf(&quot;第%d行写入字节数：%d\n&quot;,i+1, len);//返回写入字符数
-	}
+    for (int i = 0; i &lt; sizeof(hero) / sizeof(struct Hero); i++)
+    {
+        //1个中文两个字节
+        int len = fprintf(fp, &quot;%s %d %d\n&quot;, hero[i].name, hero[i].atk, hero[i].def); 
+        printf(&quot;第%d行写入字节数：%d\n&quot;,i+1, len);//返回写入字符数
+    }
 
-	fclose(fp);
+    fclose(fp);
 
 }
 </code></pre>
-<pre><code class="language-C">void test02()
+<pre><code class="C">void test02()
 {
-	struct Hero hero[5];
-	memset(hero, 0, sizeof(hero));
+    struct Hero hero[5];
+    memset(hero, 0, sizeof(hero));
 
-	FILE *fp = fopen(&quot;test1.txt&quot;, &quot;r&quot;);
-	if (fp == NULL)
-	{
-		printf(&quot;文件打开失败\n&quot;);
-		return;
-	}
-	int i = 0;
-	while (!feof(fp))
-	{
-		fscanf(fp, &quot;%s %d %d\n&quot;, hero[i].name, &amp;hero[i].atk, &amp;hero[i].def);
-		i++;
-	}
-	int n = i;
+    FILE *fp = fopen(&quot;test1.txt&quot;, &quot;r&quot;);
+    if (fp == NULL)
+    {
+        printf(&quot;文件打开失败\n&quot;);
+        return;
+    }
+    int i = 0;
+    while (!feof(fp))
+    {
+        fscanf(fp, &quot;%s %d %d\n&quot;, hero[i].name, &amp;hero[i].atk, &amp;hero[i].def);
+        i++;
+    }
+    int n = i;
 
-	for (int i = 0; i &lt; n; i++)
-	{
-		printf(&quot;name = %s atk = %d  def = %d\n&quot;, hero[i].name, hero[i].atk, hero[i].def);
-	}
+    for (int i = 0; i &lt; n; i++)
+    {
+        printf(&quot;name = %s atk = %d  def = %d\n&quot;, hero[i].name, hero[i].atk, hero[i].def);
+    }
 
-	fclose(fp);
+    fclose(fp);
 }
 </code></pre>
-<h4 id="7-4-4-按块方式读写">7.4.4 按块方式读写</h4>
-<p><strong>写文件 fprintf</strong></p>
-<p>​	函数原型： <code>size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);;</code></p>
+<h4 id="7-4-4-按块方式读写"><a href="#7-4-4-按块方式读写" class="headerlink" title="7.4.4 按块方式读写"></a>7.4.4 按块方式读写</h4><p><strong>写文件 fprintf</strong></p>
+<p>​    函数原型： <code>size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);;</code></p>
 <p><strong>读文件 fscanf</strong></p>
-<p>​	函数原型： <code>size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);</code></p>
+<p>​    函数原型： <code>size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);</code></p>
 <p><strong>案例：</strong></p>
-<pre><code class="language-C">//块读写回顾
+<pre><code class="C">//块读写回顾
 struct Hero{
-	char name[64];
-	int age;
+    char name[64];
+    int age;
 };
 
 void test01(){
 
-	//写文件
-	FILE* file_write = NULL;
-	//写方式打开文件
-	file_write = fopen(&quot;./test3.txt&quot;, &quot;wb&quot;); //wb 二进制方式写
-	if (file_write == NULL){
-		return;
-	}
+    //写文件
+    FILE* file_write = NULL;
+    //写方式打开文件
+    file_write = fopen(&quot;./test3.txt&quot;, &quot;wb&quot;); //wb 二进制方式写
+    if (file_write == NULL){
+        return;
+    }
 
-	struct Hero heros[4] = {
-		{ &quot;孙悟空&quot;, 33 },
-		{ &quot;韩信&quot;, 28 },
-		{ &quot;赵云&quot;, 45 },
-		{ &quot;亚瑟&quot;, 35 }
-	};
+    struct Hero heros[4] = {
+        { &quot;孙悟空&quot;, 33 },
+        { &quot;韩信&quot;, 28 },
+        { &quot;赵云&quot;, 45 },
+        { &quot;亚瑟&quot;, 35 }
+    };
 
-	for (int i = 0; i &lt; 4; i++){
-		//参数1 数据地址  参数2  块大小   参数3  块数  参数4  文件指针
-		fwrite(&amp;teachers[i], sizeof(struct Hero), 1, file_write);
-	}
-	//关闭文件
-	fclose(file_write);
+    for (int i = 0; i &lt; 4; i++){
+        //参数1 数据地址  参数2  块大小   参数3  块数  参数4  文件指针
+        fwrite(&amp;teachers[i], sizeof(struct Hero), 1, file_write);
+    }
+    //关闭文件
+    fclose(file_write);
 }
 </code></pre>
-<pre><code class="language-C">void test02()
+<pre><code class="C">void test02()
 {
-	//读文件
-	FILE* fp_read = NULL;
-	fp_read = fopen(&quot;./test3.txt&quot;, &quot;rb&quot;); //二进制方式读
-	if (fp_read == NULL){
-		return;
-	}
+    //读文件
+    FILE* fp_read = NULL;
+    fp_read = fopen(&quot;./test3.txt&quot;, &quot;rb&quot;); //二进制方式读
+    if (fp_read == NULL){
+        return;
+    }
 
-	struct Hero temps[4];
-	fread(&amp;temps, sizeof(struct Hero), 4, fp_read);
-	for (int i = 0; i &lt; 4; i++){
-		printf(&quot;Name:%s\t Age:%d\n&quot;, temps[i].name, temps[i].age);
-	}
+    struct Hero temps[4];
+    fread(&amp;temps, sizeof(struct Hero), 4, fp_read);
+    for (int i = 0; i &lt; 4; i++){
+        printf(&quot;Name:%s\t Age:%d\n&quot;, temps[i].name, temps[i].age);
+    }
 
-	fclose(fp_read);
+    fclose(fp_read);
 }
 </code></pre>
-<h3 id="7-5-文件指针移动">7.5 文件指针移动</h3>
-<p>文件指针移动这里主要介绍3个函数</p>
+<h3 id="7-5-文件指针移动"><a href="#7-5-文件指针移动" class="headerlink" title="7.5 文件指针移动"></a>7.5 文件指针移动</h3><p>文件指针移动这里主要介绍3个函数</p>
 <ul>
-<li>
-<p>rewind</p>
-</li>
-<li>
-<p>fseek</p>
-</li>
-<li>
-<p>ftell</p>
-</li>
+<li>rewind</li>
 </ul>
-<h4 id="7-5-1-rewind">7.5.1 rewind</h4>
-<p>函数原型：<code>void rewind(FILE *stream );</code></p>
+<ul>
+<li>fseek</li>
+<li>ftell      </li>
+</ul>
+<h4 id="7-5-1-rewind"><a href="#7-5-1-rewind" class="headerlink" title="7.5.1 rewind"></a>7.5.1 rewind</h4><p>函数原型：<code>void rewind(FILE *stream );</code></p>
 <p>功能：把文件流（文件光标）的读写位置移动到文件开头</p>
-<h4 id="7-5-2-fseek">7.5.2 fseek</h4>
-<p>函数原型： <code>int fseek(FILE *stream, long offset, int fromwhere);</code></p>
+<h4 id="7-5-2-fseek"><a href="#7-5-2-fseek" class="headerlink" title="7.5.2 fseek"></a>7.5.2 fseek</h4><p>函数原型： <code>int fseek(FILE *stream, long offset, int fromwhere);</code></p>
 <p>功能：移动文件流（文件光标）的读写位置。</p>
 <p>fromwhere：取值如下：</p>
-<p>​		SEEK_SET：从文件开头移动offset个字节</p>
-<p>​		SEEK_CUR：从当前位置移动offset个字节</p>
-<p>​		SEEK_END：从文件末尾移动offset个字节</p>
+<p>​        SEEK_SET：从文件开头移动offset个字节</p>
+<p>​        SEEK_CUR：从当前位置移动offset个字节</p>
+<p>​        SEEK_END：从文件末尾移动offset个字节</p>
 <p>fseek相关案例：</p>
-<pre><code class="language-C">struct Hero{
-	char name[64];
-	int age;
+<pre><code class="C">struct Hero{
+    char name[64];
+    int age;
 };
 
 void test01(){
 
-	//写文件
-	FILE* file_write = NULL;
-	//写方式打开文件
-	file_write = fopen(&quot;./test4.txt&quot;, &quot;wb&quot;); //wb 二进制方式写
-	if (file_write == NULL){
-		return;
-	}
+    //写文件
+    FILE* file_write = NULL;
+    //写方式打开文件
+    file_write = fopen(&quot;./test4.txt&quot;, &quot;wb&quot;); //wb 二进制方式写
+    if (file_write == NULL){
+        return;
+    }
 
-	struct Hero heros[4] = {
-		{ &quot;孙悟空&quot;, 33 },
-		{ &quot;韩信&quot;, 28 },
-		{ &quot;赵云&quot;, 45 },
-		{ &quot;亚瑟&quot;, 35 }
-	};
+    struct Hero heros[4] = {
+        { &quot;孙悟空&quot;, 33 },
+        { &quot;韩信&quot;, 28 },
+        { &quot;赵云&quot;, 45 },
+        { &quot;亚瑟&quot;, 35 }
+    };
 
-	for (int i = 0; i &lt; 4; i++){
-		//参数1 数据地址  参数2  块大小   参数3  块数  参数4  文件指针
-		fwrite(&amp;teachers[i], sizeof(struct Hero), 1, file_write);
-	}
-	//关闭文件
-	fclose(file_write);
-    
-    
+    for (int i = 0; i &lt; 4; i++){
+        //参数1 数据地址  参数2  块大小   参数3  块数  参数4  文件指针
+        fwrite(&amp;teachers[i], sizeof(struct Hero), 1, file_write);
+    }
+    //关闭文件
+    fclose(file_write);
+
+
     //随机位置读取
     FILE* file_read = NULL;
-	file_read = fopen(&quot;./test4.txt&quot;, &quot;rb&quot;);
-	if (file_read == NULL){
-		return;
-	}
-	//创建临时的结构体 
-	struct Hero temp;
-	//读文件  移动到第三个结构体位置
-	fseek(file_read, sizeof(Heros)* 2, SEEK_SET); //SEEK_SET从文件开始移动
-	fread(&amp;temp, sizeof(Heros), 1, file_read);
-	printf(&quot;Name:%s Age:%d\n&quot;, temp.name, temp.age);
+    file_read = fopen(&quot;./test4.txt&quot;, &quot;rb&quot;);
+    if (file_read == NULL){
+        return;
+    }
+    //创建临时的结构体 
+    struct Hero temp;
+    //读文件  移动到第三个结构体位置
+    fseek(file_read, sizeof(Heros)* 2, SEEK_SET); //SEEK_SET从文件开始移动
+    fread(&amp;temp, sizeof(Heros), 1, file_read);
+    printf(&quot;Name:%s Age:%d\n&quot;, temp.name, temp.age);
 
-	memset(&amp;temp, 0, sizeof(Heros));
+    memset(&amp;temp, 0, sizeof(Heros));
 
-	fseek(file_read, -(long)sizeof(Heros)* 2, SEEK_END); //SEEK_END从文件末尾移动
-	fread(&amp;temp, sizeof(Heros), 1, file_read);
-	printf(&quot;Name:%s Age:%d\n&quot;, temp.name, temp.age);
-    
-	rewind(file_read); //把文件流（文件光标）的读写位置移动到文件开头，读第一个结构体
-	fread(&amp;temp, sizeof(Heros), 1, file_read);
-	printf(&quot;Name:%s Age:%d\n&quot;, temp.name, temp.age);
-    
-	fclose(file_read);
+    fseek(file_read, -(long)sizeof(Heros)* 2, SEEK_END); //SEEK_END从文件末尾移动
+    fread(&amp;temp, sizeof(Heros), 1, file_read);
+    printf(&quot;Name:%s Age:%d\n&quot;, temp.name, temp.age);
+
+    rewind(file_read); //把文件流（文件光标）的读写位置移动到文件开头，读第一个结构体
+    fread(&amp;temp, sizeof(Heros), 1, file_read);
+    printf(&quot;Name:%s Age:%d\n&quot;, temp.name, temp.age);
+
+    fclose(file_read);
 }
 
 </code></pre>
-<h4 id="7-5-3-ftell">7.5.3 ftell</h4>
-<p>函数原型：<code>long ftell(FILE *stream);</code></p>
+<h4 id="7-5-3-ftell"><a href="#7-5-3-ftell" class="headerlink" title="7.5.3 ftell"></a>7.5.3 ftell</h4><p>函数原型：<code>long ftell(FILE *stream);</code></p>
 <p>功能： 获取文件流（文件光标）的读写位置</p>
 <p>ftell相关案例</p>
-<pre><code class="language-C">void test03()
+<pre><code class="C">void test03()
 {
-	FILE *fp = fopen(&quot;test1.txt&quot;, &quot;w&quot;); 
-	fputs(&quot;hello,斧头帮帮主&quot;, fp);
-	fclose(fp);
+    FILE *fp = fopen(&quot;test1.txt&quot;, &quot;w&quot;); 
+    fputs(&quot;hello,斧头帮帮主&quot;, fp);
+    fclose(fp);
 
-	fp = fopen(&quot;test1.txt&quot;, &quot;r&quot;);
-	//将文件流指针定位到文件尾部
-	fseek(fp, 0, SEEK_END);
-	//得到文件流指针的偏移量
-	int len = ftell(fp); 
-	printf(&quot;len = %d\n&quot;, len); 
+    fp = fopen(&quot;test1.txt&quot;, &quot;r&quot;);
+    //将文件流指针定位到文件尾部
+    fseek(fp, 0, SEEK_END);
+    //得到文件流指针的偏移量
+    int len = ftell(fp); 
+    printf(&quot;len = %d\n&quot;, len); 
 
-	fclose(fp);
+    fclose(fp);
 }
 </code></pre>
-<h3 id="7-6-文件相关案例">7.6 文件相关案例</h3>
-<p><strong>解析配置文件案例</strong></p>
+<h3 id="7-6-文件相关案例"><a href="#7-6-文件相关案例" class="headerlink" title="7.6 文件相关案例"></a>7.6 文件相关案例</h3><p><strong>解析配置文件案例</strong></p>
 <p>案例需求：</p>
 <ul>
 <li>游戏中有个配置文件，其中带<code>$</code>开头的代表注释信息，以<code>:</code>分隔的为正文内容</li>
@@ -2388,14 +2281,14 @@ void test01(){
 <li>提供一个函数，可以通过key返回对应的value值</li>
 </ul>
 <p>提示: 键值对的结构体设计可以如下</p>
-<pre><code class="language-C">struct ConfigInfo
+<pre><code class="C">struct ConfigInfo
 {
-	char key[64];
-	char value[64];
+    char key[64];
+    char value[64];
 };
 </code></pre>
 <p>配置文件config.txt 内容如下：</p>
-<pre><code class="language-c">$英雄的Id
+<pre><code class="c">$英雄的Id
 heroId:1
 $英雄的姓名
 heroName:琦玉
@@ -2407,244 +2300,235 @@ $英雄的简介
 heroInfo:无敌
 
 </code></pre>
-<h2 id="8-函数指针">8 函数指针</h2>
-<h3 id="8-1-函数指针概念">8.1 函数指针概念</h3>
-<p>函数指针：函数名称就是函数的入口地址，我们可以通过函数指针去指向函数的入口地址</p>
-<pre><code class="language-C">void func()
+<h2 id="8-函数指针"><a href="#8-函数指针" class="headerlink" title="8 函数指针"></a>8 函数指针</h2><h3 id="8-1-函数指针概念"><a href="#8-1-函数指针概念" class="headerlink" title="8.1 函数指针概念"></a>8.1 函数指针概念</h3><p>函数指针：函数名称就是函数的入口地址，我们可以通过函数指针去指向函数的入口地址</p>
+<pre><code class="C">void func()
 {
-	printf(&quot;hello world\n&quot;);
+    printf(&quot;hello world\n&quot;);
 }
 
 int main() {
 
-	printf(&quot;%p\n&quot;, func);
-    
-	system(&quot;pause&quot;);
-	return EXIT_SUCCESS;
+    printf(&quot;%p\n&quot;, func);
+
+    system(&quot;pause&quot;);
+    return EXIT_SUCCESS;
 }
 </code></pre>
-<h3 id="8-2-函数指针定义方式">8.2 函数指针定义方式</h3>
-<p>函数指针定义方式有三种：</p>
+<h3 id="8-2-函数指针定义方式"><a href="#8-2-函数指针定义方式" class="headerlink" title="8.2 函数指针定义方式"></a>8.2 函数指针定义方式</h3><p>函数指针定义方式有三种：</p>
 <ul>
 <li>先定义函数类型，通过函数类型定义函数指针变量</li>
 <li>先定义函数指针类型，再通过函数指针类型定义函数指针变量</li>
 <li>直接定义函数指针变量</li>
 </ul>
 <p>代码如下：</p>
-<pre><code class="language-C">void func(int a ,char b)
+<pre><code class="C">void func(int a ,char b)
 {
-	printf(&quot;hello world\n&quot;);
+    printf(&quot;hello world\n&quot;);
 }
 
 void test01()
 {
-	//1、先定义函数类型，通过函数类型定义函数指针变量
-	typedef void(FUNC_TYPE)(int,char);
-	FUNC_TYPE * pFunc = func;
-	pFunc(10,'a');
+    //1、先定义函数类型，通过函数类型定义函数指针变量
+    typedef void(FUNC_TYPE)(int,char);
+    FUNC_TYPE * pFunc = func;
+    pFunc(10,&#39;a&#39;);
 
 
-	//2、先定义函数指针类型，再通过函数指针类型定义函数指针变量
-	typedef void(*FUNC_TYPE2) (int, char);
-	FUNC_TYPE2 pFunc2 = func;
-	pFunc2(10, 'a');
+    //2、先定义函数指针类型，再通过函数指针类型定义函数指针变量
+    typedef void(*FUNC_TYPE2) (int, char);
+    FUNC_TYPE2 pFunc2 = func;
+    pFunc2(10, &#39;a&#39;);
 
-	//3、直接定义函数指针变量
-	void(*pFunc3)(int, char) = func;
-	pFunc3(10, 'a');
+    //3、直接定义函数指针变量
+    void(*pFunc3)(int, char) = func;
+    pFunc3(10, &#39;a&#39;);
 
-	//4、函数指针 和 指针函数区别
-	//函数指针是指向函数的指针；
- 	//指针函数是返回类型为指针的函数；
+    //4、函数指针 和 指针函数区别
+    //函数指针是指向函数的指针；
+     //指针函数是返回类型为指针的函数；
 }
 
 //函数指针的数组
 void func1()
 {
-	printf(&quot;func1调用\n&quot;);
+    printf(&quot;func1调用\n&quot;);
 }
 void func2()
 {
-	printf(&quot;func2调用\n&quot;);
+    printf(&quot;func2调用\n&quot;);
 }
 void func3()
 {
-	printf(&quot;func3调用\n&quot;);
+    printf(&quot;func3调用\n&quot;);
 }
 
 void test02()
 {
-	//函数指针数组
-	void(*fun_array[3])();
+    //函数指针数组
+    void(*fun_array[3])();
 
-	fun_array[0] = func1;
-	fun_array[1] = func2;
-	fun_array[2] = func3;
+    fun_array[0] = func1;
+    fun_array[1] = func2;
+    fun_array[2] = func3;
 
-	for (int i = 0; i &lt; 3;i++)
-	{
-		fun_array[i]();
-	}
+    for (int i = 0; i &lt; 3;i++)
+    {
+        fun_array[i]();
+    }
 }
 </code></pre>
-<h3 id="8-3-回调函数案例">8.3 回调函数案例</h3>
-<p>当函数指针做函数参数的时候，利用函数指针调用所指的函数时，称为回调函数</p>
+<h3 id="8-3-回调函数案例"><a href="#8-3-回调函数案例" class="headerlink" title="8.3 回调函数案例"></a>8.3 回调函数案例</h3><p>当函数指针做函数参数的时候，利用函数指针调用所指的函数时，称为回调函数</p>
 <p>案例1 ：提供一个函数，实现可以打印任何类型的元素</p>
-<pre><code class="language-C">void printText(void * data, void(*func)(void *))
+<pre><code class="C">void printText(void * data, void(*func)(void *))
 {
-	func(data);
+    func(data);
 }
 
 void myPrintInt(void * data) //参数就是每个元素的地址
 {
-	int * num = data;
-	printf(&quot;%d\n&quot;, *num);
+    int * num = data;
+    printf(&quot;%d\n&quot;, *num);
 }
 void test01()
 {
-	int a = 10;
-	printText(&amp;a,myPrintInt);
+    int a = 10;
+    printText(&amp;a,myPrintInt);
 }
 
 struct Person
 {
-	char name[64];
-	int age;
+    char name[64];
+    int age;
 };
 void myPrintPerson(void * data) //参数就是每个元素的地址
 {
-	struct Person * p = data;
-	printf(&quot;姓名：%s 年龄： %d \n&quot;, p-&gt;name,p-&gt;age);
+    struct Person * p = data;
+    printf(&quot;姓名：%s 年龄： %d \n&quot;, p-&gt;name,p-&gt;age);
 }
 void test02()
 {
-	struct Person p = { &quot;Tom&quot;, 100 };
-	printText(&amp;p, myPrintPerson);
+    struct Person p = { &quot;Tom&quot;, 100 };
+    printText(&amp;p, myPrintPerson);
 }
 </code></pre>
 <p>案例2 ：提供一个函数，可以打印任意类型的数组</p>
-<pre><code class="language-C">void printALLArray(void *arr, int eleSize, int len , void(*myFunc)(void *) )
+<pre><code class="C">void printALLArray(void *arr, int eleSize, int len , void(*myFunc)(void *) )
 {
-	char * p = arr;
-	for (int i = 0; i &lt; len;i++)
-	{
-		char * eleAddr = p + eleSize* i; //计算每个元素的地址
-		myFunc(eleAddr);
-	}
+    char * p = arr;
+    for (int i = 0; i &lt; len;i++)
+    {
+        char * eleAddr = p + eleSize* i; //计算每个元素的地址
+        myFunc(eleAddr);
+    }
 }
 
 void myPrintInt(void * data) 
 {
-	int * num = data;
-	printf(&quot;%d\n&quot;, *num);
+    int * num = data;
+    printf(&quot;%d\n&quot;, *num);
 }
 
 struct Person
 {
-	char name[64];
-	int age;
+    char name[64];
+    int age;
 };
 
 void myPrintPerson(void * data)
 {
-	struct Person * p = data;
-	printf(&quot;姓名： %s  年龄： %d \n&quot;, p-&gt;name, p-&gt;age);
+    struct Person * p = data;
+    printf(&quot;姓名： %s  年龄： %d \n&quot;, p-&gt;name, p-&gt;age);
 }
 
 void test01()
 {
-	int arr[] = { 1, 2, 3, 4, 5 };
+    int arr[] = { 1, 2, 3, 4, 5 };
 
-	int len = sizeof(arr) / sizeof(int);
-	printALLArray(arr, sizeof(int), len, myPrintInt);
+    int len = sizeof(arr) / sizeof(int);
+    printALLArray(arr, sizeof(int), len, myPrintInt);
 
-	struct Person personArr[] = 
-	{
-		{ &quot;aaa&quot;, 10 },
-		{ &quot;bbb&quot;, 20 },
-		{ &quot;ccc&quot;, 30 },
-		{ &quot;ddd&quot;, 40 }
-	};
+    struct Person personArr[] = 
+    {
+        { &quot;aaa&quot;, 10 },
+        { &quot;bbb&quot;, 20 },
+        { &quot;ccc&quot;, 30 },
+        { &quot;ddd&quot;, 40 }
+    };
 
-	len = sizeof(personArr)/ sizeof(struct Person);
-	printALLArray(personArr, sizeof(struct Person), len, myPrintPerson);
+    len = sizeof(personArr)/ sizeof(struct Person);
+    printALLArray(personArr, sizeof(struct Person), len, myPrintPerson);
 }
 </code></pre>
 <p>案例3 ：查找数组中的元素是否存在</p>
-<pre><code class="language-C">int findArrayEle(void *arr, int eleSize, int len, int(*myFunc)(void * , void *) , void * data)
+<pre><code class="C">int findArrayEle(void *arr, int eleSize, int len, int(*myFunc)(void * , void *) , void * data)
 {
-	char * p = arr;
-	for (int i = 0; i &lt; len; i++)
-	{
-		char * eleAddr = p + eleSize* i; //计算每个元素的地址
-		if (myFunc(eleAddr , data))
-		{
-			return 1;
-		}
-	}
-	return 0;
+    char * p = arr;
+    for (int i = 0; i &lt; len; i++)
+    {
+        char * eleAddr = p + eleSize* i; //计算每个元素的地址
+        if (myFunc(eleAddr , data))
+        {
+            return 1;
+        }
+    }
+    return 0;
 }
 
 int myFindPerson(void * data1, void * data2)
 {
-	struct Person * p1 = data1;
-	struct Person * p2 = data2;
-	if (strcmp(p1-&gt;name,p2-&gt;name) == 0  &amp;&amp; p1-&gt;age == p2-&gt;age )
-	{
-		return 1;
-	}
-	return 0;
+    struct Person * p1 = data1;
+    struct Person * p2 = data2;
+    if (strcmp(p1-&gt;name,p2-&gt;name) == 0  &amp;&amp; p1-&gt;age == p2-&gt;age )
+    {
+        return 1;
+    }
+    return 0;
 }
 
 void test02()
 {
-	struct Person personArr[] =
-	{
-		{ &quot;aaa&quot;, 10 },
-		{ &quot;bbb&quot;, 20 },
-		{ &quot;ccc&quot;, 30 },
-		{ &quot;ddd&quot;, 40 }
-	};
+    struct Person personArr[] =
+    {
+        { &quot;aaa&quot;, 10 },
+        { &quot;bbb&quot;, 20 },
+        { &quot;ccc&quot;, 30 },
+        { &quot;ddd&quot;, 40 }
+    };
 
-	int len = sizeof(personArr) / sizeof(struct Person);
+    int len = sizeof(personArr) / sizeof(struct Person);
 
-	struct Person p = { &quot;aaa&quot;, 10 };
-	int ret = findArrayEle(personArr, sizeof(struct Person), len, myFindPerson , &amp;p);
+    struct Person p = { &quot;aaa&quot;, 10 };
+    int ret = findArrayEle(personArr, sizeof(struct Person), len, myFindPerson , &amp;p);
 
-	if (ret)
-	{
-		printf(&quot;找到了！\n&quot;);
-	}
-	else
-	{
-		printf(&quot;未找到!\n&quot;);
-	}
+    if (ret)
+    {
+        printf(&quot;找到了！\n&quot;);
+    }
+    else
+    {
+        printf(&quot;未找到!\n&quot;);
+    }
 }
 </code></pre>
-<h2 id="9-预处理指令">9 预处理指令</h2>
-<h3 id="9-1-预处理概念">9.1  预处理概念</h3>
-<ul>
+<h2 id="9-预处理指令"><a href="#9-预处理指令" class="headerlink" title="9 预处理指令"></a>9 预处理指令</h2><h3 id="9-1-预处理概念"><a href="#9-1-预处理概念" class="headerlink" title="9.1  预处理概念"></a>9.1  预处理概念</h3><ul>
 <li>预处理是在程序源代码被编译之前，由预处理器对程序源代码进行的处理。</li>
 <li>这个阶段并不对程序的源代码语法进行解析，为下一步的编译做准备工作。</li>
 </ul>
-<h3 id="9-2-文件包含指令">9.2 文件包含指令</h3>
-<ul>
+<h3 id="9-2-文件包含指令"><a href="#9-2-文件包含指令" class="headerlink" title="9.2 文件包含指令"></a>9.2 文件包含指令</h3><ul>
 <li>文件包含是指一个源文件可以将另外一个文件的全部内容包含进来。</li>
 <li>Ｃ语言提供了#include命令用来实现“文件包含”的操作</li>
 </ul>
 <p><strong>图示：</strong></p>
 <p><img src="1590724863093.png" alt="1590724863093"></p>
-<p><strong>#incude&lt;&gt;  #include&quot;&quot;区别</strong></p>
+<p><strong>#incude&lt;&gt;  #include””区别</strong></p>
 <p><code>&lt; &gt;</code> 表示包含系统头文件</p>
 <p><code>&quot; &quot;</code> 表示包含自定义头文件</p>
-<h3 id="9-3-宏定义">9.3 宏定义</h3>
-<h4 id="9-3-1-宏常量">9.3.1 宏常量</h4>
-<p><strong>语法：</strong> <code>#define 名称  值</code></p>
+<h3 id="9-3-宏定义"><a href="#9-3-宏定义" class="headerlink" title="9.3 宏定义"></a>9.3 宏定义</h3><h4 id="9-3-1-宏常量"><a href="#9-3-1-宏常量" class="headerlink" title="9.3.1 宏常量"></a>9.3.1 宏常量</h4><p><strong>语法：</strong> <code>#define 名称  值</code></p>
 <p><strong>实例：</strong> <code>#define MAX  1024</code></p>
-<pre><code class="language-C">void test(){
-	double r = 10.0;
-	double s = PI * r * r;
-	printf(&quot;s = %lf\n&quot;, s);
+<pre><code class="C">void test(){
+    double r = 10.0;
+    double s = PI * r * r;
+    printf(&quot;s = %lf\n&quot;, s);
 }
 </code></pre>
 <p><strong>总结：</strong></p>
@@ -2655,37 +2539,30 @@ void test02()
 <li>宏名从定义到本源文件结束都可以使用</li>
 <li>可以用#undef命令终止宏定义的作用域</li>
 </ul>
-<h4 id="9-3-2-宏函数">9.3.2 宏函数</h4>
-<p><strong>语法：</strong> <code>#define 宏函数名(参数)  表达式</code></p>
+<h4 id="9-3-2-宏函数"><a href="#9-3-2-宏函数" class="headerlink" title="9.3.2 宏函数"></a>9.3.2 宏函数</h4><p><strong>语法：</strong> <code>#define 宏函数名(参数)  表达式</code> </p>
 <p><strong>实例：</strong> <code>define SUM(x,y) (( x )+( y ))</code></p>
-<pre><code class="language-C">#define SUM(x,y) (( x )+( y ))
+<pre><code class="C">#define SUM(x,y) (( x )+( y ))
 
 void test(){
-	int ret = SUM(10, 20);
-	printf(&quot;ret:%d\n&quot;,ret);
+    int ret = SUM(10, 20);
+    printf(&quot;ret:%d\n&quot;,ret);
 }
 </code></pre>
 <p><strong>总结：</strong></p>
 <ul>
-<li>
-<p>在项目中，可以把一些短小而又频繁使用的函数写成宏函数</p>
+<li><p>在项目中，可以把一些短小而又频繁使用的函数写成宏函数</p>
 </li>
-<li>
-<p>宏函数没有普通函数参数压栈、出栈上的开销，可以调高程序的效率</p>
+<li><p>宏函数没有普通函数参数压栈、出栈上的开销，可以调高程序的效率</p>
 </li>
-<li>
-<p>宏的名字中不能有空格，但是在替换的字符串中可以有空格</p>
+<li><p>宏的名字中不能有空格，但是在替换的字符串中可以有空格</p>
 </li>
-<li>
-<p>用括号括住每一个参数，并括住宏的整体定义。</p>
+<li><p>用括号括住每一个参数，并括住宏的整体定义。</p>
 </li>
-<li>
-<p>用大写字母表示宏的函数名。</p>
+<li><p>用大写字母表示宏的函数名。</p>
 <p>​</p>
 </li>
 </ul>
-<h3 id="9-4-条件编译">9.4 条件编译</h3>
-<ul>
+<h3 id="9-4-条件编译"><a href="#9-4-条件编译" class="headerlink" title="9.4 条件编译"></a>9.4 条件编译</h3><ul>
 <li>一般情况下，源程序中所有的行都参加编译</li>
 <li>但有时希望对部分源程序行只在满足一定条件时才编译，即对这部分源程序行指定编译条件</li>
 </ul>
@@ -2697,21 +2574,21 @@ void test(){
 </ol>
 <p>示例：</p>
 <p><code>#ifdef</code></p>
-<pre><code class="language-C">#define debug 
+<pre><code class="C">#define debug 
 #ifdef debug
 void func1()
 {
-	printf(&quot;Debug版本\n&quot;);
+    printf(&quot;Debug版本\n&quot;);
 }
 #else
 void func1()
 {
-	printf(&quot;Release版本\n&quot;);
+    printf(&quot;Release版本\n&quot;);
 }
 #endif 
 </code></pre>
 <p><code>#ifndef</code></p>
-<pre><code class="language-C">//防止头文件被重复包含引用；
+<pre><code class="C">//防止头文件被重复包含引用；
 #ifndef _SOMEFILE_H
 #define _SOMEFILE_H
 
@@ -2720,43 +2597,39 @@ void func1()
 #endif
 </code></pre>
 <p><code>#if</code></p>
-<pre><code class="language-C">//做注释用
+<pre><code class="C">//做注释用
 #if 0
     void myAdd()
     {
         printf(&quot;第一种写法\n&quot;);
     }
 #else 
-	void myAdd()
+    void myAdd()
     {
         printf(&quot;第二种写法\n&quot;);
     }
 #endif
 </code></pre>
-<h3 id="9-5-特殊宏">9.5 特殊宏</h3>
-<pre><code class="language-C">//	__FILE__			宏所在文件的源文件名 
-//	__LINE__			宏所在行的行号
-//	__DATE__			代码编译的日期
-//	__TIME__			代码编译的时间
+<h3 id="9-5-特殊宏"><a href="#9-5-特殊宏" class="headerlink" title="9.5 特殊宏"></a>9.5 特殊宏</h3><pre><code class="C">//    __FILE__            宏所在文件的源文件名 
+//    __LINE__            宏所在行的行号
+//    __DATE__            代码编译的日期
+//    __TIME__            代码编译的时间
 
 void test()
 {
-	printf(&quot;%s\n&quot;, __FILE__);
-	printf(&quot;%d\n&quot;, __LINE__);
-	printf(&quot;%s\n&quot;, __DATE__);
-	printf(&quot;%s\n&quot;, __TIME__);
+    printf(&quot;%s\n&quot;, __FILE__);
+    printf(&quot;%d\n&quot;, __LINE__);
+    printf(&quot;%s\n&quot;, __DATE__);
+    printf(&quot;%s\n&quot;, __TIME__);
 }
 </code></pre>
-<h2 id="10-动态库的配置与使用">10 动态库的配置与使用</h2>
-<h3 id="10-1-库的基本概念">10.1 库的基本概念</h3>
-<ul>
+<h2 id="10-动态库的配置与使用"><a href="#10-动态库的配置与使用" class="headerlink" title="10 动态库的配置与使用"></a>10 动态库的配置与使用</h2><h3 id="10-1-库的基本概念"><a href="#10-1-库的基本概念" class="headerlink" title="10.1 库的基本概念"></a>10.1 库的基本概念</h3><ul>
 <li>库是已经写好的、成熟的、可复用的代码</li>
 <li>每个程序都需要依赖很多底层库，不可能每个人的代码从零开始编写代码</li>
 <li>我们的开发的应用中经常有一些公共代码是需要反复使用的，就把这些代码编译为库文件。</li>
 <li>库可以简单看成一组目标文件的集合，将这些目标文件经过压缩打包之后形成的一个文件。</li>
 </ul>
-<h3 id="10-2-静态库的配置与使用">10.2 静态库的配置与使用</h3>
-<p>window下静态库配置步骤如下：</p>
+<h3 id="10-2-静态库的配置与使用"><a href="#10-2-静态库的配置与使用" class="headerlink" title="10.2 静态库的配置与使用"></a>10.2 静态库的配置与使用</h3><p>window下静态库配置步骤如下：</p>
 <ol>
 <li>创建新项目，编写库文件</li>
 <li>修改项目配置属性</li>
@@ -2770,17 +2643,17 @@ void test()
 <li>创建头文件和头文件，例如staticLib.h和staticLib.c</li>
 </ul>
 <p>头文件添加如下代码：</p>
-<pre><code class="language-C">#pragma once
+<pre><code class="C">#pragma once
 
 //加法运算，实现两个整型数字相加，并返回结果
 int myadd(int a, int b);
 </code></pre>
 <p>源文件添加如下代码：</p>
-<pre><code class="language-C">#include &quot;staticLib.h&quot;
+<pre><code class="C">#include &quot;staticLib.h&quot;
 
 int myadd(int a, int b)
 {
-	return a + b;
+    return a + b;
 }
 </code></pre>
 <p><strong>2 修改项目配置属性</strong></p>
@@ -2801,45 +2674,37 @@ int myadd(int a, int b)
 <p><strong>4 测试并使用库</strong></p>
 <p>创建新项目，导入生成的.lib和.h文件导入到项目中进行测试</p>
 <p><img src="1590806974967.png" alt="1590806974967"></p>
-<p>运行查看结果，成功实现后，会打印出1 + 1 = 2</p>
-<h3 id="10-3-动态库的配置与使用">10.3 动态库的配置与使用</h3>
-<h4 id="10-3-1-静态库优缺点">10.3.1 静态库优缺点</h4>
-<p>本章节主要讲的内容是动态库，主要是因为静态库缺点明显，利小于弊</p>
+<p>运行查看结果，成功实现后，会打印出1 + 1 = 2 </p>
+<h3 id="10-3-动态库的配置与使用"><a href="#10-3-动态库的配置与使用" class="headerlink" title="10.3 动态库的配置与使用"></a>10.3 动态库的配置与使用</h3><h4 id="10-3-1-静态库优缺点"><a href="#10-3-1-静态库优缺点" class="headerlink" title="10.3.1 静态库优缺点"></a>10.3.1 静态库优缺点</h4><p>本章节主要讲的内容是动态库，主要是因为静态库缺点明显，利小于弊</p>
 <p>优点：</p>
 <ul>
-<li>
-<p>静态库在程序的链接阶段被复制到了程序中</p>
-</li>
-<li>
-<p>程序在运行时与库再无瓜葛，移植方便</p>
-</li>
+<li>静态库在程序的链接阶段被复制到了程序中</li>
+</ul>
+<ul>
+<li>程序在运行时与库再无瓜葛，移植方便</li>
 </ul>
 <p>缺点：</p>
 <ul>
-<li>浪费空间和资源
-<ul>
+<li>浪费空间和资源<ul>
 <li>静态库所有内容都放在了程序中</li>
 <li>假设1个程序占用1MB，如果磁盘中有2000个程序，将近浪费了2GB空间</li>
 </ul>
 </li>
-<li>更新部署麻烦
-<ul>
+<li>更新部署麻烦<ul>
 <li>假设库文件为第三方厂商提供</li>
 <li>如果库文件有所改动，需要更新，那么整个程序需要重新编译发布给用户</li>
 <li>用户也需要重新安装整个程序</li>
 </ul>
 </li>
 </ul>
-<h4 id="10-3-2-动态库简介">10.3.2 动态库简介</h4>
-<p>为了解决静态库浪费空间和更新困难的两个问题，诞生了动态库</p>
+<h4 id="10-3-2-动态库简介"><a href="#10-3-2-动态库简介" class="headerlink" title="10.3.2 动态库简介"></a>10.3.2 动态库简介</h4><p>为了解决静态库浪费空间和更新困难的两个问题，诞生了动态库</p>
 <p>动态库链接思想：</p>
 <ul>
 <li>将整个链接过程推迟到运行时候在进行</li>
 <li>程序中用到了库函数，再从库中使用</li>
 <li>更新时候，只需要替换库文件</li>
 </ul>
-<h4 id="10-3-3-动态库配置和使用">10.3.3  动态库配置和使用</h4>
-<p>window下动态库配置步骤如下：</p>
+<h4 id="10-3-3-动态库配置和使用"><a href="#10-3-3-动态库配置和使用" class="headerlink" title="10.3.3  动态库配置和使用"></a>10.3.3  动态库配置和使用</h4><p>window下动态库配置步骤如下：</p>
 <ol>
 <li>创建新项目，编写库文件</li>
 <li>修改项目配置属性</li>
@@ -2853,7 +2718,7 @@ int myadd(int a, int b)
 <li>创建头文件和头文件，例如dynamicLib.h和dynamicLib.c</li>
 </ul>
 <p>头文件添加如下代码：</p>
-<pre><code class="language-c">#pragma once
+<pre><code class="c">#pragma once
 
 //减法运算，实现两个整型数字相减，并返回结果
 __declspec(dllexport) int mysub(int a, int b);
@@ -2863,11 +2728,11 @@ __declspec(dllexport) int mysub(int a, int b);
 <li><code>__declspec(dllexport)</code> 为导出函数，只有导出函数才可以被外部程序使用</li>
 </ul>
 <p>源文件添加如下代码：</p>
-<pre><code class="language-c">#include &quot;dynamicLib.h&quot;
+<pre><code class="c">#include &quot;dynamicLib.h&quot;
 
 int mysub(int a, int b)
 {
-	return a - b;
+    return a - b;
 }
 </code></pre>
 <p><strong>2 修改项目配置属性</strong></p>
@@ -2889,75 +2754,72 @@ int mysub(int a, int b)
 <p><img src="1590810554561.png" alt="1590810554561"></p>
 <p>运行查看结果，成功实现后，会打印出1 - 1 = -1</p>
 <p>注： 如果不把文件导入项目中，也可以采用代码中添加 <code>#pragma comment(lib,&quot;./动态库.lib&quot;)</code> 使用动态库</p>
-<h2 id="11-递归函数">11 递归函数</h2>
-<h3 id="11-1-普通函数调用">11.1 普通函数调用</h3>
-<p>学习递归函数前，我们先要搞清楚普通函数的调用流程</p>
-<pre><code class="language-C">#define _CRT_SECURE_NO_WARNINGS
+<h2 id="11-递归函数"><a href="#11-递归函数" class="headerlink" title="11 递归函数"></a>11 递归函数</h2><h3 id="11-1-普通函数调用"><a href="#11-1-普通函数调用" class="headerlink" title="11.1 普通函数调用"></a>11.1 普通函数调用</h3><p>学习递归函数前，我们先要搞清楚普通函数的调用流程</p>
+<pre><code class="C">#define _CRT_SECURE_NO_WARNINGS
 #include&lt;stdio.h&gt;
 #include&lt;string.h&gt;
 #include&lt;stdlib.h&gt;
 
 void funB(int a) 
 {
-	printf(&quot;funB中的 a = %d\n&quot;, a);
+    printf(&quot;funB中的 a = %d\n&quot;, a);
 }
 
 void funA(int a) 
 {
-	funB(a - 1);
-	printf(&quot;funA中的 a = %d\n&quot;, a);
+    funB(a - 1);
+    printf(&quot;funA中的 a = %d\n&quot;, a);
 }
 
 int main() {
 
-	funA(2);
-	printf(&quot;main\n&quot;);
+    funA(2);
+    printf(&quot;main\n&quot;);
 
-	system(&quot;pause&quot;);
-	return EXIT_SUCCESS;
+    system(&quot;pause&quot;);
+    return EXIT_SUCCESS;
 }
 </code></pre>
 <p>思考上面代码运行的结果，理解代码的执行流程</p>
 <p><strong>流程分析图：</strong></p>
 <p><img src="1590812031315.png" alt="1590812031315"></p>
 <p>执行结果为：</p>
-<pre><code class="language-C">funcB中的 a = 1;
+<pre><code class="C">funcB中的 a = 1;
 funcA中的 a = 2;
 main
 请按任意键继续...
 </code></pre>
-<h3 id="11-2-递归函数调用">11.2 递归函数调用</h3>
-<p>如果11.1已经看懂，那么接下来分析以下代码的运行结果：</p>
-<pre><code class="language-C">#define _CRT_SECURE_NO_WARNINGS
+<h3 id="11-2-递归函数调用"><a href="#11-2-递归函数调用" class="headerlink" title="11.2 递归函数调用"></a>11.2 递归函数调用</h3><p>如果11.1已经看懂，那么接下来分析以下代码的运行结果：</p>
+<pre><code class="C">#define _CRT_SECURE_NO_WARNINGS
 #include&lt;stdio.h&gt;
 #include&lt;string.h&gt;
 #include&lt;stdlib.h&gt;
 
 void funA(int a) 
 {
-	if (a == 1)
-	{
-		printf(&quot;funA中的 a = %d\n&quot;, a);
-		return;
-	}
+    if (a == 1)
+    {
+        printf(&quot;funA中的 a = %d\n&quot;, a);
+        return;
+    }
 
-	funA(a - 1);
-	printf(&quot;funA中的 a = %d\n&quot;, a);
+    funA(a - 1);
+    printf(&quot;funA中的 a = %d\n&quot;, a);
 }
 
 int main() {
 
-	funA(2);
-	printf(&quot;main\n&quot;);
+    funA(2);
+    printf(&quot;main\n&quot;);
 
-	system(&quot;pause&quot;);
-	return EXIT_SUCCESS;
+    system(&quot;pause&quot;);
+    return EXIT_SUCCESS;
 }
 </code></pre>
 <p><strong>流程分析图：</strong></p>
 <p><img src="1590812756535.png" alt="1590812756535"></p>
 <p>执行结果为：</p>
-<pre><code class="language-c">funcA中的 a = 1;
+<pre><code class="c">funcA中的 a = 1;
 funcA中的 a = 2;
 main
 请按任意键继续...
@@ -2967,41 +2829,40 @@ main
 <ul>
 <li>递归函数必须有退出条件，否则出现无限递归</li>
 </ul>
-<h3 id="11-3-递归函数案例">11.3 递归函数案例</h3>
-<p>案例1：逆序遍历字符串</p>
-<pre><code class="language-C">void reversePrint(char * p)
+<h3 id="11-3-递归函数案例"><a href="#11-3-递归函数案例" class="headerlink" title="11.3 递归函数案例"></a>11.3 递归函数案例</h3><p>案例1：逆序遍历字符串</p>
+<pre><code class="C">void reversePrint(char * p)
 {
-	if (*p == '\0')
-	{
-		return;
-	}
+    if (*p == &#39;\0&#39;)
+    {
+        return;
+    }
 
-	reversePrint(p + 1);
-	printf(&quot;%c&quot;, *p);
+    reversePrint(p + 1);
+    printf(&quot;%c&quot;, *p);
 }
 
 void test01()
 {
-	char * str = &quot;abcdefgh&quot;;
-	reversePrint(str);
+    char * str = &quot;abcdefgh&quot;;
+    reversePrint(str);
 }
 </code></pre>
 <p>案例2：获取斐波那契数列指定位置元素</p>
 <p>斐波那契数列：1、1、2、3、5、8…</p>
-<pre><code class="language-C">int fibonacci(int pos)   
+<pre><code class="C">int fibonacci(int pos)   
 {
-	if (pos == 1 || pos == 2)
-	{
-		return 1;
-	}
+    if (pos == 1 || pos == 2)
+    {
+        return 1;
+    }
 
-	return fibonacci(pos - 1) + fibonacci(pos - 2);
+    return fibonacci(pos - 1) + fibonacci(pos - 2);
 }
 
 void test02()
 {
-	int num = fibonacci(10);
-	printf(&quot;斐波那契数列中第十个元素为：%d\n&quot;, num);
+    int num = fibonacci(10);
+    printf(&quot;斐波那契数列中第十个元素为：%d\n&quot;, num);
 }
 </code></pre>
 
